@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 const TikTok = ({ className }: { className?: string }) => (
@@ -22,12 +23,19 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-primary text-white pt-20 pb-12 relative overflow-hidden">
+        <footer className="bg-neutral-dark text-white pt-20 pb-12 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-20">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
                     {/* Brand Column */}
                     <div className="md:col-span-6">
+                        <Image
+                            src="/images/logo.png"
+                            alt="YooMarrakech"
+                            width={100}
+                            height={100}
+                            className="mb-6 object-contain"
+                        />
                         <h3 className="text-3xl font-medium font-poppins text-white mb-6">Explore Morocco with Us</h3>
                         <p className="text-white/80 leading-relaxed mb-6 font-light max-w-md">
                             Step into the heart of Morocco with curated travel experiences that showcase its timeless medinas, vibrant souks, and breathtaking Atlas landscapes.
@@ -63,16 +71,16 @@ export default function Footer() {
                     </p>
 
                     <div className="flex items-center gap-6">
-                        <Link href="https://instagram.com" target="_blank" className="hover:text-white text-white/80 transition-colors">
+                        <Link href="https://instagram.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
                             <Instagram className="w-5 h-5" />
                         </Link>
-                        <Link href="https://tiktok.com" target="_blank" className="hover:text-white text-white/80 transition-colors">
+                        <Link href="https://tiktok.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
                             <TikTok className="w-5 h-5" />
                         </Link>
-                        <Link href="https://youtube.com" target="_blank" className="hover:text-white text-white/80 transition-colors">
+                        <Link href="https://youtube.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
                             <Youtube className="w-5 h-5" />
                         </Link>
-                        <Link href="https://facebook.com" target="_blank" className="hover:text-white text-white/80 transition-colors">
+                        <Link href="https://facebook.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
                             <Facebook className="w-5 h-5" />
                         </Link>
                     </div>

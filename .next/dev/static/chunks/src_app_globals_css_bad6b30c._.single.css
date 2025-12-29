@@ -440,11 +440,11 @@
   }
 
   :root {
-    --primary: #c04a2f;
-    --secondary: #f5f5f5;
-    --accent: #2f6b4f;
-    --neutral-dark: #1f1f1f;
-    --neutral-light: #fafaf8;
+    --primary: #fdc82f;
+    --secondary: #f2f2f2;
+    --accent: #1a1a1a;
+    --neutral-dark: #1a1a1a;
+    --neutral-light: #f2f2f2;
     --surface: #fff;
   }
 
@@ -565,6 +565,10 @@
 
   .z-50 {
     z-index: 50;
+  }
+
+  .z-\[100\] {
+    z-index: 100;
   }
 
   .row-span-1 {
@@ -1332,6 +1336,10 @@
     background-color: #25d366;
   }
 
+  .bg-\[\#F2F2F2\] {
+    background-color: #f2f2f2;
+  }
+
   .bg-\[\#FDFBF7\] {
     background-color: #fdfbf7;
   }
@@ -1676,6 +1684,10 @@
 
   .fill-current {
     fill: currentColor;
+  }
+
+  .object-contain {
+    object-fit: contain;
   }
 
   .object-cover {

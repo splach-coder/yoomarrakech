@@ -12,3 +12,70 @@
 [00:09:00.643] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon-16x16.png.json'
 [00:09:04.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:39:12.786] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[18:46:15.276] Server  LOG      ✓ Compiled in 1272ms
+[18:47:49.038] Server  LOG      ✓ Compiled in 222ms
+[18:47:58.824] Server  LOG      ✓ Compiled in 273ms
+[18:48:15.955] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[18:48:16.559] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon.ico.json'
+[18:48:16.809] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon-16x16.png.json'
+[18:48:17.095] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[18:49:52.742] Server  LOG      ✓ Compiled in 2.3s
+[18:49:53.028] Server  LOG      ✓ Compiled in 0ms
+[18:49:54.146] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[18:53:23.561] Server  LOG      ✓ Compiled in 1000ms
+[18:53:23.734] Server  LOG      ✓ Compiled in 0ms
+[18:53:25.184] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[18:53:27.597] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[18:53:41.750] Server  LOG      ✓ Compiled in 1167ms
+[18:55:15.762] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[18:55:15.762] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/en/policy" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="__next_bui...">
+                      <SegmentTrieNode>
+                      <script>
+                      <script>
+                      <DefaultLayout>
+                        <html>
+                          <body
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[18:55:18.060] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[18:55:18.406] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[18:58:13.499] Server  LOG      ✓ Compiled in 165ms
+[18:58:29.247] Server  LOG      ✓ Compiled in 173ms
+[19:03:12.075] Server  LOG      ✓ Compiled in 316ms
+[19:03:18.778] Server  LOG      ✓ Compiled in 265ms
+[19:05:24.478] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[19:07:04.697] Server  LOG      ✓ Compiled in 201ms
+[19:07:17.191] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[19:07:17.469] Server  LOG      ✓ Compiled in 53ms
+[19:07:35.268] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[19:07:39.448] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[19:07:39.819] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[19:07:45.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[19:07:45.874] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[19:07:53.475] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[19:07:53.858] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.

@@ -6,6 +6,7 @@ import "../globals.css";
 import { inter, poppins } from '@/lib/fonts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Preloader from '@/components/Preloader';
 import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
 
@@ -66,6 +67,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={`${inter.variable} ${poppins.variable} font-sans min-h-screen flex flex-col antialiased text-neutral-dark`} suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
+          <Preloader />
           <Header />
           <main className="flex-grow">
             {children}

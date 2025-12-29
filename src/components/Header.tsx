@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, useTransition, useState, useEffect } from 'react';
 
@@ -70,10 +71,15 @@ export default function Header() {
             <div className="container mx-auto px-4 flex items-center justify-between relative">
 
                 {/* Logo Section - Left */}
-                <Link href={`/${locale}`} className={`flex items-center gap-2 z-50 transition-colors ${logoColorClass}`}>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isScrolled || !isHomePage ? 'bg-primary text-white' : 'bg-white text-primary'}`}>
-                        <span className="font-bold text-xl">Y</span>
-                    </div>
+                <Link href={`/${locale}`} className="flex items-center gap-2 z-50">
+                    <Image
+                        src="/images/logo.png"
+                        alt="YooMarrakech"
+                        width={64}
+                        height={64}
+                        className="object-contain"
+                        priority
+                    />
                 </Link>
 
                 {/* Centered Navigation */}

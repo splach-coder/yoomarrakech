@@ -18,7 +18,7 @@ const categories = {
 // Moroccan Pattern SVG Background
 const PatternBackground = () => (
     <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #C04A2F 1px, transparent 0)', backgroundSize: '40px 40px' }}>
+        style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #FDC82F 1px, transparent 0)', backgroundSize: '40px 40px' }}>
     </div>
 );
 
@@ -71,7 +71,7 @@ export const ServicesPageContent = ({ locale }: { locale: string }) => {
 
     return (
         <div className="min-h-screen relative overflow-hidden font-poppins text-neutral-dark">
-            <div className="absolute inset-0 bg-[#FDFBF7]">
+            <div className="absolute inset-0 bg-[#F2F2F2]">
                 <PatternBackground />
             </div>
 

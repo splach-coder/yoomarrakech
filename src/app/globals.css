@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --primary: #C04A2F;
-    --secondary: #f5f5f5;
-    --accent: #2F6B4F;
-    --neutral-dark: #1F1F1F;
-    --neutral-light: #FAFAF8;
+    --primary: #FDC82F;
+    --secondary: #F2F2F2;
+    --accent: #1A1A1A;
+    --neutral-dark: #1A1A1A;
+    --neutral-light: #F2F2F2;
     --surface: #ffffff;
   }
 }
