@@ -1,0 +1,142 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { siteData } from '@/data/siteData';
+import { ArrowLeft, ArrowUpRight, Clock, Star } from 'lucide-react';
+import Link from 'next/link';
+
+interface PageProps {
+    params: Promise<{
+        locale: string;
+    }>;
+}
+
+export default function ActivitiesPage({ params }: PageProps) {
+    const { locale } = React.use(params);
+
+    // Group activities by type
+    const experiences = siteData.activities.experiences || [];
+    const grouped = experiences.reduce((acc: any, curr: any) => {
+        const type = curr.type;
+        if (!acc[type]) {
+            acc[type] = {
+                ...curr,
+                id: curr.type,
+                name: `${curr.type} Adventures`,
+                desc: `Experience our exclusive ${curr.type} activities.`,
+                isGrouped: true
+            };
+        }
+        if (curr.price < acc[type].price) {
+            acc[type].price = curr.price;
+        }
+        return acc;
+    }, {});
+
+    const groupedActivities = Object.values(grouped);
+
+    return (
+        <div className="min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark">
+            {/* Hero Banner */}
+            <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
+                <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
+                ></div>
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="relative z-10 container mx-auto px-4 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <span className="block font-poppins font-semibold text-primary text-xl italic mb-4">
+                            Discover Morocco
+                        </span>
+                        <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 leading-tight">
+                            Adventures
+                        </h1>
+                        <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed mb-8">
+                            Thrills in the desert.
+                        </p>
+                        <Link
+                            href={`/${locale}/services`}
+                            className="px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-neutral-dark text-white transition-all flex items-center gap-2 font-medium backdrop-blur-sm inline-flex"
+                        >
+                            <ArrowLeft className="w-5 h-5" /> View All Collections
+                        </Link>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Activities Grid */}
+            <div className="container mx-auto px-4 py-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {groupedActivities.map((item: any, idx) => (
+                        <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="group"
+                        >
+                            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[350px] border border-neutral-100 group cursor-pointer hover:-translate-y-1">
+                                {/* Image Section */}
+                                <div className="md:w-2/5 relative h-64 md:h-full overflow-hidden">
+                                    <div
+                                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                        style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
+                                    ></div>
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+
+                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
+                                        Activities
+                                    </div>
+                                </div>
+
+                                {/* Content Section */}
+                                <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+                                    <div>
+                                        <div className="flex justify-between items-start mb-2">
+                                            <div className="flex items-center gap-2 text-gray-500 text-xs font-semibold uppercase tracking-wider">
+                                                <Clock className="w-3 h-3 text-primary" />
+                                                <span>2 hours</span>
+                                            </div>
+                                            <div className="flex items-center gap-1 text-yellow-500 text-sm font-bold bg-yellow-50 px-2 py-1 rounded-md">
+                                                <Star className="w-3 h-3 fill-current" />
+                                                <span>4.9</span>
+                                            </div>
+                                        </div>
+
+                                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-3 leading-tight group-hover:text-primary transition-colors uppercase">
+                                            {item.name || item.type}
+                                        </h3>
+
+                                        <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 md:line-clamp-3">
+                                            {item.desc || "Immerse yourself in the authentic beauty of Morocco with our expertly curated experience."}
+                                        </p>
+                                    </div>
+
+                                    <div className="pt-6 mt-4 border-t border-neutral-100 flex items-center justify-between">
+                                        <div>
+                                            <p className="text-xs text-gray-400 font-medium mb-0.5">Starting from</p>
+                                            <p className="text-2xl font-bold text-primary">{item.price}€</p>
+                                        </div>
+
+                                        <Link
+                                            href={`/${locale}/activities/${item.id}`}
+                                            className="px-5 py-2.5 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-primary hover:text-white transition-all flex items-center gap-2"
+                                        >
+                                            Details <ArrowUpRight className="w-4 h-4" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}

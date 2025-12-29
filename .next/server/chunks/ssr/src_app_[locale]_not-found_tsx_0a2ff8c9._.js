@@ -1,0 +1,3 @@
+module.exports=[8909,a=>{"use strict";var b=a.i(7997),c=a.i(42979);function d(){return(0,c.useTranslations)("HomePage"),(0,b.jsxs)("div",{className:"flex flex-col items-center justify-center min-h-[50vh] text-center",children:[(0,b.jsx)("h2",{className:"text-2xl font-bold mb-4",children:"Page Not Found"}),(0,b.jsx)("p",{children:"Could not find requested resource"})]})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=src_app_%5Blocale%5D_not-found_tsx_0a2ff8c9._.js.map

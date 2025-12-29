@@ -1,0 +1,14 @@
+[00:00:06.326] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:06.650] Server  LOG      ✓ Ready in 4.2s
+[00:01:45.594] Server  LOG      ○ Compiling /[locale] ...
+[00:01:53.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:53.991] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon.ico.json'
+[00:01:54.149] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon-16x16.png.json'
+[00:01:54.417] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:02:59.540] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:08:59.548] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:00.189] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon.ico.json'
+[00:09:00.434] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:09:00.643] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/favicon-16x16.png.json'
+[00:09:04.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:12.786] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
