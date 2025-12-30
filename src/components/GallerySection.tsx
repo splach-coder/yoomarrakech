@@ -18,7 +18,7 @@ const galleryImages = [
 
 export const GallerySection = ({ locale }: { locale: string }) => {
     return (
-        <section className="py-8 container mx-auto px-4">
+        <section className="py-8 container mx-auto px-6 md:px-4">
             {/* Top Divider with Title */}
             <div className="flex items-center justify-center mb-12 relative">
                 <div className="absolute inset-0 flex items-center">

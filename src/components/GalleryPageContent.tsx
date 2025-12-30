@@ -126,17 +126,17 @@ export const GalleryPageContent = () => {
                             <motion.button
                                 initial={{ opacity: 0, rotate: -90 }}
                                 animate={{ opacity: 1, rotate: 0 }}
-                                className="absolute top-8 right-8 text-white hover:text-primary transition-colors p-2 bg-white/10 rounded-full"
+                                className="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-primary transition-colors p-2 bg-white/10 rounded-full z-50"
                                 onClick={() => setSelectedImage(null)}
                             >
-                                <X className="w-8 h-8" />
+                                <X className="w-6 h-6 md:w-8 md:h-8" />
                             </motion.button>
 
                             <motion.div
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 exit={{ scale: 0.8, opacity: 0 }}
-                                className="relative max-w-5xl w-full max-h-[90vh] rounded-2xl overflow-hidden aspect-[16/9]"
+                                className="relative max-w-5xl w-full max-h-[85vh] md:max-h-[90vh] rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[16/9] bg-neutral-900"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <div
@@ -144,9 +144,9 @@ export const GalleryPageContent = () => {
                                     style={{ backgroundImage: `url(${selectedImage.src})` }}
                                 ></div>
 
-                                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-center">
-                                    <h2 className="text-3xl font-bold font-poppins text-white mb-2">{selectedImage.title}</h2>
-                                    <p className="text-white/80 text-lg capitalize">{selectedImage.category}</p>
+                                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-center">
+                                    <h2 className="text-xl md:text-3xl font-bold font-poppins text-white mb-1 md:mb-2">{selectedImage.title}</h2>
+                                    <p className="text-white/80 text-sm md:text-lg capitalize">{selectedImage.category}</p>
                                 </div>
                             </motion.div>
                         </motion.div>

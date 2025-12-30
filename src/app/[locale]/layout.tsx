@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     creator: siteConfig.twitterHandle,
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
+    icon: '/images/yoomarrakech-logo.ico',
+    shortcut: '/images/yoomarrakech-logo.ico',
     apple: '/apple-touch-icon.png',
   },
   metadataBase: new URL(siteConfig.url),

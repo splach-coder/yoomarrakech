@@ -24,7 +24,7 @@ export default function Footer() {
 
     return (
         <footer className="bg-neutral-dark text-white pt-20 pb-12 relative overflow-hidden">
-            <div className="container mx-auto px-4 relative z-20">
+            <div className="container mx-auto px-6 md:px-4 relative z-20">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
                     {/* Brand Column */}

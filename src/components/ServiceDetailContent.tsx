@@ -59,7 +59,7 @@ export const ServiceDetailContent = ({
 
 
                 <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white z-10">
-                    <div className="container mx-auto">
+                    <div className="container mx-auto px-6 md:px-4">
                         <div className="max-w-4xl">
                             <div className="mb-6">
                                 <Link href={`/${locale}/services`} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors bg-white/10 backdrop-blur-md px-4 py-2 rounded-full w-fit">

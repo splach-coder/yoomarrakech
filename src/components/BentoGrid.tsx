@@ -62,7 +62,7 @@ const BentoItem: React.FC<BentoItemProps> = ({ title, description, icon: Icon, h
 
 export const BentoGrid = ({ locale }: { locale: string }) => {
     return (
-        <div className="container mx-auto px-4 py-24">
+        <div className="container mx-auto px-6 md:px-4 py-24">
             <motion.div className="text-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

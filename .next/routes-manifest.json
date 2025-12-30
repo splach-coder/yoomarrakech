@@ -37,6 +37,23 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/about(?:/)?$"
     },
     {
+      "page": "/[locale]/activities",
+      "regex": "^/([^/]+?)/activities(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/activities(?:/)?$"
+    },
+    {
+      "page": "/[locale]/activities/[id]",
+      "regex": "^/([^/]+?)/activities/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/activities/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/[locale]/contact",
       "regex": "^/([^/]+?)/contact(?:/)?$",
       "routeKeys": {
@@ -45,12 +62,71 @@
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/contact(?:/)?$"
     },
     {
+      "page": "/[locale]/gallery",
+      "regex": "^/([^/]+?)/gallery(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/gallery(?:/)?$"
+    },
+    {
+      "page": "/[locale]/packages",
+      "regex": "^/([^/]+?)/packages(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/packages(?:/)?$"
+    },
+    {
+      "page": "/[locale]/packages/[id]",
+      "regex": "^/([^/]+?)/packages/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/packages/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/[locale]/services",
       "regex": "^/([^/]+?)/services(?:/)?$",
       "routeKeys": {
         "nxtPlocale": "nxtPlocale"
       },
       "namedRegex": "^/(?<nxtPlocale>[^/]+?)/services(?:/)?$"
+    },
+    {
+      "page": "/[locale]/tours",
+      "regex": "^/([^/]+?)/tours(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/tours(?:/)?$"
+    },
+    {
+      "page": "/[locale]/tours/[id]",
+      "regex": "^/([^/]+?)/tours/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/tours/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[locale]/transport",
+      "regex": "^/([^/]+?)/transport(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/transport(?:/)?$"
+    },
+    {
+      "page": "/[locale]/transport/[id]",
+      "regex": "^/([^/]+?)/transport/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPlocale": "nxtPlocale",
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/(?<nxtPlocale>[^/]+?)/transport/(?<nxtPid>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [

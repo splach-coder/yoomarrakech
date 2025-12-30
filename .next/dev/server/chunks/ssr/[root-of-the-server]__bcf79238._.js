@@ -74,7 +74,7 @@ const siteData = {
             name: "1 Day Trip to Ourika",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/Ourika Valley.png",
+            image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -94,7 +94,7 @@ const siteData = {
             name: "1 Day Trip to Essaouira",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/Essaouira.png",
+            image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -107,7 +107,7 @@ const siteData = {
             name: "1 Day Trip to Ouzoud",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/ouzoud.png",
+            image: "/images/ouzoud/danai-tsoutreli-tqLc6On9KIA-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -140,7 +140,7 @@ const siteData = {
             name: "1 Day Trip to Fes",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/Fes.png",
+            image: "/images/fes/ben-ostrower-bjNv5Bg6h4U-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -153,7 +153,7 @@ const siteData = {
             name: "1 Day Trip to Casablanca",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/casablanca.png",
+            image: "/images/casablanca/eka-maitri-viryani-qL3_NSPo9o8-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -166,7 +166,7 @@ const siteData = {
             name: "1 Day Trip to Ouarzazate",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/ouarzazate.png",
+            image: "/images/ouarzazate/abdou-faiz-lA-P8-vagrI-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -179,7 +179,7 @@ const siteData = {
             name: "1 Day Trip to Rabat",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/rabat.png",
+            image: "/images/rabat/framopia-EZqHkkyc0wg-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -258,7 +258,7 @@ const siteData = {
                 location: "Marrakech",
                 price: 180,
                 duration: "3_hours",
-                image: "/images/airballon.png",
+                image: "/images/airballon/manoa-angelo-w7jeZ5NFSvQ-unsplash.jpg",
                 gallery: []
             },
             {
@@ -267,7 +267,7 @@ const siteData = {
                 location: "Marrakech",
                 price: 60,
                 duration: "4_hours",
-                image: "/images/cookingclass.png",
+                image: "/images/cooking-class/aziz-acharki-UBEcFUvkrcc-unsplash.jpg",
                 gallery: []
             },
             {
@@ -276,7 +276,7 @@ const siteData = {
                 location: "Marrakech",
                 price: 45,
                 duration: "3_hours",
-                image: "/images/foodtour.png",
+                image: "/images/food-tour/annie-spratt-_V4v7BbG338-unsplash.jpg",
                 gallery: []
             }
         ],
@@ -295,19 +295,22 @@ const siteData = {
             id: "private",
             name: "Private Transport",
             image: "/images/services/transport-private.jpg",
-            description: "Comfortable private vehicle with professional driver"
+            description: "Comfortable private vehicle with professional driver",
+            price: 50
         },
         {
             id: "airport",
             name: "Airport Transport",
             image: "/images/services/transport-airport.jpg",
-            description: "Reliable airport transfers, meet & greet service"
+            description: "Reliable airport transfers, meet & greet service",
+            price: 30
         },
         {
             id: "on-demand",
             name: "On-demand Transport",
             image: "/images/services/transport-ondemand.jpg",
-            description: "Flexible transportation for your custom itinerary"
+            description: "Flexible transportation for your custom itinerary",
+            price: 20
         }
     ],
     packages: [
@@ -351,7 +354,7 @@ const siteData = {
                 "overnight"
             ],
             price: 120,
-            image: "/images/marzouga-v2.png",
+            image: "/images/merzouga/merzouga1.jpg",
             gallery: []
         }
     ],
@@ -458,7 +461,7 @@ const siteDataFr = {
             name: "Excursion d'une journée à la vallée de l'Ourika",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/Ourika Valley.png",
+            image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -478,7 +481,7 @@ const siteDataFr = {
             name: "Excursion d'une journée à Essaouira",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/Essaouira.png",
+            image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -491,7 +494,7 @@ const siteDataFr = {
             name: "Excursion d'une journée aux cascades d'Ouzoud",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/ouzoud.png",
+            image: "/images/ouzoud/danai-tsoutreli-tqLc6On9KIA-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -524,7 +527,7 @@ const siteDataFr = {
             name: "Excursion d'une journée à Fès",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/Fes.png",
+            image: "/images/fes/ben-ostrower-bjNv5Bg6h4U-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -537,7 +540,7 @@ const siteDataFr = {
             name: "Excursion d'une journée à Casablanca",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/casablanca.png",
+            image: "/images/casablanca/eka-maitri-viryani-qL3_NSPo9o8-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -550,7 +553,7 @@ const siteDataFr = {
             name: "Excursion d'une journée à Ouarzazate",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/ouarzazate.png",
+            image: "/images/ouarzazate/abdou-faiz-lA-P8-vagrI-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -563,7 +566,7 @@ const siteDataFr = {
             name: "Excursion d'une journée à Rabat",
             duration: "1_day",
             maxPeople: 8,
-            image: "/images/rabat.png",
+            image: "/images/rabat/framopia-EZqHkkyc0wg-unsplash.jpg",
             gallery: [],
             pricing: [
                 {
@@ -642,7 +645,7 @@ const siteDataFr = {
                 location: "Marrakech",
                 price: 180,
                 duration: "3_hours",
-                image: "/images/airballon.png",
+                image: "/images/airballon/manoa-angelo-w7jeZ5NFSvQ-unsplash.jpg",
                 gallery: []
             },
             {
@@ -651,7 +654,7 @@ const siteDataFr = {
                 location: "Marrakech",
                 price: 60,
                 duration: "4_hours",
-                image: "/images/cookingclass.png",
+                image: "/images/cooking-class/aziz-acharki-UBEcFUvkrcc-unsplash.jpg",
                 gallery: []
             },
             {
@@ -660,7 +663,7 @@ const siteDataFr = {
                 location: "Marrakech",
                 price: 45,
                 duration: "3_hours",
-                image: "/images/foodtour.png",
+                image: "/images/food-tour/annie-spratt-_V4v7BbG338-unsplash.jpg",
                 gallery: []
             }
         ],
@@ -679,19 +682,22 @@ const siteDataFr = {
             id: "private",
             name: "Transport privé",
             image: "/images/services/transport-private.jpg",
-            description: "Véhicule privé confortable avec chauffeur professionnel"
+            description: "Véhicule privé confortable avec chauffeur professionnel",
+            price: 50
         },
         {
             id: "airport",
             name: "Transfert aéroport",
             image: "/images/services/transport-airport.jpg",
-            description: "Transferts aéroport fiables, service d'accueil"
+            description: "Transferts aéroport fiables, service d'accueil",
+            price: 30
         },
         {
             id: "on-demand",
             name: "Transport sur demande",
             image: "/images/services/transport-ondemand.jpg",
-            description: "Transport flexible pour votre itinéraire personnalisé"
+            description: "Transport flexible pour votre itinéraire personnalisé",
+            price: 20
         }
     ],
     packages: [
@@ -735,7 +741,7 @@ const siteDataFr = {
                 "overnight"
             ],
             price: 120,
-            image: "/images/marzouga-v2.png",
+            image: "/images/merzouga/merzouga1.jpg",
             gallery: []
         }
     ],

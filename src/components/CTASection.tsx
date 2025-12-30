@@ -8,7 +8,7 @@ export const CTASection = () => {
     const locale = useLocale();
 
     return (
-        <section className="py-8 container mx-auto px-4">
+        <section className="py-8 container mx-auto px-6 md:px-4">
             <div className="relative w-full rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center p-12 md:p-24 shadow-2xl group">
                 {/* Background Image with Blur */}
                 <div

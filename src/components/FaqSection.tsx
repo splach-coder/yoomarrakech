@@ -32,7 +32,7 @@ export const FaqSection = ({ locale }: { locale: string }) => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-8 container mx-auto">
+        <section className="py-8 container mx-auto px-6 md:px-4">
             {/* Top Divider with Title */}
             <div className="flex items-center justify-end mb-16">
                 <div className="h-[1px] bg-gray-200 w-full max-w-4xl mr-8"></div>

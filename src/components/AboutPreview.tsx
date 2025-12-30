@@ -8,7 +8,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const AnimatedCounter = ({ value, suffix = '', decimals = 0 }: { value: number, suffix?: string, decimals?: number }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, amount: "some" });
     const count = useMotionValue(0);
     const rounded = useTransform(count, (latest) => latest.toFixed(decimals));
 
@@ -27,7 +27,7 @@ const AnimatedCounter = ({ value, suffix = '', decimals = 0 }: { value: number, 
 
 export const AboutPreview = ({ locale }: { locale: string }) => {
     return (
-        <section className="py-8 container mx-auto">
+        <section className="py-8 container mx-auto px-6 md:px-4">
             {/* Top Divider with Title */}
             <div className="flex items-center justify-between mb-12">
                 <div className="h-[1px] bg-gray-200 flex-grow mr-8"></div>
