@@ -169,7 +169,7 @@ function Header() {
                                     defaultValue: locale,
                                     onChange: handleLocaleChange,
                                     disabled: isPending,
-                                    className: `bg-transparent border-none text-sm focus:outline-none cursor-pointer font-medium ${textColorClass}`,
+                                    className: `bg-transparent border-0 text-sm focus:outline-none focus:border-0 cursor-pointer font-medium ${textColorClass}`,
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                             value: "en",
@@ -198,8 +198,11 @@ function Header() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     href: `/${locale}/services`,
                                     className: `px-6 py-2.5 rounded-full font-medium transition-all text-sm ${buttonClass}`,
-                                    children: "Trip Now →"
-                                }, void 0, false, {
+                                    children: [
+                                        t('tripNow'),
+                                        " →"
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/Header.tsx",
                                     lineNumber: 125,
                                     columnNumber: 25
@@ -434,7 +437,7 @@ function Header() {
                                     href: `/${locale}/services`,
                                     onClick: ()=>setIsMenuOpen(false),
                                     className: "block w-full bg-primary text-neutral-dark font-bold text-lg py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all active:scale-[0.98]",
-                                    children: "Book Your Trip"
+                                    children: t('bookYourTrip')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
                                     lineNumber: 235,
@@ -445,7 +448,8 @@ function Header() {
                                     children: [
                                         "© ",
                                         new Date().getFullYear(),
-                                        " YooMarrakech. All rights reserved."
+                                        " YooMarrakech. ",
+                                        t('allRightsReserved')
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Header.tsx",
@@ -540,7 +544,7 @@ function Footer() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                     className: "text-3xl font-medium font-poppins text-white mb-6",
-                                    children: "Explore Morocco with Us"
+                                    children: t('exploreTitle')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
                                     lineNumber: 39,
@@ -548,7 +552,7 @@ function Footer() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-white/80 leading-relaxed mb-6 font-light max-w-md",
-                                    children: "Step into the heart of Morocco with curated travel experiences that showcase its timeless medinas, vibrant souks, and breathtaking Atlas landscapes."
+                                    children: t('exploreText')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
                                     lineNumber: 40,
@@ -565,7 +569,7 @@ function Footer() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     className: "text-white/80 font-medium mb-6 text-sm",
-                                    children: "Quick Links"
+                                    children: t('quickLinks')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
                                     lineNumber: 47,
@@ -593,7 +597,7 @@ function Footer() {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 href: `/${locale}/about`,
                                                 className: "hover:text-white text-white/70 transition-colors",
-                                                children: "About us"
+                                                children: t('about')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 50,
@@ -638,7 +642,7 @@ function Footer() {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 href: `/${locale}/contact`,
                                                 className: "hover:text-white text-white/70 transition-colors",
-                                                children: "Contact Us"
+                                                children: t('contact')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 53,
@@ -666,7 +670,7 @@ function Footer() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     className: "text-white/80 font-medium mb-6 text-sm",
-                                    children: "Legal"
+                                    children: t('legal')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
                                     lineNumber: 59,
@@ -679,7 +683,7 @@ function Footer() {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 href: `/${locale}/terms`,
                                                 className: "hover:text-white text-white/70 transition-colors",
-                                                children: "Terms of Service"
+                                                children: t('terms')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 61,
@@ -692,9 +696,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: `/${locale}/policy`,
+                                                href: `/${locale}/privacy`,
                                                 className: "hover:text-white text-white/70 transition-colors",
-                                                children: "Privacy Policy"
+                                                children: t('privacy')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 62,
@@ -731,7 +735,8 @@ function Footer() {
                             children: [
                                 "© YooMarrakech ",
                                 currentYear,
-                                " All rights reserved."
+                                " ",
+                                t('copyright')
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Footer.tsx",

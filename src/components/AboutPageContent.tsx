@@ -30,6 +30,7 @@ export const AboutPageContent = () => {
     return (
         <div className="min-h-screen bg-secondary">
             {/* Hero Section */}
+            {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
@@ -44,7 +45,7 @@ export const AboutPageContent = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="block font-poppins font-semibold text-primary text-xl italic mb-4">
-                            About Us
+                            {t('tag')}
                         </span>
                         <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 leading-tight">
                             {t('title')}
@@ -67,7 +68,7 @@ export const AboutPageContent = () => {
                     >
                         <div className="flex items-center mb-8">
                             <div className="h-[1px] bg-gray-300 w-16 mr-4"></div>
-                            <span className="font-poppins font-semibold text-primary text-lg italic">Our Story</span>
+                            <span className="font-poppins font-semibold text-primary text-lg italic">{t('storyTag')}</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-medium font-poppins text-neutral-dark mb-8 leading-tight">
                             {t('storyTitle')}
@@ -75,7 +76,7 @@ export const AboutPageContent = () => {
                         <div className="space-y-6 text-gray-500 text-lg leading-relaxed">
                             <p>{t('storyText')}</p>
                             <p>
-                                Founded by locals with a deep love for their heritage, we aim to show you the Morocco that we know and love. From the bustling souks of Marrakech to the serene silence of the Agafay desert, every experience is crafted with care.
+                                {t('storyLocal')}
                             </p>
                         </div>
                     </motion.div>
@@ -102,15 +103,15 @@ export const AboutPageContent = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
                         <div className="p-4">
                             <AnimatedCounter value={98} suffix="%" />
-                            <p className="text-gray-500 mt-2 text-lg">Travelers recommend us</p>
+                            <p className="text-gray-500 mt-2 text-lg">{t('statsRecommend')}</p>
                         </div>
                         <div className="p-4">
                             <AnimatedCounter value={100} suffix="+" />
-                            <p className="text-gray-500 mt-2 text-lg">Unique itineraries</p>
+                            <p className="text-gray-500 mt-2 text-lg">{t('statsItineraries')}</p>
                         </div>
                         <div className="p-4">
                             <AnimatedCounter value={4.9} suffix="/5" decimals={1} />
-                            <p className="text-gray-500 mt-2 text-lg">Customer Satisfaction</p>
+                            <p className="text-gray-500 mt-2 text-lg">{t('statsSatisfaction')}</p>
                         </div>
                     </div>
                 </div>
@@ -119,9 +120,9 @@ export const AboutPageContent = () => {
             {/* Values Section */}
             <section className="py-24 container mx-auto px-4">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
-                    <span className="font-poppins font-semibold text-primary text-lg italic block mb-4">Why Choose Us</span>
+                    <span className="font-poppins font-semibold text-primary text-lg italic block mb-4">{t('whyChooseTag')}</span>
                     <h2 className="text-4xl md:text-5xl font-medium font-poppins text-neutral-dark leading-tight">
-                        Our Core <span className="text-primary italic">Values</span>
+                        {t('valuesTitlePart1')} <span className="text-primary italic">{t('valuesTitlePart2')}</span>
                     </h2>
                 </div>
 
@@ -131,9 +132,9 @@ export const AboutPageContent = () => {
                         <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-colors duration-300">
                             <Heart className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" />
                         </div>
-                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-4">Authentic Connection</h3>
+                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-4">{t('value1Title')}</h3>
                         <p className="text-gray-500 leading-relaxed">
-                            We prioritize genuine interactions, connecting you directly with local artisans, guides, and communities.
+                            {t('value1Text')}
                         </p>
                     </div>
 
@@ -142,7 +143,7 @@ export const AboutPageContent = () => {
                         <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-colors duration-300">
                             <Star className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" />
                         </div>
-                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-4">Premium Quality</h3>
+                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-4">{t('value2Title')}</h3>
                         <p className="text-gray-500 leading-relaxed">
                             {t('missionText')}
                         </p>
@@ -153,12 +154,13 @@ export const AboutPageContent = () => {
                         <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-colors duration-300">
                             <Shield className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" />
                         </div>
-                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-4">Safe & Reliable</h3>
+                        <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-4">{t('value3Title')}</h3>
                         <p className="text-gray-500 leading-relaxed">
-                            Your safety is our top priority. We provide professional transport, expert guides, and 24/7 support.
+                            {t('value3Text')}
                         </p>
                     </div>
                 </div>
+
             </section>
         </div>
     );

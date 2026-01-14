@@ -30,13 +30,14 @@ export default function TransportDetailPage({ params }: PageProps) {
             type="transport"
             title={item.name}
             description={description}
-            image="/images/hero-marrakech.jpg"
+            image={item.image || "/images/hero-marrakech.jpg"}
             price={item.price || 0}
             duration="Flexible"
             location="Marrakech"
             included={['Professional Driver', 'A/C Vehicle', 'Fuel', 'Insurance']}
             excluded={['Tips', 'Extra Stops']}
             subItems={[]}
+            gallery={[]}
         />
     );
 }

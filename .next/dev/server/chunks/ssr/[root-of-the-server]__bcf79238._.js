@@ -294,21 +294,21 @@ const siteData = {
         {
             id: "private",
             name: "Private Transport",
-            image: "/images/services/transport-private.jpg",
+            image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Comfortable private vehicle with professional driver",
             price: 50
         },
         {
             id: "airport",
             name: "Airport Transport",
-            image: "/images/services/transport-airport.jpg",
+            image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Reliable airport transfers, meet & greet service",
             price: 30
         },
         {
             id: "on-demand",
             name: "On-demand Transport",
-            image: "/images/services/transport-ondemand.jpg",
+            image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Flexible transportation for your custom itinerary",
             price: 20
         }
@@ -681,21 +681,21 @@ const siteDataFr = {
         {
             id: "private",
             name: "Transport privé",
-            image: "/images/services/transport-private.jpg",
+            image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Véhicule privé confortable avec chauffeur professionnel",
             price: 50
         },
         {
             id: "airport",
             name: "Transfert aéroport",
-            image: "/images/services/transport-airport.jpg",
+            image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Transferts aéroport fiables, service d'accueil",
             price: 30
         },
         {
             id: "on-demand",
             name: "Transport sur demande",
-            image: "/images/services/transport-ondemand.jpg",
+            image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Transport flexible pour votre itinéraire personnalisé",
             price: 20
         }
@@ -1128,9 +1128,6 @@ async function Home({ params }) {
         className: "flex flex-col min-h-screen",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AnimatedHero$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AnimatedHero"], {
-                title: t.HomePage.heroTitle,
-                subtitle: t.HomePage.heroSubtitle,
-                ctaText: t.HomePage.cta,
                 lang: locale
             }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
@@ -1138,48 +1135,57 @@ async function Home({ params }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$PopularDestinations$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["PopularDestinations"], {
-                locale: locale
+                locale: locale,
+                dict: t.HomePage.PopularDestinations
+            }, void 0, false, {
+                fileName: "[project]/src/app/[locale]/page.tsx",
+                lineNumber: 27,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$WhyTravelWithUs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["WhyTravelWithUs"], {
+                dict: t.HomePage.WhyTravel
             }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
                 lineNumber: 30,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$WhyTravelWithUs$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["WhyTravelWithUs"], {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AboutPreview$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AboutPreview"], {
+                locale: locale,
+                dict: t.HomePage.AboutPreview
+            }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
                 lineNumber: 33,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AboutPreview$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AboutPreview"], {
-                locale: locale
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$GallerySection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GallerySection"], {
+                locale: locale,
+                dict: t.HomePage.Gallery
             }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
                 lineNumber: 36,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$GallerySection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GallerySection"], {
-                locale: locale
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$FaqSection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FaqSection"], {
+                locale: locale,
+                dict: t.HomePage.FAQ
             }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
                 lineNumber: 39,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$FaqSection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FaqSection"], {
-                locale: locale
-            }, void 0, false, {
-                fileName: "[project]/src/app/[locale]/page.tsx",
-                lineNumber: 42,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ReviewsSlider$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ReviewsSlider"], {
                 reviews: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["siteData"].reviews.items
             }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
-                lineNumber: 45,
+                lineNumber: 42,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CTASection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CTASection"], {}, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CTASection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CTASection"], {
+                locale: locale,
+                dict: t.HomePage.CTA
+            }, void 0, false, {
                 fileName: "[project]/src/app/[locale]/page.tsx",
-                lineNumber: 47,
+                lineNumber: 44,
                 columnNumber: 7
             }, this)
         ]

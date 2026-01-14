@@ -36,30 +36,30 @@ export default function Footer() {
                             height={100}
                             className="mb-6 object-contain"
                         />
-                        <h3 className="text-3xl font-medium font-poppins text-white mb-6">Explore Morocco with Us</h3>
+                        <h3 className="text-3xl font-medium font-poppins text-white mb-6">{t('exploreTitle')}</h3>
                         <p className="text-white/80 leading-relaxed mb-6 font-light max-w-md">
-                            Step into the heart of Morocco with curated travel experiences that showcase its timeless medinas, vibrant souks, and breathtaking Atlas landscapes.
+                            {t('exploreText')}
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div className="md:col-span-3">
-                        <h4 className="text-white/80 font-medium mb-6 text-sm">Quick Links</h4>
+                        <h4 className="text-white/80 font-medium mb-6 text-sm">{t('quickLinks')}</h4>
                         <ul className="space-y-4 font-light">
                             <li><Link href={`/${locale}`} className="hover:text-white text-white/70 transition-colors">Home</Link></li>
-                            <li><Link href={`/${locale}/about`} className="hover:text-white text-white/70 transition-colors">About us</Link></li>
+                            <li><Link href={`/${locale}/about`} className="hover:text-white text-white/70 transition-colors">{t('about')}</Link></li>
                             <li><Link href={`/${locale}/gallery`} className="hover:text-white text-white/70 transition-colors">Gallery</Link></li>
                             <li><Link href={`/${locale}/services`} className="hover:text-white text-white/70 transition-colors">Travel Services</Link></li>
-                            <li><Link href={`/${locale}/contact`} className="hover:text-white text-white/70 transition-colors">Contact Us</Link></li>
+                            <li><Link href={`/${locale}/contact`} className="hover:text-white text-white/70 transition-colors">{t('contact')}</Link></li>
                         </ul>
                     </div>
 
                     {/* Legal */}
                     <div className="md:col-span-3">
-                        <h4 className="text-white/80 font-medium mb-6 text-sm">Legal</h4>
+                        <h4 className="text-white/80 font-medium mb-6 text-sm">{t('legal')}</h4>
                         <ul className="space-y-4 font-light">
-                            <li><Link href={`/${locale}/terms`} className="hover:text-white text-white/70 transition-colors">Terms of Service</Link></li>
-                            <li><Link href={`/${locale}/policy`} className="hover:text-white text-white/70 transition-colors">Privacy Policy</Link></li>
+                            <li><Link href={`/${locale}/terms`} className="hover:text-white text-white/70 transition-colors">{t('terms')}</Link></li>
+                            <li><Link href={`/${locale}/privacy`} className="hover:text-white text-white/70 transition-colors">{t('privacy')}</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ export default function Footer() {
                 {/* Bottom Bar: Copyright & Socials */}
                 <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-white/60 text-sm">
-                        &copy; YooMarrakech {currentYear} All rights reserved.
+                        &copy; YooMarrakech {currentYear} {t('copyright')}
                     </p>
 
                     <div className="flex items-center gap-6">

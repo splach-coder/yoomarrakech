@@ -28,6 +28,7 @@ interface ServiceDetailProps {
     minPeople?: number;
     subItems?: SubItem[]; // For grouped activities like "Quad"
     locale: string;
+    gallery?: string[];
 }
 
 export const ServiceDetailContent = ({
@@ -41,7 +42,8 @@ export const ServiceDetailContent = ({
     included = [],
     excluded = [],
     subItems = [],
-    locale
+    locale,
+    gallery = []
 }: ServiceDetailProps) => {
 
     const renderDuration = (d: string) => d?.replace('_', ' ') || 'Flexible';
@@ -107,6 +109,30 @@ export const ServiceDetailContent = ({
                                 {description}
                             </p>
                         </div>
+
+                        {/* Gallery Section */}
+                        {gallery && gallery.length > 0 && (
+                            <div className="bg-white rounded-2xl shadow-sm p-8 border border-neutral-100">
+                                <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                    {gallery.map((imgSrc, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: idx * 0.1 }}
+                                            className="relative aspect-square overflow-hidden rounded-xl group cursor-pointer"
+                                        >
+                                            <div
+                                                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                                style={{ backgroundImage: `url(${imgSrc})` }}
+                                            ></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         {/* Variants (If Grouped Activity) */}
                         {subItems.length > 0 && (

@@ -57,6 +57,11 @@ export default function ActivityDetailPage({ params }: PageProps) {
         ? Math.min(...groupedItems.map(i => i.price))
         : (item?.price || 0);
 
+    // Gather gallery images from grouped items or specific item
+    const galleryImages = isGroup
+        ? groupedItems.flatMap(g => g.gallery || []).concat(groupedItems.map(g => g.image).filter(Boolean))
+        : (item?.gallery || []);
+
     return (
         <ServiceDetailContent
             id={id}
@@ -64,13 +69,14 @@ export default function ActivityDetailPage({ params }: PageProps) {
             type="activity"
             title={displayTitle}
             description={description}
-            image="/images/hero-marrakech.jpg" // Default or grouped image
+            image={item?.image || "/images/hero-marrakech.jpg"}
             price={price}
             duration="2_hours"
             location={isGroup ? 'Various Locations' : item?.location}
             subItems={subItems}
             included={['Professional Guide', 'Safety Equipment', 'Tea Break']}
             excluded={['Tips', 'Personal Expenses']}
+            gallery={galleryImages}
         />
     );
 }

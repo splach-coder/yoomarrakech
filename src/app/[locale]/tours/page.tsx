@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { siteData } from '@/data/siteData';
 import { ArrowLeft, ArrowUpRight, Clock, Star } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 interface PageProps {
     params: Promise<{
@@ -14,7 +16,26 @@ interface PageProps {
 
 export default function ToursPage({ params }: PageProps) {
     const { locale } = React.use(params);
-    const tours = siteData.tours || [];
+    const t = useTranslations('ListingPage');
+    const searchParams = useSearchParams();
+    const query = searchParams.get('search') || searchParams.get('destination');
+    const allTours = siteData.tours || [];
+
+    const tours = React.useMemo(() => {
+        if (!query) return allTours;
+        const q = query.toLowerCase();
+
+        // Handle "Atlas" explicitly to map to Atlas regions
+        if (q.includes('atlas')) {
+            return allTours.filter(t =>
+                t.name.toLowerCase().includes('ourika') ||
+                t.name.toLowerCase().includes('imlil') ||
+                t.name.toLowerCase().includes('ouzoud')
+            );
+        }
+
+        return allTours.filter(t => t.name.toLowerCase().includes(q));
+    }, [allTours, query]);
 
     const renderPrice = (item: any) => {
         if (item.pricing && item.pricing[0]) {
@@ -40,19 +61,19 @@ export default function ToursPage({ params }: PageProps) {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="block font-poppins font-semibold text-primary text-xl italic mb-4">
-                            Discover Morocco
+                            {t('tag')}
                         </span>
                         <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 leading-tight">
-                            Cultural Tours
+                            {t('toursTitle')}
                         </h1>
                         <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed mb-8">
-                            Immerse yourself in history.
+                            {t('toursSubtitle')}
                         </p>
                         <Link
                             href={`/${locale}/services`}
                             className="px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-neutral-dark text-white transition-all inline-flex items-center gap-2 font-medium backdrop-blur-sm"
                         >
-                            <ArrowLeft className="w-5 h-5" /> View All Collections
+                            <ArrowLeft className="w-5 h-5" /> {t('viewAllCollections')}
                         </Link>
                     </motion.div>
                 </div>
@@ -73,11 +94,11 @@ export default function ToursPage({ params }: PageProps) {
                                 <div className="md:w-2/5 relative h-64 md:h-full overflow-hidden">
                                     <div
                                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
+                                        style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
                                     ></div>
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
-                                        Tours
+                                        {t('toursLabel')}
                                     </div>
                                 </div>
 
@@ -86,7 +107,7 @@ export default function ToursPage({ params }: PageProps) {
                                         <div className="flex justify-between items-start mb-2">
                                             <div className="flex items-center gap-2 text-gray-500 text-xs font-semibold uppercase tracking-wider">
                                                 <Clock className="w-3 h-3 text-primary" />
-                                                <span>{item.duration?.replace('_', ' ') || 'Full Day'}</span>
+                                                <span>{item.duration ? t(`duration_${item.duration}`) : t('duration_full_day')}</span>
                                             </div>
                                             <div className="flex items-center gap-1 text-yellow-500 text-sm font-bold bg-yellow-50 px-2 py-1 rounded-md">
                                                 <Star className="w-3 h-3 fill-current" />
@@ -105,7 +126,7 @@ export default function ToursPage({ params }: PageProps) {
 
                                     <div className="pt-6 mt-4 border-t border-neutral-100 flex items-center justify-between">
                                         <div>
-                                            <p className="text-xs text-gray-400 font-medium mb-0.5">Starting from</p>
+                                            <p className="text-xs text-gray-400 font-medium mb-0.5">{t('startingFrom')}</p>
                                             <p className="text-2xl font-bold text-primary">{renderPrice(item)}</p>
                                         </div>
 
@@ -113,7 +134,7 @@ export default function ToursPage({ params }: PageProps) {
                                             href={`/${locale}/tours/${item.id}`}
                                             className="px-5 py-2.5 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-primary hover:text-white transition-all flex items-center gap-2"
                                         >
-                                            Details <ArrowUpRight className="w-4 h-4" />
+                                            {t('details')} <ArrowUpRight className="w-4 h-4" />
                                         </Link>
                                     </div>
                                 </div>

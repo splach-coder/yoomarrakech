@@ -20,31 +20,28 @@ export default async function Home({
     <main className="flex flex-col min-h-screen">
       {/* 1. Immersive Hero with Parallax */}
       <AnimatedHero
-        title={t.HomePage.heroTitle}
-        subtitle={t.HomePage.heroSubtitle}
-        ctaText={t.HomePage.cta}
         lang={locale}
       />
 
       {/* 2.5 Popular Destinations */}
-      <PopularDestinations locale={locale} />
+      <PopularDestinations locale={locale} dict={t.HomePage.PopularDestinations} />
 
       {/* 2.7 Why Travel With Us */}
-      <WhyTravelWithUs />
+      <WhyTravelWithUs dict={t.HomePage.WhyTravel} />
 
       {/* 3. About Preview */}
-      <AboutPreview locale={locale} />
+      <AboutPreview locale={locale} dict={t.HomePage.AboutPreview} />
 
       {/* 3.5 Gallery Section */}
-      <GallerySection locale={locale} />
+      <GallerySection locale={locale} dict={t.HomePage.Gallery} />
 
       {/* 3.7 FAQ Section */}
-      <FaqSection locale={locale} />
+      <FaqSection locale={locale} dict={t.HomePage.FAQ} />
 
       {/* 4. Swiper Reviews Section */}
       <ReviewsSlider reviews={siteData.reviews.items} />
 
-      <CTASection />
+      <CTASection locale={locale} dict={t.HomePage.CTA} />
     </main>
   );
 }

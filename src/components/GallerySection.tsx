@@ -16,7 +16,7 @@ const galleryImages = [
     { src: '/images/marrakech/marrakech7.jpg', span: 'row-span-1' },
 ];
 
-export const GallerySection = ({ locale }: { locale: string }) => {
+export const GallerySection = ({ locale, dict }: { locale: string, dict: any }) => {
     return (
         <section className="py-8 container mx-auto px-6 md:px-4">
             {/* Top Divider with Title */}
@@ -25,14 +25,14 @@ export const GallerySection = ({ locale }: { locale: string }) => {
                     <div className="h-[1px] bg-gray-200 w-full"></div>
                 </div>
                 <div className="relative bg-secondary px-8">
-                    <span className="font-poppins font-semibold text-primary text-lg italic">Gallery</span>
+                    <span className="font-poppins font-semibold text-primary text-lg italic">{dict.title}</span>
                 </div>
             </div>
 
             {/* Main Heading */}
             <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-medium font-poppins leading-tight">
-                    Discover Morocco's Landscapes, <span className="text-primary/80 font-light">Culture, and Moments in Photos</span>
+                    {dict.headlinePart1} <span className="text-primary/80 font-light">{dict.headlinePart2}</span>
                 </h2>
             </div>
 
@@ -44,7 +44,7 @@ export const GallerySection = ({ locale }: { locale: string }) => {
                         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                         className="relative h-64 md:h-80 rounded-2xl overflow-hidden group cursor-pointer"
                     >
-                        <Image src="/images/marrakech/marrakech1.jpg" alt="Gallery 1" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <Image src="/images/marrakech/marrakech1.jpg" alt="Gallery 1" fill loading="lazy" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                     </motion.div>
                     <motion.div
@@ -99,7 +99,7 @@ export const GallerySection = ({ locale }: { locale: string }) => {
                         href={`/${locale}/gallery`}
                         className="bg-white text-primary px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-2xl flex items-center gap-2 transform hover:scale-105 border border-primary/10"
                     >
-                        Explore Gallery <ArrowUpRight className="w-5 h-5" />
+                        {dict.explore} <ArrowUpRight className="w-5 h-5" />
                     </Link>
                 </div>
 
@@ -109,7 +109,7 @@ export const GallerySection = ({ locale }: { locale: string }) => {
                         href={`/${locale}/gallery`}
                         className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-lg flex items-center gap-2 border border-primary/10"
                     >
-                        Explore Gallery <ArrowUpRight className="w-4 h-4" />
+                        {dict.explore} <ArrowUpRight className="w-4 h-4" />
                     </Link>
                 </div>
             </div>
@@ -117,7 +117,7 @@ export const GallerySection = ({ locale }: { locale: string }) => {
             {/* Bottom Description */}
             <div className="text-center mt-12 max-w-3xl mx-auto">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                    Step into Morocco through our curated gallery, capturing the beauty, culture, and unforgettable moments from our journeys across the country. From iconic landmarks to hidden gems, experience Morocco in every image.
+                    {dict.description}
                 </p>
             </div>
         </section>

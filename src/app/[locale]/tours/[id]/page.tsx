@@ -38,13 +38,14 @@ export default function TourDetailPage({ params }: PageProps) {
             type="tour"
             title={item.name}
             description={description}
-            image="/images/hero-marrakech.jpg"
+            image={item.image || "/images/hero-marrakech.jpg"}
             price={price}
             duration={item.duration}
             location="Marrakech Region"
             included={['Hotel Pickup', 'Transport A/C', 'Local Guide']}
             excluded={['Lunch', 'Entrance Fees', 'Tips']}
             subItems={[]}
+            gallery={item.gallery || []}
         />
     );
 }

@@ -215,21 +215,21 @@ export const siteData = {
         {
             id: "private",
             name: "Private Transport",
-            image: "/images/services/transport-private.jpg",
+            image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Comfortable private vehicle with professional driver",
             price: 50
         },
         {
             id: "airport",
             name: "Airport Transport",
-            image: "/images/services/transport-airport.jpg",
+            image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Reliable airport transfers, meet & greet service",
             price: 30
         },
         {
             id: "on-demand",
             name: "On-demand Transport",
-            image: "/images/services/transport-ondemand.jpg",
+            image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Flexible transportation for your custom itinerary",
             price: 20
         }
@@ -541,21 +541,21 @@ export const siteDataFr = {
         {
             id: "private",
             name: "Transport privé",
-            image: "/images/services/transport-private.jpg",
+            image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Véhicule privé confortable avec chauffeur professionnel",
             price: 50
         },
         {
             id: "airport",
             name: "Transfert aéroport",
-            image: "/images/services/transport-airport.jpg",
+            image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Transferts aéroport fiables, service d'accueil",
             price: 30
         },
         {
             id: "on-demand",
             name: "Transport sur demande",
-            image: "/images/services/transport-ondemand.jpg",
+            image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Transport flexible pour votre itinéraire personnalisé",
             price: 20
         }

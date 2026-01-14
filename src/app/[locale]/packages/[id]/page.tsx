@@ -30,13 +30,14 @@ export default function PackageDetailPage({ params }: PageProps) {
             type="package"
             title={item.name}
             description={description}
-            image="/images/hero-marrakech.jpg"
+            image={item.image || "/images/hero-marrakech.jpg"}
             price={item.price}
             duration="4_hours"
             location={item.location}
             included={item.included}
             excluded={[]}
             subItems={[]}
+            gallery={item.gallery || []}
         />
     );
 }

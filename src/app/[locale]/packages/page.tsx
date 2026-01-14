@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { siteData } from '@/data/siteData';
 import { ArrowLeft, ArrowUpRight, Clock, Star } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 interface PageProps {
     params: Promise<{
@@ -14,7 +16,19 @@ interface PageProps {
 
 export default function PackagesPage({ params }: PageProps) {
     const { locale } = React.use(params);
-    const packages = siteData.packages || [];
+    const t = useTranslations('ListingPage');
+    const searchParams = useSearchParams();
+    const query = searchParams.get('search') || searchParams.get('destination');
+    const allPackages = siteData.packages || [];
+
+    const packages = React.useMemo(() => {
+        if (!query) return allPackages;
+        const q = query.toLowerCase();
+        return allPackages.filter(p =>
+            p.name.toLowerCase().includes(q) ||
+            (p.location && p.location.toLowerCase().includes(q))
+        );
+    }, [allPackages, query]);
 
     return (
         <div className="min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark">
@@ -32,19 +46,19 @@ export default function PackagesPage({ params }: PageProps) {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="block font-poppins font-semibold text-primary text-xl italic mb-4">
-                            Discover Morocco
+                            {t('tag')}
                         </span>
                         <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 leading-tight">
-                            Curated Packs
+                            {t('packagesTitle')}
                         </h1>
                         <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed mb-8">
-                            Complete experiences.
+                            {t('packagesSubtitle')}
                         </p>
                         <Link
                             href={`/${locale}/services`}
                             className="px-8 py-3 rounded-full border border-white/30 hover:bg-white hover:text-neutral-dark text-white transition-all inline-flex items-center gap-2 font-medium backdrop-blur-sm"
                         >
-                            <ArrowLeft className="w-5 h-5" /> View All Collections
+                            <ArrowLeft className="w-5 h-5" /> {t('viewAllCollections')}
                         </Link>
                     </motion.div>
                 </div>
@@ -65,11 +79,11 @@ export default function PackagesPage({ params }: PageProps) {
                                 <div className="md:w-2/5 relative h-64 md:h-full overflow-hidden">
                                     <div
                                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
+                                        style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
                                     ></div>
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
-                                        Package
+                                        {t('packagesLabel')}
                                     </div>
                                 </div>
 
@@ -91,13 +105,13 @@ export default function PackagesPage({ params }: PageProps) {
                                         </h3>
 
                                         <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 md:line-clamp-3">
-                                            The ultimate experience: {item.name}. Includes {item.included?.join(', ')}.
+                                            {item.desc || t('packagesDescDefault')}
                                         </p>
                                     </div>
 
                                     <div className="pt-6 mt-4 border-t border-neutral-100 flex items-center justify-between">
                                         <div>
-                                            <p className="text-xs text-gray-400 font-medium mb-0.5">Starting from</p>
+                                            <p className="text-xs text-gray-400 font-medium mb-0.5">{t('startingFrom')}</p>
                                             <p className="text-2xl font-bold text-primary">{item.price}€</p>
                                         </div>
 
@@ -105,7 +119,7 @@ export default function PackagesPage({ params }: PageProps) {
                                             href={`/${locale}/packages/${item.id}`}
                                             className="px-5 py-2.5 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-primary hover:text-white transition-all flex items-center gap-2"
                                         >
-                                            Details <ArrowUpRight className="w-4 h-4" />
+                                            {t('details')} <ArrowUpRight className="w-4 h-4" />
                                         </Link>
                                     </div>
                                 </div>

@@ -3,20 +3,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export const WhyTravelWithUs = () => {
+export const WhyTravelWithUs = ({ dict }: { dict: any }) => {
     return (
         <section className="py-8 container mx-auto px-6 md:px-4">
             {/* Top Divider with Title */}
             <div className="flex items-center justify-end mb-16">
                 <div className="h-[1px] bg-gray-200 w-full max-w-4xl mr-8"></div>
-                <span className="font-poppins font-semibold text-primary text-lg italic whitespace-nowrap">Why travel with us</span>
+                <span className="font-poppins font-semibold text-primary text-lg italic whitespace-nowrap">{dict.title}</span>
             </div>
 
             {/* Main Headline */}
             <div className="max-w-5xl mb-24">
                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-medium leading-tight font-poppins">
-                    <span className="text-neutral-dark">Choosing the right travel partner </span>
-                    <span className="text-primary/80">can make all the difference in your journey.</span>
+                    <span className="text-neutral-dark">{dict.headlinePart1}</span>
+                    <span className="text-primary/80">{dict.headlinePart2}</span>
                 </h2>
             </div>
 
@@ -88,9 +88,9 @@ export const WhyTravelWithUs = () => {
                     >
                         <span className="text-4xl font-medium text-primary/40 font-poppins">01</span>
                         <div>
-                            <h3 className="text-xl font-bold text-neutral-dark mb-3 font-poppins">Authenticity</h3>
+                            <h3 className="text-xl font-bold text-neutral-dark mb-3 font-poppins">{dict.authenticity}</h3>
                             <p className="text-gray-500 leading-relaxed text-sm">
-                                We're passionate about introducing you to the heart of Moroccan culture, going beyond the tourist traps.
+                                {dict.authenticityDesc}
                             </p>
                         </div>
                     </motion.div>
@@ -112,9 +112,9 @@ export const WhyTravelWithUs = () => {
 
                         <span className="relative z-10 text-4xl font-medium text-white/50 font-poppins">02</span>
                         <div className="relative z-10">
-                            <h3 className="text-xl font-bold mb-3 text-white font-poppins">Expert Knowledge</h3>
+                            <h3 className="text-xl font-bold mb-3 text-white font-poppins">{dict.expertKnowledge}</h3>
                             <p className="text-gray-200 leading-relaxed text-sm">
-                                Our guides and planners are deeply familiar with Morocco, ensuring an enriching and seamless journey.
+                                {dict.expertKnowledgeDesc}
                             </p>
                         </div>
                     </motion.div>
@@ -129,9 +129,9 @@ export const WhyTravelWithUs = () => {
                     >
                         <span className="text-4xl font-medium text-primary/40 font-poppins">03</span>
                         <div>
-                            <h3 className="text-xl font-bold text-neutral-dark mb-3 font-poppins">Personalized Service</h3>
+                            <h3 className="text-xl font-bold text-neutral-dark mb-3 font-poppins">{dict.personalized}</h3>
                             <p className="text-gray-500 leading-relaxed text-sm">
-                                Each traveler is unique, and we work tirelessly to customize trips to fit your specific preferences and style.
+                                {dict.personalizedDesc}
                             </p>
                         </div>
                     </motion.div>
@@ -146,9 +146,9 @@ export const WhyTravelWithUs = () => {
                     >
                         <span className="text-4xl font-medium text-primary/40 font-poppins">04</span>
                         <div>
-                            <h3 className="text-xl font-bold text-neutral-dark mb-3 font-poppins">Sustainable Tourism</h3>
+                            <h3 className="text-xl font-bold text-neutral-dark mb-3 font-poppins">{dict.sustainable}</h3>
                             <p className="text-gray-500 leading-relaxed text-sm">
-                                We support responsible travel that respects local communities and preserves Morocco's natural beauty.
+                                {dict.sustainableDesc}
                             </p>
                         </div>
                     </motion.div>

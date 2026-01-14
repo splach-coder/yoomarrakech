@@ -1,36 +1,137 @@
-[00:00:02.427] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:02.790] Server  LOG      ✓ Ready in 2.3s
-[00:00:09.043] Server  LOG      ○ Compiling /[locale] ...
-[00:05:25.795] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:05:25.976] Browser WARN    Image with src "/images/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:05:33.346] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:08:28.313] Server  LOG      ✓ Compiled in 551ms
-[00:09:01.459] Server  LOG      ✓ Compiled in 205ms
-[00:12:18.964] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:14:51.324] Server  LOG      ✓ Compiled in 163ms
-[00:16:36.051] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:17:33.772] Server  LOG      ✓ Compiled in 304ms
-[00:17:34.807] Browser ERROR   ./src/components/Header.tsx:253:3
-Parsing ecmascript source code failed
-  251 |     );
-  252 | }
-> 253 | ```
-      |   ^
-> 254 | 
-      | ^
-
-Unterminated template
-
-Import trace:
-  Server Component:
-    ./src/components/Header.tsx
-    ./src/app/[locale]/layout.tsx
-[00:17:48.372] Server  LOG      ✓ Compiled in 220ms
-[00:19:41.982] Server  LOG      ✓ Compiled in 441ms
-[00:23:33.659] Server  LOG      ✓ Compiled in 192ms
-[00:24:35.728] Server  LOG      ✓ Compiled in 11ms
-[01:05:36.496] Server  LOG      ✓ Compiled in 160ms
-[01:06:08.678] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[01:06:18.863] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[01:16:11.288] Server  LOG      ✓ Compiled in 88ms
+[00:00:01.974] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:02.219] Server  LOG      ✓ Ready in 1687ms
+[00:00:12.905] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.185] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:13.340] Browser LOG     Video metadata loaded
+[00:00:13.340] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:13.340] Browser LOG     Video playing successfully in slow motion
+[00:00:13.548] Server  ERROR   C:\Users\pc\Desktop\Ai Websites\yoomarrakech\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:13.549] Server  ERROR   C:\Users\pc\Desktop\Ai Websites\yoomarrakech\.next\dev\server\chunks\ssr\[root-of-the-server]__bcf79238._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:13.551] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/apple-touch-icon.png.json'
+[00:00:20.370] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:20.370] Browser LOG     Video playing successfully in slow motion
+[00:00:27.397] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:27.397] Browser LOG     Video playing successfully in slow motion
+[00:00:34.461] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:34.462] Browser LOG     Video playing successfully in slow motion
+[00:00:41.486] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:41.486] Browser LOG     Video playing successfully in slow motion
+[00:00:48.514] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:48.514] Browser LOG     Video playing successfully in slow motion
+[00:00:55.545] Browser LOG     Video can play through - starting playback in slow motion
+[00:00:55.545] Browser LOG     Video playing successfully in slow motion
+[00:01:02.582] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:02.582] Browser LOG     Video playing successfully in slow motion
+[00:01:03.801] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:03.801] Browser LOG     Video playing successfully in slow motion
+[00:01:09.769] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:09.769] Browser LOG     Video playing successfully in slow motion
+[00:01:16.802] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:16.802] Browser LOG     Video playing successfully in slow motion
+[00:01:23.827] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:23.827] Browser LOG     Video playing successfully in slow motion
+[00:01:30.857] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:30.857] Browser LOG     Video playing successfully in slow motion
+[00:01:37.892] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:37.892] Browser LOG     Video playing successfully in slow motion
+[00:01:44.921] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:44.922] Browser LOG     Video playing successfully in slow motion
+[00:01:51.952] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:51.952] Browser LOG     Video playing successfully in slow motion
+[00:01:58.974] Browser LOG     Video can play through - starting playback in slow motion
+[00:01:58.974] Browser LOG     Video playing successfully in slow motion
+[00:02:07.470] Browser LOG     Video can play through - starting playback in slow motion
+[00:02:07.470] Browser LOG     Video playing successfully in slow motion
+[00:02:14.558] Browser LOG     Video can play through - starting playback in slow motion
+[00:02:14.558] Browser LOG     Video playing successfully in slow motion
+[00:02:21.629] Browser LOG     Video can play through - starting playback in slow motion
+[00:02:21.629] Browser LOG     Video playing successfully in slow motion
+[00:02:28.689] Browser LOG     Video can play through - starting playback in slow motion
+[00:02:28.689] Browser LOG     Video playing successfully in slow motion
+[00:02:35.732] Browser LOG     Video can play through - starting playback in slow motion
+[00:02:35.732] Browser LOG     Video playing successfully in slow motion
+[00:04:00.776] Server  LOG      ✓ Compiled in 612ms
+[00:04:02.381] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:02.381] Browser LOG     Video playing successfully in slow motion
+[00:04:04.927] Server  LOG      ✓ Compiled in 91ms
+[00:04:09.488] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:09.488] Browser LOG     Video playing successfully in slow motion
+[00:04:16.761] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:16.761] Browser LOG     Video playing successfully in slow motion
+[00:04:19.920] Server  LOG      ✓ Compiled in 64ms
+[00:04:24.030] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:24.030] Browser LOG     Video playing successfully in slow motion
+[00:04:31.312] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:31.312] Browser LOG     Video playing successfully in slow motion
+[00:04:38.583] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:38.584] Browser LOG     Video playing successfully in slow motion
+[00:04:43.740] Server  LOG      ✓ Compiled in 68ms
+[00:04:45.864] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:45.864] Browser LOG     Video playing successfully in slow motion
+[00:04:53.023] Browser LOG     Video can play through - starting playback in slow motion
+[00:04:53.023] Browser LOG     Video playing successfully in slow motion
+[00:04:58.590] Server  ERROR   C:\Users\pc\Desktop\Ai Websites\yoomarrakech\.next\dev\server\chunks\ssr\[turbopack]_runtime.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:58.593] Server  ERROR   C:\Users\pc\Desktop\Ai Websites\yoomarrakech\.next\dev\server\chunks\ssr\[root-of-the-server]__bcf79238._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:58.594] Server  ERROR    ⨯ Error: Cannot find module '../../../messages/apple-touch-icon.png.json'
+[00:04:58.701] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:05:24.795] Browser LOG     Video metadata loaded
+[00:05:24.795] Browser LOG     Video can play through - starting playback in slow motion
+[00:05:24.795] Browser LOG     Video playing successfully in slow motion
+[00:05:36.189] Browser LOG     Video metadata loaded
+[00:05:36.189] Browser LOG     Video can play through - starting playback in slow motion
+[00:05:36.189] Browser LOG     Video playing successfully in slow motion
+[00:05:36.404] Browser LOG     Video can play through - starting playback in slow motion
+[00:05:36.404] Browser LOG     Video playing successfully in slow motion
+[00:05:44.994] Browser LOG     Video metadata loaded
+[00:05:44.994] Browser LOG     Video can play through - starting playback in slow motion
+[00:05:44.994] Browser LOG     Video playing successfully in slow motion
+[00:05:52.243] Browser LOG     Video can play through - starting playback in slow motion
+[00:05:52.243] Browser LOG     Video playing successfully in slow motion
+[00:05:59.282] Browser LOG     Video can play through - starting playback in slow motion
+[00:05:59.282] Browser LOG     Video playing successfully in slow motion
+[00:06:00.536] Browser LOG     Video metadata loaded
+[00:06:00.536] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:00.536] Browser LOG     Video playing successfully in slow motion
+[00:06:07.746] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:07.746] Browser LOG     Video playing successfully in slow motion
+[00:06:14.735] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:14.735] Browser LOG     Video playing successfully in slow motion
+[00:06:21.772] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:21.772] Browser LOG     Video playing successfully in slow motion
+[00:06:28.796] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:28.796] Browser LOG     Video playing successfully in slow motion
+[00:06:35.912] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:35.912] Browser LOG     Video playing successfully in slow motion
+[00:06:42.942] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:42.942] Browser LOG     Video playing successfully in slow motion
+[00:06:49.968] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:49.968] Browser LOG     Video playing successfully in slow motion
+[00:06:57.003] Browser LOG     Video can play through - starting playback in slow motion
+[00:06:57.003] Browser LOG     Video playing successfully in slow motion
+[00:07:04.052] Browser LOG     Video can play through - starting playback in slow motion
+[00:07:04.053] Browser LOG     Video playing successfully in slow motion
+[00:07:11.080] Browser LOG     Video can play through - starting playback in slow motion
+[00:07:11.080] Browser LOG     Video playing successfully in slow motion
+[00:07:18.112] Browser LOG     Video can play through - starting playback in slow motion
+[00:07:18.112] Browser LOG     Video playing successfully in slow motion
+[00:07:25.152] Browser LOG     Video can play through - starting playback in slow motion
+[00:07:25.152] Browser LOG     Video playing successfully in slow motion
+[00:07:44.232] Server  LOG      ✓ Compiled in 978ms
+[00:07:49.716] Server  LOG      ✓ Compiled in 256ms
+[00:08:37.012] Server  LOG      ✓ Compiled in 2.5s
+[00:09:12.983] Server  LOG      ✓ Compiled in 77ms
+[00:10:14.254] Server  LOG      ✓ Compiled in 77ms
+[00:10:15.673] Server  LOG      ✓ Compiled in 125ms
+[00:10:48.150] Server  LOG      ✓ Compiled in 91ms
+[00:10:50.014] Server  LOG      ✓ Compiled in 496ms
+[00:11:50.152] Server  LOG      ✓ Compiled in 91ms
+[00:12:56.849] Server  LOG      ✓ Compiled in 294ms
+[00:12:58.484] Server  LOG      ✓ Compiled in 100ms
+[00:15:44.573] Server  LOG      ✓ Compiled in 133ms
+[00:15:46.135] Server  LOG      ✓ Compiled in 340ms
+[00:16:19.820] Server  LOG      ✓ Compiled in 89ms
+[00:17:32.395] Server  LOG      ✓ Compiled in 115ms
+[00:19:54.027] Server  LOG      ✓ Compiled in 319ms
+[00:21:17.926] Server  LOG      ✓ Compiled in 155ms
+[00:23:30.508] Server  LOG      ✓ Compiled in 60ms
+[00:24:12.928] Server  LOG      ✓ Compiled in 70ms

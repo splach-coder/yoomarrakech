@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, Instagram, Facebook, ArrowRight, MessageCircle } f
 import { siteInfo } from '@/data/siteInfo';
 
 export default function ContactPage() {
-    const t = useTranslations('Header');
+    const t = useTranslations('ContactPage');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -41,10 +41,10 @@ export default function ContactPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-5xl md:text-7xl font-light font-poppins text-white mb-6 tracking-tight">
-                            Connect with <span className="font-bold border-b-2 border-primary/50">Us</span>
+                            {t('heroTitlePart1')} <span className="font-bold border-b-2 border-primary/50">{t('heroTitlePart2')}</span>
                         </h1>
                         <p className="text-lg text-white/90 max-w-xl mx-auto font-light leading-relaxed tracking-wide">
-                            Bespoke Moroccan journeys tailored to your rhythm.
+                            {t('heroSubtitle')}
                         </p>
                     </motion.div>
                 </div>
@@ -58,10 +58,10 @@ export default function ContactPage() {
                         {/* Left Side: Professional Info */}
                         <div className="lg:col-span-2 bg-neutral-50 p-12 md:p-16 flex flex-col justify-between">
                             <div>
-                                <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-8 block">Reach Out</span>
+                                <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs mb-8 block">{t('reachOut')}</span>
                                 <h2 className="text-3xl font-bold font-poppins text-neutral-dark mb-12">
-                                    Let's Start Your <br />
-                                    <span className="text-primary">New Adventure</span>
+                                    {t('ctaStart')} <br />
+                                    <span className="text-primary">{t('ctaNewAdventure')}</span>
                                 </h2>
 
                                 <div className="space-y-10">
@@ -70,7 +70,7 @@ export default function ContactPage() {
                                             <Phone className="w-4 h-4" />
                                         </div>
                                         <div>
-                                            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Call or WhatsApp</p>
+                                            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">{t('callWhatsapp')}</p>
                                             <a href={`https://wa.me/${siteInfo.contact.whatsapp.replace(/\+/g, '')}`} className="text-lg text-neutral-dark hover:text-primary transition-colors font-medium">
                                                 {siteInfo.contact.whatsapp}
                                             </a>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                                             <Mail className="w-4 h-4" />
                                         </div>
                                         <div>
-                                            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Email Us</p>
+                                            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">{t('emailUs')}</p>
                                             <a href={`mailto:${siteInfo.contact.email}`} className="text-lg text-neutral-dark hover:text-primary transition-colors font-medium">
                                                 {siteInfo.contact.email}
                                             </a>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                                             <MapPin className="w-4 h-4" />
                                         </div>
                                         <div>
-                                            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">Location</p>
+                                            <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-1">{t('location')}</p>
                                             <p className="text-neutral-dark font-medium leading-relaxed">
                                                 {siteInfo.contact.address}
                                             </p>
@@ -113,8 +113,8 @@ export default function ContactPage() {
                         {/* Right Side: Sleek Inquiries Form */}
                         <div className="lg:col-span-3 p-12 md:p-16">
                             <div className="mb-10 text-center lg:text-left">
-                                <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-2">Send an Inquiry</h3>
-                                <p className="text-gray-400 text-sm">Fill out the form below to chat with us directly on WhatsApp.</p>
+                                <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-2">{t('sendInquiry')}</h3>
+                                <p className="text-gray-400 text-sm">{t('fillForm')}</p>
                             </div>
 
                             <form onSubmit={handleWhatsAppSubmit} className="space-y-8">
@@ -123,7 +123,7 @@ export default function ContactPage() {
                                         <input
                                             type="text"
                                             required
-                                            placeholder="Full Name"
+                                            placeholder={t('fullName')}
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             className="w-full border-b border-neutral-200 bg-transparent py-4 text-neutral-dark outline-none focus:border-primary transition-all font-light"
@@ -133,7 +133,7 @@ export default function ContactPage() {
                                         <input
                                             type="email"
                                             required
-                                            placeholder="Email Address"
+                                            placeholder={t('emailAddr')}
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             className="w-full border-b border-neutral-200 bg-transparent py-4 text-neutral-dark outline-none focus:border-primary transition-all font-light"
@@ -144,7 +144,7 @@ export default function ContactPage() {
                                     <textarea
                                         rows={5}
                                         required
-                                        placeholder="Tell us about your trip plans (dates, guests, preferences...)"
+                                        placeholder={t('tripPlans')}
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         className="w-full border-b border-neutral-200 bg-transparent py-4 text-neutral-dark outline-none focus:border-primary transition-all font-light resize-none"
@@ -157,7 +157,7 @@ export default function ContactPage() {
                                         className="inline-flex items-center gap-4 bg-primary text-white px-12 py-4 rounded-full font-bold hover:bg-neutral-dark transition-all duration-300 group shadow-lg shadow-primary/20"
                                     >
                                         <MessageCircle className="w-5 h-5 fill-current" />
-                                        Chat on WhatsApp
+                                        {t('chatWhatsapp')}
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </div>

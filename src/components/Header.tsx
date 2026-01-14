@@ -116,7 +116,7 @@ export default function Header() {
                             defaultValue={locale}
                             onChange={handleLocaleChange}
                             disabled={isPending}
-                            className={`bg-transparent border-none text-sm focus:outline-none cursor-pointer font-medium ${textColorClass}`}
+                            className={`bg-transparent border-0 text-sm focus:outline-none focus:border-0 cursor-pointer font-medium ${textColorClass}`}
                         >
                             <option value="en" className="text-neutral-dark">EN</option>
                             <option value="fr" className="text-neutral-dark">FR</option>
@@ -126,7 +126,7 @@ export default function Header() {
                             href={`/${locale}/services`}
                             className={`px-6 py-2.5 rounded-full font-medium transition-all text-sm ${buttonClass}`}
                         >
-                            Trip Now &rarr;
+                            {t('tripNow')} &rarr;
                         </Link>
                     </div>
 
@@ -237,11 +237,11 @@ export default function Header() {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="block w-full bg-primary text-neutral-dark font-bold text-lg py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
                             >
-                                Book Your Trip
+                                {t('bookYourTrip')}
                             </Link>
 
                             <div className="text-center text-sm text-neutral-dark/40 pt-4">
-                                © {new Date().getFullYear()} YooMarrakech. All rights reserved.
+                                © {new Date().getFullYear()} YooMarrakech. {t('allRightsReserved')}
                             </div>
                         </motion.div>
                     </motion.div>

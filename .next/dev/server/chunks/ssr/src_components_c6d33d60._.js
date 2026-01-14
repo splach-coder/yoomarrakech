@@ -11,12 +11,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-scroll.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$transform$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-transform.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-intl/dist/esm/development/react-client/index.js [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
 ;
+;
 const AnimatedHero = ({ lang })=>{
+    const t = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useTranslations"])('HomePage');
     const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const videoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [isVideoLoaded, setIsVideoLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isVideoPlaying, setIsVideoPlaying] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const { scrollYProgress } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useScroll"])({
         target: containerRef,
         offset: [
@@ -38,7 +44,29 @@ const AnimatedHero = ({ lang })=>{
         1,
         0
     ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const video = videoRef.current;
+        if (!video) return;
+        // Set slow motion playback speed (0.5 = half speed)
+        video.playbackRate = 0.5;
+        // Play video only after it's fully loaded
+        const handleCanPlayThrough = ()=>{
+            setIsVideoLoaded(true);
+            video.play().then(()=>{
+                setIsVideoPlaying(true);
+            }).catch((error)=>{
+                console.error('Video autoplay prevented:', error);
+            });
+        };
+        const videoEl = video;
+        videoEl.addEventListener('canplaythrough', handleCanPlayThrough);
+        // Force load
+        videoEl.load();
+        return ()=>{
+            videoEl.removeEventListener('canplaythrough', handleCanPlayThrough);
+        };
+    }, []);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         ref: containerRef,
         className: "relative h-screen min-h-[700px] w-full overflow-hidden bg-neutral-dark flex flex-col justify-center",
         children: [
@@ -49,34 +77,71 @@ const AnimatedHero = ({ lang })=>{
                 },
                 className: "absolute inset-0 z-0",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-cover bg-center",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].video, {
+                        ref: videoRef,
+                        loop: true,
+                        muted: true,
+                        playsInline: true,
+                        preload: "auto",
+                        initial: {
+                            scale: 1.1
+                        },
+                        animate: {
+                            scale: isVideoPlaying ? 1 : 1.1
+                        },
+                        transition: {
+                            duration: 8,
+                            ease: "easeOut"
+                        },
+                        className: "absolute inset-0 w-full h-full object-cover transition-opacity duration-500",
+                        "aria-label": "Background video showcasing Marrakech, Morocco",
                         style: {
-                            backgroundImage: 'url(/images/hero-marrakech.jpg)'
+                            opacity: isVideoLoaded ? 1 : 0,
+                            zIndex: isVideoLoaded ? 10 : 0
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
+                            src: "/videos/159727-819369000.mp4",
+                            type: "video/mp4"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AnimatedHero.tsx",
+                            lineNumber: 78,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/AnimatedHero.tsx",
+                        lineNumber: 62,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 bg-cover bg-center transition-opacity duration-500",
+                        style: {
+                            backgroundImage: 'url(https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2070)',
+                            opacity: isVideoLoaded ? 0 : 1,
+                            zIndex: 5
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/AnimatedHero.tsx",
-                        lineNumber: 32,
+                        lineNumber: 82,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-black/20"
+                        className: "absolute inset-0 bg-black/30 z-20"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AnimatedHero.tsx",
-                        lineNumber: 38,
+                        lineNumber: 92,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"
+                        className: "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-20"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AnimatedHero.tsx",
-                        lineNumber: 39,
+                        lineNumber: 93,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AnimatedHero.tsx",
-                lineNumber: 28,
+                lineNumber: 57,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -97,15 +162,15 @@ const AnimatedHero = ({ lang })=>{
                         },
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "font-dancing text-2xl md:text-3xl text-white mb-4 italic drop-shadow-md",
-                            children: "Discover Marrakech"
+                            children: t('heroTag')
                         }, void 0, false, {
                             fileName: "[project]/src/components/AnimatedHero.tsx",
-                            lineNumber: 49,
+                            lineNumber: 103,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/AnimatedHero.tsx",
-                        lineNumber: 44,
+                        lineNumber: 98,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
@@ -122,54 +187,44 @@ const AnimatedHero = ({ lang })=>{
                             duration: 0.8,
                             delay: 0.2
                         },
-                        children: [
-                            "A Journey of Tradition,",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {
-                                className: "hidden md:block"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/AnimatedHero.tsx",
-                                lineNumber: 60,
-                                columnNumber: 44
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            "Innovation, and Natural Beauty"
-                        ]
-                    }, void 0, true, {
+                        children: t('heroTitle')
+                    }, void 0, false, {
                         fileName: "[project]/src/components/AnimatedHero.tsx",
-                        lineNumber: 54,
+                        lineNumber: 108,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AnimatedHero.tsx",
-                lineNumber: 43,
+                lineNumber: 97,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute bottom-8 left-0 right-0 z-20 container mx-auto px-6",
+                className: "absolute bottom-8 left-0 right-0 z-10 container mx-auto px-6",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex justify-center items-center",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "max-w-lg text-center text-white/90 text-sm font-light leading-relaxed hidden md:block animate-fade-in-up delay-700",
-                        children: "Curated travel experiences showcasing the timeless beauty of Marrakech."
+                        children: t('heroFooter')
                     }, void 0, false, {
                         fileName: "[project]/src/components/AnimatedHero.tsx",
-                        lineNumber: 69,
+                        lineNumber: 122,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/AnimatedHero.tsx",
-                    lineNumber: 67,
+                    lineNumber: 120,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/AnimatedHero.tsx",
-                lineNumber: 66,
+                lineNumber: 119,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/AnimatedHero.tsx",
-        lineNumber: 26,
+        lineNumber: 55,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -575,7 +630,7 @@ const AnimatedCounter = ({ value, suffix = '', decimals = 0 })=>{
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-const AboutPreview = ({ locale })=>{
+const AboutPreview = ({ locale, dict })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-8 container mx-auto px-6 md:px-4",
         children: [
@@ -591,7 +646,7 @@ const AboutPreview = ({ locale })=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "font-poppins font-semibold text-primary text-lg italic",
-                        children: "About us"
+                        children: dict.title
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPreview.tsx",
                         lineNumber: 34,
@@ -621,7 +676,7 @@ const AboutPreview = ({ locale })=>{
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "text-neutral-dark",
-                            children: "We specialize in creating tailor-made journeys across Morocco, "
+                            children: dict.headlinePart1
                         }, void 0, false, {
                             fileName: "[project]/src/components/AboutPreview.tsx",
                             lineNumber: 45,
@@ -629,7 +684,7 @@ const AboutPreview = ({ locale })=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "text-primary/80",
-                            children: "blending must-see landmarks with hidden gems to give you a true sense of this beautiful country."
+                            children: dict.headlinePart2
                         }, void 0, false, {
                             fileName: "[project]/src/components/AboutPreview.tsx",
                             lineNumber: 46,
@@ -666,7 +721,7 @@ const AboutPreview = ({ locale })=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105",
                         style: {
-                            backgroundImage: 'url(/images/hero-marrakech.jpg)'
+                            backgroundImage: 'url(https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=2070)'
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPreview.tsx",
@@ -686,13 +741,14 @@ const AboutPreview = ({ locale })=>{
                             href: `/${locale}/about`,
                             className: "bg-white text-primary px-8 py-3 rounded-full font-medium hover:bg-primary hover:text-white transition-all shadow-lg flex items-center gap-2 transform hover:scale-105",
                             children: [
-                                "Read More ",
+                                dict.readMore,
+                                " ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPreview.tsx",
                                     lineNumber: 71,
-                                    columnNumber: 35
+                                    columnNumber: 41
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
@@ -716,7 +772,7 @@ const AboutPreview = ({ locale })=>{
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-gray-600 leading-relaxed text-lg",
-                        children: "Our team is made up of Morocco enthusiasts, local experts, and travel specialists dedicated to crafting unique and meaningful experiences. We don't just show you the sights; we connect you with the soul of the place."
+                        children: dict.text1
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPreview.tsx",
                         lineNumber: 78,
@@ -724,7 +780,7 @@ const AboutPreview = ({ locale })=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-gray-600 leading-relaxed text-lg",
-                        children: "From Marrakech's vibrant energy to the quiet dunes of the Agafay Desert, and from the scenic Atlas Mountains to the coastal charm of Essaouira, we strive to bring out the best of Morocco in each trip."
+                        children: dict.text2
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPreview.tsx",
                         lineNumber: 81,
@@ -757,7 +813,7 @@ const AboutPreview = ({ locale })=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-gray-500 max-w-xs",
-                                children: "of travelers would recommend us to friends and family."
+                                children: dict.stats.recommend
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutPreview.tsx",
                                 lineNumber: 92,
@@ -787,7 +843,7 @@ const AboutPreview = ({ locale })=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-gray-500 max-w-xs",
-                                children: "unique itineraries crafted each year to showcase Morocco."
+                                children: dict.stats.itineraries
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutPreview.tsx",
                                 lineNumber: 100,
@@ -818,7 +874,7 @@ const AboutPreview = ({ locale })=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-gray-500 max-w-xs",
-                                children: "average rating from hundreds of happy customers."
+                                children: dict.stats.rating
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutPreview.tsx",
                                 lineNumber: 108,
@@ -860,27 +916,31 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const destinations = [
-    {
-        id: 1,
-        title: "Marrakech",
-        image: "/images/hero-marrakech.jpg",
-        description: "Dive into the vibrant heart of Morocco! Marrakech dazzles with its endless energy, from the neon-lit streets of the Medina to the tranquil Majorelle Garden."
-    },
-    {
-        id: 2,
-        title: "Agafay Desert",
-        image: "/images/hero-marrakech.jpg",
-        description: "Experience the magic of the stone desert just outside the city. A perfect blend of luxury camping, camel treks, and starlit dinners."
-    },
-    {
-        id: 3,
-        title: "Atlas Mountains",
-        image: "/images/hero-marrakech.jpg",
-        description: "Escape to the majestic peaks. Discover traditional Berber villages, waterfalls, and breathtaking panoramic views."
-    }
-];
-const PopularDestinations = ({ locale })=>{
+const getDestinations = (dict)=>[
+        {
+            id: 1,
+            title: dict.Marrakech,
+            image: "/images/marrakech/marrakech1.jpg",
+            description: dict.MarrakechDesc,
+            link: "/tours?search=Marrakech"
+        },
+        {
+            id: 2,
+            title: dict.Agafay,
+            image: "/images/quad-biking/haris-khan-v40H7tLOZII-unsplash.jpg",
+            description: dict.AgafayDesc,
+            link: "/packages?search=Agafay"
+        },
+        {
+            id: 3,
+            title: dict.Atlas,
+            image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
+            description: dict.AtlasDesc,
+            link: "/tours?search=Atlas"
+        }
+    ];
+const PopularDestinations = ({ locale, dict })=>{
+    const destinations = getDestinations(dict);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-8 container mx-auto px-6 md:px-4",
         children: [
@@ -893,26 +953,26 @@ const PopularDestinations = ({ locale })=>{
                             className: "w-full h-[1px] bg-gray-200"
                         }, void 0, false, {
                             fileName: "[project]/src/components/PopularDestinations.tsx",
-                            lineNumber: 36,
+                            lineNumber: 41,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/PopularDestinations.tsx",
-                        lineNumber: 35,
+                        lineNumber: 40,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "relative bg-secondary px-8 font-poppins font-semibold text-primary text-lg italic z-10",
-                        children: "Popular Destinations"
+                        children: dict.title
                     }, void 0, false, {
                         fileName: "[project]/src/components/PopularDestinations.tsx",
-                        lineNumber: 38,
+                        lineNumber: 43,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PopularDestinations.tsx",
-                lineNumber: 34,
+                lineNumber: 39,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -923,29 +983,30 @@ const PopularDestinations = ({ locale })=>{
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-4xl md:text-5xl lg:text-5xl font-medium leading-tight font-poppins text-neutral-dark mb-4",
                             children: [
-                                "Journey Through Morocco's ",
+                                dict.heading1,
+                                " ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/src/components/PopularDestinations.tsx",
-                                    lineNumber: 47,
-                                    columnNumber: 51
+                                    lineNumber: 52,
+                                    columnNumber: 41
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-primary/80",
-                                    children: "Best Destinations"
+                                    children: dict.heading2
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PopularDestinations.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 53,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PopularDestinations.tsx",
-                            lineNumber: 46,
+                            lineNumber: 51,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/PopularDestinations.tsx",
-                        lineNumber: 45,
+                        lineNumber: 50,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -953,133 +1014,141 @@ const PopularDestinations = ({ locale })=>{
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-gray-500 text-sm mb-6 leading-relaxed",
-                                children: "Discover Morocco's cosmopolitan cities, ancient medinas, and breathtaking landscapes just a short distance from each other."
+                                children: dict.description
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PopularDestinations.tsx",
-                                lineNumber: 53,
+                                lineNumber: 58,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: `/${locale}/services`,
                                 className: "px-8 py-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all font-medium",
-                                children: "View All"
+                                children: dict.viewAll
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PopularDestinations.tsx",
-                                lineNumber: 56,
+                                lineNumber: 61,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PopularDestinations.tsx",
-                        lineNumber: 52,
+                        lineNumber: 57,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PopularDestinations.tsx",
-                lineNumber: 44,
+                lineNumber: 49,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid grid-cols-1 md:grid-cols-3 gap-8",
-                children: destinations.map((dest, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        initial: {
-                            opacity: 0,
-                            y: 20
-                        },
-                        whileInView: {
-                            opacity: 1,
-                            y: 0
-                        },
-                        viewport: {
-                            once: true
-                        },
-                        transition: {
-                            delay: i * 0.1,
-                            duration: 0.6
-                        },
-                        className: "group cursor-pointer",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative h-[400px] rounded-3xl overflow-hidden mb-6",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110",
-                                        style: {
-                                            backgroundImage: `url(${dest.image})`
-                                        }
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/PopularDestinations.tsx",
-                                        lineNumber: 78,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/PopularDestinations.tsx",
-                                        lineNumber: 82,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/PopularDestinations.tsx",
-                                lineNumber: 77,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center justify-between mb-3",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold font-poppins text-neutral-dark",
-                                        children: dest.title
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/PopularDestinations.tsx",
-                                        lineNumber: 87,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
-                                            className: "w-5 h-5"
+                children: destinations.map((dest, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        href: `/${locale}${dest.link}`,
+                        className: "block",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                y: 20
+                            },
+                            whileInView: {
+                                opacity: 1,
+                                y: 0
+                            },
+                            viewport: {
+                                once: true
+                            },
+                            transition: {
+                                delay: i * 0.1,
+                                duration: 0.6
+                            },
+                            className: "group cursor-pointer h-full",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative h-[400px] rounded-3xl overflow-hidden mb-6",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110",
+                                            style: {
+                                                backgroundImage: `url(${dest.image})`
+                                            }
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PopularDestinations.tsx",
-                                            lineNumber: 89,
+                                            lineNumber: 83,
+                                            columnNumber: 33
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/PopularDestinations.tsx",
+                                            lineNumber: 87,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/PopularDestinations.tsx",
-                                        lineNumber: 88,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/PopularDestinations.tsx",
-                                lineNumber: 86,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-gray-500 text-sm leading-relaxed pr-4",
-                                children: dest.description
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/PopularDestinations.tsx",
-                                lineNumber: 93,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, dest.id, true, {
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/PopularDestinations.tsx",
+                                    lineNumber: 82,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center justify-between mb-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-2xl font-bold font-poppins text-neutral-dark",
+                                            children: dest.title
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/PopularDestinations.tsx",
+                                            lineNumber: 92,
+                                            columnNumber: 33
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
+                                                className: "w-5 h-5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/PopularDestinations.tsx",
+                                                lineNumber: 94,
+                                                columnNumber: 37
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/PopularDestinations.tsx",
+                                            lineNumber: 93,
+                                            columnNumber: 33
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/PopularDestinations.tsx",
+                                    lineNumber: 91,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-gray-500 text-sm leading-relaxed pr-4",
+                                    children: dest.description
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/PopularDestinations.tsx",
+                                    lineNumber: 98,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/PopularDestinations.tsx",
+                            lineNumber: 74,
+                            columnNumber: 25
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, dest.id, false, {
                         fileName: "[project]/src/components/PopularDestinations.tsx",
-                        lineNumber: 68,
+                        lineNumber: 73,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/src/components/PopularDestinations.tsx",
-                lineNumber: 66,
+                lineNumber: 71,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/PopularDestinations.tsx",
-        lineNumber: 32,
+        lineNumber: 37,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1096,7 +1165,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 'use client';
 ;
 ;
-const WhyTravelWithUs = ()=>{
+const WhyTravelWithUs = ({ dict })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-8 container mx-auto px-6 md:px-4",
         children: [
@@ -1112,7 +1181,7 @@ const WhyTravelWithUs = ()=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "font-poppins font-semibold text-primary text-lg italic whitespace-nowrap",
-                        children: "Why travel with us"
+                        children: dict.title
                     }, void 0, false, {
                         fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                         lineNumber: 12,
@@ -1131,7 +1200,7 @@ const WhyTravelWithUs = ()=>{
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "text-neutral-dark",
-                            children: "Choosing the right travel partner "
+                            children: dict.headlinePart1
                         }, void 0, false, {
                             fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                             lineNumber: 18,
@@ -1139,7 +1208,7 @@ const WhyTravelWithUs = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "text-primary/80",
-                            children: "can make all the difference in your journey."
+                            children: dict.headlinePart2
                         }, void 0, false, {
                             fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                             lineNumber: 19,
@@ -1285,7 +1354,7 @@ const WhyTravelWithUs = ()=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "text-xl font-bold text-neutral-dark mb-3 font-poppins",
-                                                children: "Authenticity"
+                                                children: dict.authenticity
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 91,
@@ -1293,7 +1362,7 @@ const WhyTravelWithUs = ()=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-gray-500 leading-relaxed text-sm",
-                                                children: "We're passionate about introducing you to the heart of Moroccan culture, going beyond the tourist traps."
+                                                children: dict.authenticityDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 92,
@@ -1358,7 +1427,7 @@ const WhyTravelWithUs = ()=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "text-xl font-bold mb-3 text-white font-poppins",
-                                                children: "Expert Knowledge"
+                                                children: dict.expertKnowledge
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 115,
@@ -1366,7 +1435,7 @@ const WhyTravelWithUs = ()=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-gray-200 leading-relaxed text-sm",
-                                                children: "Our guides and planners are deeply familiar with Morocco, ensuring an enriching and seamless journey."
+                                                children: dict.expertKnowledgeDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 116,
@@ -1413,7 +1482,7 @@ const WhyTravelWithUs = ()=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "text-xl font-bold text-neutral-dark mb-3 font-poppins",
-                                                children: "Personalized Service"
+                                                children: dict.personalized
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 132,
@@ -1421,7 +1490,7 @@ const WhyTravelWithUs = ()=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-gray-500 leading-relaxed text-sm",
-                                                children: "Each traveler is unique, and we work tirelessly to customize trips to fit your specific preferences and style."
+                                                children: dict.personalizedDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 133,
@@ -1468,7 +1537,7 @@ const WhyTravelWithUs = ()=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "text-xl font-bold text-neutral-dark mb-3 font-poppins",
-                                                children: "Sustainable Tourism"
+                                                children: dict.sustainable
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 149,
@@ -1476,7 +1545,7 @@ const WhyTravelWithUs = ()=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-gray-500 leading-relaxed text-sm",
-                                                children: "We support responsible travel that respects local communities and preserves Morocco's natural beauty."
+                                                children: dict.sustainableDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/WhyTravelWithUs.tsx",
                                                 lineNumber: 150,
@@ -1562,7 +1631,7 @@ const galleryImages = [
         span: 'row-span-1'
     }
 ];
-const GallerySection = ({ locale })=>{
+const GallerySection = ({ locale, dict })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-8 container mx-auto px-6 md:px-4",
         children: [
@@ -1587,7 +1656,7 @@ const GallerySection = ({ locale })=>{
                         className: "relative bg-secondary px-8",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "font-poppins font-semibold text-primary text-lg italic",
-                            children: "Gallery"
+                            children: dict.title
                         }, void 0, false, {
                             fileName: "[project]/src/components/GallerySection.tsx",
                             lineNumber: 28,
@@ -1609,14 +1678,15 @@ const GallerySection = ({ locale })=>{
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                     className: "text-4xl md:text-5xl font-medium font-poppins leading-tight",
                     children: [
-                        "Discover Morocco's Landscapes, ",
+                        dict.headlinePart1,
+                        " ",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "text-primary/80 font-light",
-                            children: "Culture, and Moments in Photos"
+                            children: dict.headlinePart2
                         }, void 0, false, {
                             fileName: "[project]/src/components/GallerySection.tsx",
                             lineNumber: 35,
-                            columnNumber: 52
+                            columnNumber: 42
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
@@ -1653,6 +1723,7 @@ const GallerySection = ({ locale })=>{
                                         src: "/images/marrakech/marrakech1.jpg",
                                         alt: "Gallery 1",
                                         fill: true,
+                                        loading: "lazy",
                                         className: "object-cover transition-transform duration-700 group-hover:scale-110"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/GallerySection.tsx",
@@ -1924,13 +1995,14 @@ const GallerySection = ({ locale })=>{
                             href: `/${locale}/gallery`,
                             className: "bg-white text-primary px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-2xl flex items-center gap-2 transform hover:scale-105 border border-primary/10",
                             children: [
-                                "Explore Gallery ",
+                                dict.explore,
+                                " ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/GallerySection.tsx",
                                     lineNumber: 102,
-                                    columnNumber: 41
+                                    columnNumber: 40
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
@@ -1949,13 +2021,14 @@ const GallerySection = ({ locale })=>{
                             href: `/${locale}/gallery`,
                             className: "bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-lg flex items-center gap-2 border border-primary/10",
                             children: [
-                                "Explore Gallery ",
+                                dict.explore,
+                                " ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/GallerySection.tsx",
                                     lineNumber: 112,
-                                    columnNumber: 41
+                                    columnNumber: 40
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
@@ -1978,7 +2051,7 @@ const GallerySection = ({ locale })=>{
                 className: "text-center mt-12 max-w-3xl mx-auto",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-gray-600 text-sm leading-relaxed",
-                    children: "Step into Morocco through our curated gallery, capturing the beauty, culture, and unforgettable moments from our journeys across the country. From iconic landmarks to hidden gems, experience Morocco in every image."
+                    children: dict.description
                 }, void 0, false, {
                     fileName: "[project]/src/components/GallerySection.tsx",
                     lineNumber: 119,
@@ -2017,30 +2090,30 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const faqs = [
-    {
-        question: "Do you offer customizable travel itineraries?",
-        answer: "Yes! We specialize in creating personalized itineraries tailored to your preferences. Whether you're interested in cultural landmarks, outdoor adventures, or unique experiences, our team will help craft the perfect journey."
-    },
-    {
-        question: "What is the best time to visit Morocco?",
-        answer: "The best time to visit is generally during spring (Mid-March to May) or autumn (September to November) when the weather is warm and pleasant."
-    },
-    {
-        question: "Are your tours guided?",
-        answer: "Yes, all our tours include expert local guides who provide deep insights into the history, culture, and hidden gems of each destination."
-    },
-    {
-        question: "Do you provide assistance with visas?",
-        answer: "While we can provide guidance and supporting documents for your visa application, we recommend checking with your local Moroccan embassy for the most up-to-date requirements."
-    },
-    {
-        question: "What is included in the trip cost?",
-        answer: "Our packages typically include accommodation, private transport, expert guides, and select meals. Specific inclusions are detailed in each itinerary."
-    }
-];
-const FaqSection = ({ locale })=>{
+const FaqSection = ({ locale, dict })=>{
     const [openIndex, setOpenIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const faqs = [
+        {
+            question: dict.q1,
+            answer: dict.a1
+        },
+        {
+            question: dict.q2,
+            answer: dict.a2
+        },
+        {
+            question: dict.q3,
+            answer: dict.a3
+        },
+        {
+            question: dict.q4,
+            answer: dict.a4
+        },
+        {
+            question: dict.q5,
+            answer: dict.a5
+        }
+    ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-8 container mx-auto px-6 md:px-4",
         children: [
@@ -2051,21 +2124,21 @@ const FaqSection = ({ locale })=>{
                         className: "h-[1px] bg-gray-200 w-full max-w-4xl mr-8"
                     }, void 0, false, {
                         fileName: "[project]/src/components/FaqSection.tsx",
-                        lineNumber: 38,
+                        lineNumber: 23,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "font-poppins font-semibold text-primary text-lg italic whitespace-nowrap",
-                        children: "FAQs"
+                        children: dict.title
                     }, void 0, false, {
                         fileName: "[project]/src/components/FaqSection.tsx",
-                        lineNumber: 39,
+                        lineNumber: 24,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/FaqSection.tsx",
-                lineNumber: 37,
+                lineNumber: 22,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2076,27 +2149,28 @@ const FaqSection = ({ locale })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-4xl md:text-5xl font-medium leading-tight font-poppins mb-6",
                                 children: [
-                                    "Explore our FAQ section for ",
+                                    dict.headlinePart1,
+                                    " ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-primary/80",
-                                        children: "answers on trip planning."
+                                        children: dict.headlinePart2
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                        lineNumber: 46,
-                                        columnNumber: 53
+                                        lineNumber: 31,
+                                        columnNumber: 46
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                lineNumber: 45,
+                                lineNumber: 30,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-gray-500 mb-12",
-                                children: "We're here to help! Browse our FAQ section to get all the information you need to plan your perfect trip"
+                                children: dict.subHeadline
                             }, void 0, false, {
                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                lineNumber: 48,
+                                lineNumber: 33,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2113,7 +2187,7 @@ const FaqSection = ({ locale })=>{
                                                         children: faq.question
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                                        lineNumber: 63,
+                                                        lineNumber: 48,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2122,24 +2196,24 @@ const FaqSection = ({ locale })=>{
                                                             className: "w-5 h-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/FaqSection.tsx",
-                                                            lineNumber: 68,
+                                                            lineNumber: 53,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                                             className: "w-5 h-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/FaqSection.tsx",
-                                                            lineNumber: 70,
+                                                            lineNumber: 55,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                                        lineNumber: 66,
+                                                        lineNumber: 51,
                                                         columnNumber: 37
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                                lineNumber: 59,
+                                                lineNumber: 44,
                                                 columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -2165,34 +2239,34 @@ const FaqSection = ({ locale })=>{
                                                         children: faq.answer
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                                        lineNumber: 83,
+                                                        lineNumber: 68,
                                                         columnNumber: 45
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/FaqSection.tsx",
-                                                    lineNumber: 76,
+                                                    lineNumber: 61,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 59,
                                                 columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 39,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                lineNumber: 52,
+                                lineNumber: 37,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/FaqSection.tsx",
-                        lineNumber: 44,
+                        lineNumber: 29,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2201,11 +2275,11 @@ const FaqSection = ({ locale })=>{
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-cover bg-center",
                                 style: {
-                                    backgroundImage: 'url(/images/hero-marrakech.jpg)'
+                                    backgroundImage: 'url(/images/marrakech/marrakech7.jpg)'
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                lineNumber: 96,
+                                lineNumber: 81,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2213,18 +2287,18 @@ const FaqSection = ({ locale })=>{
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-2xl font-bold font-poppins text-neutral-dark mb-3 text-center",
-                                        children: "Still Have Questions?"
+                                        children: dict.stillHaveQuestions
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 88,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-500 text-sm text-center mb-6 leading-relaxed",
-                                        children: "Need more help planning your perfect Morocco journey? Our team is here to assist you with any questions or special requests"
+                                        children: dict.contactText
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 91,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2232,39 +2306,39 @@ const FaqSection = ({ locale })=>{
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             href: `/${locale}/contact`,
                                             className: "px-8 py-3 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all",
-                                            children: "Contact us"
+                                            children: dict.contactBtn
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/FaqSection.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 95,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/FaqSection.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 94,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/FaqSection.tsx",
-                                lineNumber: 102,
+                                lineNumber: 87,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/FaqSection.tsx",
-                        lineNumber: 95,
+                        lineNumber: 80,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/FaqSection.tsx",
-                lineNumber: 42,
+                lineNumber: 27,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/FaqSection.tsx",
-        lineNumber: 35,
+        lineNumber: 20,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2278,13 +2352,10 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/use-intl/dist/esm/development/react.js [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
-;
-const CTASection = ()=>{
-    const locale = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$use$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useLocale"])();
+const CTASection = ({ locale, dict })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-8 container mx-auto px-6 md:px-4",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2293,19 +2364,19 @@ const CTASection = ()=>{
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "absolute inset-0 bg-cover bg-center scale-110",
                     style: {
-                        backgroundImage: 'url(/images/hero-marrakech.jpg)',
+                        backgroundImage: 'url(/images/marrakech/marrakech4.jpg)',
                         filter: 'blur(8px)'
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/CTASection.tsx",
-                    lineNumber: 14,
+                    lineNumber: 12,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "absolute inset-0 bg-black/40"
                 }, void 0, false, {
                     fileName: "[project]/src/components/CTASection.tsx",
-                    lineNumber: 20,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2313,18 +2384,18 @@ const CTASection = ()=>{
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-4xl md:text-6xl font-bold font-poppins mb-6 text-white leading-tight tracking-tight",
-                            children: "Ready to start your adventure?"
+                            children: dict.ready
                         }, void 0, false, {
                             fileName: "[project]/src/components/CTASection.tsx",
-                            lineNumber: 24,
+                            lineNumber: 22,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light",
-                            children: "Book your private tour today and discover the magic of Marrakech with our expert guides."
+                            children: dict.text
                         }, void 0, false, {
                             fileName: "[project]/src/components/CTASection.tsx",
-                            lineNumber: 28,
+                            lineNumber: 26,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2332,32 +2403,32 @@ const CTASection = ()=>{
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: `/${locale}/contact`,
                                 className: "px-10 py-4 rounded-full bg-white text-neutral-dark font-bold hover:bg-gray-100 transition-all font-poppins shadow-xl transform hover:scale-105",
-                                children: "Book Your Trip"
+                                children: dict.button
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CTASection.tsx",
-                                lineNumber: 33,
+                                lineNumber: 31,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/CTASection.tsx",
-                            lineNumber: 32,
+                            lineNumber: 30,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/CTASection.tsx",
-                    lineNumber: 23,
+                    lineNumber: 21,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/CTASection.tsx",
-            lineNumber: 12,
+            lineNumber: 10,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/CTASection.tsx",
-        lineNumber: 11,
+        lineNumber: 9,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
