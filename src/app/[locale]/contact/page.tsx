@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Instagram, Facebook, ArrowRight, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, ArrowRight, MessageCircle } from 'lucide-react';
 import { siteInfo } from '@/data/siteInfo';
 
 export default function ContactPage() {
@@ -105,7 +105,6 @@ export default function ContactPage() {
 
                             <div className="mt-16 sm:mt-0 pt-12 border-t border-neutral-200 flex items-center gap-6">
                                 <a href={siteInfo.socials.instagram} target="_blank" className="text-gray-400 hover:text-primary transition-colors"><Instagram className="w-5 h-5" /></a>
-                                <a href={siteInfo.socials.facebook} target="_blank" className="text-gray-400 hover:text-primary transition-colors"><Facebook className="w-5 h-5" /></a>
                                 <span className="h-[1px] flex-grow bg-neutral-200"></span>
                             </div>
                         </div>

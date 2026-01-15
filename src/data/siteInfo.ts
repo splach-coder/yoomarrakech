@@ -8,8 +8,7 @@ export const siteInfo = {
         address: "Marrakech, Morocco"
     },
     socials: {
-        instagram: "https://instagram.com/yoomarrakech",
-        facebook: "https://facebook.com/yoomarrakech"
+        instagram: "https://www.instagram.com/yoomarrakech/"
     },
     whatsappBookingMessage: "Hello, I would like to book: "
 };

@@ -3,19 +3,10 @@
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Youtube } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import { siteInfo } from '@/data/siteInfo';
 
-const TikTok = ({ className }: { className?: string }) => (
-    <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        height="1em"
-        width="1em"
-        className={className}
-    >
-        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
-    </svg>
-);
+
 
 export default function Footer() {
     const t = useTranslations('Footer');
@@ -71,17 +62,8 @@ export default function Footer() {
                     </p>
 
                     <div className="flex items-center gap-6">
-                        <Link href="https://instagram.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
+                        <Link href={siteInfo.socials.instagram} target="_blank" className="hover:text-primary text-white/80 transition-colors">
                             <Instagram className="w-5 h-5" />
-                        </Link>
-                        <Link href="https://tiktok.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
-                            <TikTok className="w-5 h-5" />
-                        </Link>
-                        <Link href="https://youtube.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
-                            <Youtube className="w-5 h-5" />
-                        </Link>
-                        <Link href="https://facebook.com" target="_blank" className="hover:text-primary text-white/80 transition-colors">
-                            <Facebook className="w-5 h-5" />
                         </Link>
                     </div>
                 </div>
