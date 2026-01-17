@@ -7,6 +7,12 @@ export const siteConfig = {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
 
+    // Contact
+    contact: {
+        phone: '+212678545975',
+        whatsapp: '+212678545975'
+    },
+
     // SEO / Social
     ogImage: '/images/og-yoo-marrakech-v2.png',
     twitterHandle: '@yoomarrakech',
@@ -14,4 +20,3 @@ export const siteConfig = {
 };
 
 export type SiteConfig = typeof siteConfig;
-

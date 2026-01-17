@@ -252,15 +252,20 @@ __turbopack_context__.s([
 ]);
 const siteConfig = {
     name: 'Yoo Marrakech',
-    description: 'Discover Marrakech with private tours, desert activities, and transport services. Explore the city, Atlas Mountains, Agafay desert, and more.',
+    description: 'Yoo Marrakech - Discover Marrakech with private tours, desert activities, and transport services. Explore the city, Atlas Mountains, Agafay desert, and more.',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yoomarrakech.com',
     defaultLocale: 'en',
     locales: [
         'en',
         'fr'
     ],
+    // Contact
+    contact: {
+        phone: '+212678545975',
+        whatsapp: '+212678545975'
+    },
     // SEO / Social
-    ogImage: '/images/og-yoo-marrakech.jpg',
+    ogImage: '/images/og-yoo-marrakech-v2.png',
     twitterHandle: '@yoomarrakech',
     creator: 'Yoo Marrakech'
 };

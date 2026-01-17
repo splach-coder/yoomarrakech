@@ -1,9 +1,11 @@
+import { siteConfig } from '@/config/site';
+
 export const siteInfo = {
     name: "Yoo Marrakech",
     description: "Experience the magic of Marrakech with our premium tours, activities, and transport services.",
     contact: {
-        phone: "+212000000000", // Placeholder, will allow user to update
-        whatsapp: "+212000000000", // Placeholder
+        phone: siteConfig.contact.phone,
+        whatsapp: siteConfig.contact.whatsapp,
         email: "contact@yoomarrakech.com",
         address: "Marrakech, Morocco"
     },

@@ -77,14 +77,14 @@ const AboutPageContent = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                        lineNumber: 34,
+                        lineNumber: 35,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-black/50"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -104,10 +104,10 @@ const AboutPageContent = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "block font-poppins font-semibold text-primary text-xl italic mb-4",
-                                    children: "About Us"
+                                    children: t('tag')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 47,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -115,7 +115,7 @@ const AboutPageContent = ()=>{
                                     children: t('title')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 50,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -123,24 +123,24 @@ const AboutPageContent = ()=>{
                                     children: t('subtitle')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 53,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                            lineNumber: 41,
+                            lineNumber: 42,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                        lineNumber: 40,
+                        lineNumber: 41,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -171,21 +171,21 @@ const AboutPageContent = ()=>{
                                             className: "h-[1px] bg-gray-300 w-16 mr-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 70,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "font-poppins font-semibold text-primary text-lg italic",
-                                            children: "Our Story"
+                                            children: t('storyTag')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 70,
+                                            lineNumber: 71,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 69,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -193,7 +193,7 @@ const AboutPageContent = ()=>{
                                     children: t('storyTitle')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 73,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -203,26 +203,26 @@ const AboutPageContent = ()=>{
                                             children: t('storyText')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 76,
+                                            lineNumber: 77,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            children: "Founded by locals with a deep love for their heritage, we aim to show you the Morocco that we know and love. From the bustling souks of Marrakech to the serene silence of the Agafay desert, every experience is crafted with care."
+                                            children: t('storyLocal')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 77,
+                                            lineNumber: 78,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 76,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                            lineNumber: 62,
+                            lineNumber: 63,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -249,31 +249,31 @@ const AboutPageContent = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 91,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-black/10"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 95,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                            lineNumber: 83,
+                            lineNumber: 84,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                    lineNumber: 61,
+                    lineNumber: 62,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -291,21 +291,21 @@ const AboutPageContent = ()=>{
                                         suffix: "%"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-500 mt-2 text-lg",
-                                        children: "Travelers recommend us"
+                                        children: t('statsRecommend')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 106,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 103,
+                                lineNumber: 104,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -316,21 +316,21 @@ const AboutPageContent = ()=>{
                                         suffix: "+"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 108,
+                                        lineNumber: 109,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-500 mt-2 text-lg",
-                                        children: "Unique itineraries"
+                                        children: t('statsItineraries')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 110,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 107,
+                                lineNumber: 108,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -342,37 +342,37 @@ const AboutPageContent = ()=>{
                                         decimals: 1
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 113,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-500 mt-2 text-lg",
-                                        children: "Customer Satisfaction"
+                                        children: t('statsSatisfaction')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 114,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 111,
+                                lineNumber: 112,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                        lineNumber: 102,
+                        lineNumber: 103,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutPageContent.tsx",
-                    lineNumber: 101,
+                    lineNumber: 102,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                lineNumber: 100,
+                lineNumber: 101,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -383,34 +383,35 @@ const AboutPageContent = ()=>{
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "font-poppins font-semibold text-primary text-lg italic block mb-4",
-                                children: "Why Choose Us"
+                                children: t('whyChooseTag')
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 122,
+                                lineNumber: 123,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-4xl md:text-5xl font-medium font-poppins text-neutral-dark leading-tight",
                                 children: [
-                                    "Our Core ",
+                                    t('valuesTitlePart1'),
+                                    " ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-primary italic",
-                                        children: "Values"
+                                        children: t('valuesTitlePart2')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 124,
-                                        columnNumber: 34
+                                        lineNumber: 125,
+                                        columnNumber: 49
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 123,
+                                lineNumber: 124,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                        lineNumber: 121,
+                        lineNumber: 122,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -425,34 +426,34 @@ const AboutPageContent = ()=>{
                                             className: "w-10 h-10 text-primary group-hover:text-white transition-colors duration-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 132,
+                                            lineNumber: 133,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 132,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-2xl font-bold font-poppins text-neutral-dark mb-4",
-                                        children: "Authentic Connection"
+                                        children: t('value1Title')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 135,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-500 leading-relaxed",
-                                        children: "We prioritize genuine interactions, connecting you directly with local artisans, guides, and communities."
+                                        children: t('value1Text')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 136,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 130,
+                                lineNumber: 131,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -464,20 +465,20 @@ const AboutPageContent = ()=>{
                                             className: "w-10 h-10 text-primary group-hover:text-white transition-colors duration-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 144,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 143,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-2xl font-bold font-poppins text-neutral-dark mb-4",
-                                        children: "Premium Quality"
+                                        children: t('value2Title')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 146,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -485,13 +486,13 @@ const AboutPageContent = ()=>{
                                         children: t('missionText')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 147,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 141,
+                                lineNumber: 142,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -503,46 +504,46 @@ const AboutPageContent = ()=>{
                                             className: "w-10 h-10 text-primary group-hover:text-white transition-colors duration-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutPageContent.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 155,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 154,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-2xl font-bold font-poppins text-neutral-dark mb-4",
-                                        children: "Safe & Reliable"
+                                        children: t('value3Title')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 157,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-500 leading-relaxed",
-                                        children: "Your safety is our top priority. We provide professional transport, expert guides, and 24/7 support."
+                                        children: t('value3Text')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 158,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                                lineNumber: 152,
+                                lineNumber: 153,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AboutPageContent.tsx",
-                        lineNumber: 128,
+                        lineNumber: 129,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AboutPageContent.tsx",
-                lineNumber: 120,
+                lineNumber: 121,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

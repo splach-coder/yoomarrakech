@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { siteConfig } from '@/config/site';
 import { Calendar, Users, MessageCircle, MapPin, Clock, Receipt, Check, ChevronDown } from 'lucide-react';
 
 interface BookingFormProps {
@@ -87,7 +88,7 @@ export const BookingForm = ({
 Please confirm availability. Thank you!`;
 
         const encodedText = encodeURIComponent(text);
-        const phoneNumber = '212600000000';
+        const phoneNumber = siteConfig.contact.whatsapp.replace('+', '');
         window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
     };
 
