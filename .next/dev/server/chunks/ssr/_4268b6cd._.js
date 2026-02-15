@@ -79,7 +79,7 @@ const siteData = {
             id: "essaouira-day-trip",
             name: "1 Day Trip to Essaouira",
             duration: "1_day",
-            maxPeople: 8,
+            maxPeople: 7,
             image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
             gallery: [],
             pricing: [

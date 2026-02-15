@@ -536,7 +536,7 @@ function ContactPage() {
         columnNumber: 9
     }, this);
 }
-_s(ContactPage, "rcDbzdAsRgJBfv/FCagiQ8R+oU0=", false, function() {
+_s(ContactPage, "nRBkQ4rVwLTLW0IFySVDtLNnRv0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"]
     ];

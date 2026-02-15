@@ -57,9 +57,15 @@ export default function Footer() {
 
                 {/* Bottom Bar: Copyright & Socials */}
                 <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-white/60 text-sm">
-                        &copy; YooMarrakech {currentYear} {t('copyright')}
-                    </p>
+                    <div className="flex flex-col md:flex-row items-center gap-2 text-white/60 text-sm font-light">
+                        <p>
+                            &copy; YooMarrakech {currentYear} {t('copyright')}
+                        </p>
+                        <span className="hidden md:block mx-2">|</span>
+                        <p>
+                            Crafted by <Link href="https://wereact.agency" target="_blank" className="text-white/80 hover:text-primary transition-colors font-medium">WeReact Agency</Link>
+                        </p>
+                    </div>
 
                     <div className="flex items-center gap-6">
                         <Link href={siteInfo.socials.instagram} target="_blank" className="hover:text-primary text-white/80 transition-colors">
