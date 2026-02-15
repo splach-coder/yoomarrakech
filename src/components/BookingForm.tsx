@@ -15,6 +15,13 @@ interface BookingFormProps {
         price: number;
         duration?: string;
     }>;
+    pricingRules?: Array<{
+        minPeople?: number;
+        maxPeople?: number;
+        totalPrice?: number;
+        pricePerPerson?: number;
+    }>;
+    maxGuests?: number;
     onSubmit?: (data: any) => void;
 }
 
@@ -22,7 +29,9 @@ export const BookingForm = ({
     serviceName,
     serviceType,
     basePrice = 0,
-    variants = []
+    variants = [],
+    pricingRules = [],
+    maxGuests = 20
 }: BookingFormProps) => {
     const [formData, setFormData] = useState({
         date: '',
@@ -39,29 +48,67 @@ export const BookingForm = ({
     });
 
     // Calculate pricing whenever form data changes
+    // Calculate pricing whenever form data changes
     useEffect(() => {
         let price = 0;
+        let guestsTotal = 0;
 
+        // Logic for variants
         if (variants.length > 0 && formData.selectedVariant) {
             const variant = variants.find(v => v.id === formData.selectedVariant);
             price = variant?.price || 0;
-        } else {
-            price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice as string) || 0;
+            guestsTotal = price * formData.guests;
         }
+        // Logic for complex pricing logic from siteData (e.g. tours)
+        else if (pricingRules && pricingRules.length > 0) {
+            // Find applicable rule for current guest count
+            const rule = pricingRules.find(r =>
+                formData.guests >= (r.minPeople || 0) &&
+                formData.guests <= (r.maxPeople || Infinity)
+            );
 
-        const guestsTotal = price * formData.guests;
+            if (rule) {
+                if (rule.totalPrice) {
+                    // Fixed price for the group size range
+                    guestsTotal = rule.totalPrice;
+                    price = Math.round(rule.totalPrice / formData.guests); // Average per person for display
+                } else if (rule.pricePerPerson) {
+                    // Per person price for the group size range
+                    price = rule.pricePerPerson;
+                    guestsTotal = price * formData.guests;
+                }
+            } else {
+                // Fallback if no rule matches (e.g. exceeding max people defined in rules)
+                const lastRule = pricingRules[pricingRules.length - 1];
+                if (lastRule.totalPrice) {
+                    guestsTotal = lastRule.totalPrice;
+                    price = Math.round(lastRule.totalPrice / formData.guests);
+                } else if (lastRule.pricePerPerson) {
+                    price = lastRule.pricePerPerson;
+                    guestsTotal = price * formData.guests;
+                } else {
+                    price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice as string) || 0;
+                    guestsTotal = price * formData.guests;
+                }
+            }
+        }
+        // Default simple pricing
+        else {
+            price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice as string) || 0;
+            guestsTotal = price * formData.guests;
+        }
 
         setPricing({
             basePrice: price,
             guestsTotal: guestsTotal,
             total: guestsTotal
         });
-    }, [formData.guests, formData.selectedVariant, basePrice, variants]);
+    }, [formData.guests, formData.selectedVariant, basePrice, variants, pricingRules]);
 
     const handleGuestsChange = (increment: number) => {
         setFormData(prev => ({
             ...prev,
-            guests: Math.max(1, Math.min(20, prev.guests + increment))
+            guests: Math.max(1, Math.min(maxGuests, prev.guests + increment))
         }));
     };
 
@@ -233,7 +280,7 @@ Please confirm availability. Thank you!`;
                             type="button"
                             onClick={() => handleGuestsChange(1)}
                             className="w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary/10 transition-colors font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                            disabled={formData.guests >= 20}
+                            disabled={formData.guests >= maxGuests}
                         >
                             +
                         </button>

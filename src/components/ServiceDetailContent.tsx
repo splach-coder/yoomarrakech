@@ -29,6 +29,13 @@ interface ServiceDetailProps {
     subItems?: SubItem[]; // For grouped activities like "Quad"
     locale: string;
     gallery?: string[];
+    pricing?: Array<{
+        minPeople?: number;
+        maxPeople?: number;
+        totalPrice?: number;
+        pricePerPerson?: number;
+    }>;
+    maxPeople?: number;
 }
 
 export const ServiceDetailContent = ({
@@ -43,7 +50,9 @@ export const ServiceDetailContent = ({
     excluded = [],
     subItems = [],
     locale,
-    gallery = []
+    gallery = [],
+    pricing = [],
+    maxPeople
 }: ServiceDetailProps) => {
 
     const renderDuration = (d: string) => d?.replace('_', ' ') || 'Flexible';
@@ -221,6 +230,8 @@ export const ServiceDetailContent = ({
                             serviceName={title}
                             serviceType={type}
                             basePrice={price}
+                            pricingRules={pricing}
+                            maxGuests={maxPeople}
                             variants={subItems.map(item => ({
                                 id: item.id,
                                 name: item.type,

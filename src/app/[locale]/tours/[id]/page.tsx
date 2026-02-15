@@ -46,6 +46,8 @@ export default function TourDetailPage({ params }: PageProps) {
             excluded={['Lunch', 'Entrance Fees', 'Tips']}
             subItems={[]}
             gallery={item.gallery || []}
+            pricing={item.pricing || []}
+            maxPeople={item.maxPeople}
         />
     );
 }
