@@ -17,6 +17,7 @@ interface PageProps {
 export default function ToursPage({ params }: PageProps) {
     const { locale } = React.use(params);
     const t = useTranslations('ListingPage');
+    const tCommon = useTranslations('Common');
     const searchParams = useSearchParams();
     const query = searchParams.get('search') || searchParams.get('destination');
     const allTours = siteData.tours || [];
@@ -40,7 +41,7 @@ export default function ToursPage({ params }: PageProps) {
     const renderPrice = (item: any) => {
         if (item.pricing && item.pricing[0]) {
             const p = item.pricing[0] as any;
-            return p.totalPrice ? `${p.totalPrice}€` : `${p.pricePerPerson}€/p`;
+            return p.totalPrice ? `€${p.totalPrice}` : `€${p.pricePerPerson} ${tCommon('perPerson')}`;
         }
         return '';
     };

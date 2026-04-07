@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { siteConfig } from '@/config/site';
 import { Calendar, Users, MessageCircle, MapPin, Clock, Receipt, Check, ChevronDown } from 'lucide-react';
 
@@ -39,12 +40,15 @@ export const BookingForm = ({
         selectedVariant: variants.length > 0 ? variants[0].id : null,
     });
 
+    const t = useTranslations('Common');
+
     const [showPriceBreakdown, setShowPriceBreakdown] = useState(true);
 
     const [pricing, setPricing] = useState({
         basePrice: 0,
         guestsTotal: 0,
-        total: 0
+        total: 0,
+        hasDiscount: false
     });
 
     // Calculate pricing whenever form data changes
@@ -98,10 +102,26 @@ export const BookingForm = ({
             guestsTotal = price * formData.guests;
         }
 
+        // Determine if a group discount is active
+        let originalPerPerson = price;
+        if (pricingRules && pricingRules.length > 0) {
+            const ruleForOne = pricingRules[0];
+            if (ruleForOne) {
+                if (ruleForOne.totalPrice) {
+                    originalPerPerson = Math.round(ruleForOne.totalPrice / (ruleForOne.minPeople || 1));
+                } else if (ruleForOne.pricePerPerson) {
+                    originalPerPerson = ruleForOne.pricePerPerson;
+                }
+            }
+        }
+
+        const hasDiscount = price < originalPerPerson;
+
         setPricing({
             basePrice: price,
             guestsTotal: guestsTotal,
-            total: guestsTotal
+            total: guestsTotal,
+            hasDiscount: hasDiscount
         });
     }, [formData.guests, formData.selectedVariant, basePrice, variants, pricingRules]);
 
@@ -174,6 +194,11 @@ Please confirm availability. Thank you!`;
                         </>
                     )}
                 </div>
+                {!isTransport && pricing.hasDiscount && (
+                    <div className="mt-3 inline-flex items-center gap-1.5 bg-[#25D366]/20 text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-[#25D366]/40">
+                        <span className="flex w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span> {t('groupDiscount')}
+                    </div>
+                )}
             </div>
 
             {/* Price Breakdown - Collapsible (Hidden for Transport) */}

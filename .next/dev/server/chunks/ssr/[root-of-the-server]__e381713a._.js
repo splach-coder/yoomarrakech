@@ -216,15 +216,20 @@ __turbopack_context__.s([
 ]);
 const siteConfig = {
     name: 'Yoo Marrakech',
-    description: 'Discover Marrakech with private tours, desert activities, and transport services. Explore the city, Atlas Mountains, Agafay desert, and more.',
+    description: 'Yoo Marrakech - Discover Marrakech with private tours, desert activities, and transport services. Explore the city, Atlas Mountains, Agafay desert, and more.',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yoomarrakech.com',
     defaultLocale: 'en',
     locales: [
         'en',
         'fr'
     ],
+    // Contact
+    contact: {
+        phone: '+212678545975',
+        whatsapp: '+212678545975'
+    },
     // SEO / Social
-    ogImage: '/images/og-yoo-marrakech.jpg',
+    ogImage: '/images/og-yoo-marrakech-v2.png',
     twitterHandle: '@yoomarrakech',
     creator: 'Yoo Marrakech'
 };
@@ -292,8 +297,8 @@ const metadata = {
         creator: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["siteConfig"].twitterHandle
     },
     icons: {
-        icon: '/favicon.ico',
-        shortcut: '/favicon-16x16.png',
+        icon: '/images/yoomarrakech-logo.ico',
+        shortcut: '/images/yoomarrakech-logo.ico',
         apple: '/apple-touch-icon.png'
     },
     metadataBase: new URL(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["siteConfig"].url)

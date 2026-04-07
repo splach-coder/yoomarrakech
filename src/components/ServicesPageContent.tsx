@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteData } from '@/data/siteData';
-import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { ArrowLeft, ArrowUpRight, Compass, Map, Palmtree, Car, Clock, Users, Star } from 'lucide-react';
+import { ServiceModal, ServiceModalItem } from '@/components/ServiceModal';
+import { useTranslations } from 'next-intl';
+import { ArrowLeft, ArrowUpRight, Compass, Map, Palmtree, Car, Clock, Star } from 'lucide-react';
 import Link from 'next/link';
 
 const categories = {
@@ -23,7 +24,9 @@ const PatternBackground = () => (
 );
 
 export const ServicesPageContent = ({ locale }: { locale: string }) => {
+    const tCommon = useTranslations('Common');
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [modalItem, setModalItem] = useState<ServiceModalItem | null>(null);
 
     const getItems = () => {
         if (selectedCategory === 'tours') return siteData.tours;
@@ -55,10 +58,11 @@ export const ServicesPageContent = ({ locale }: { locale: string }) => {
     };
 
     const renderPrice = (item: any) => {
-        if (item.price) return `${item.price}€`;
+        const perPerson = tCommon('perPerson');
+        if (item.price) return `€${item.price}`;
         if (item.pricing && item.pricing[0]) {
             const p = item.pricing[0];
-            return p.totalPrice ? `${p.totalPrice}€` : `${p.pricePerPerson}€/p`;
+            return p.totalPrice ? `€${p.totalPrice}` : `€${p.pricePerPerson} ${perPerson}`;
         }
         return '';
     };
@@ -224,15 +228,13 @@ export const ServicesPageContent = ({ locale }: { locale: string }) => {
                                             transition={{ delay: idx * 0.1 }}
                                             className="group"
                                         >
-                                            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[350px] border border-neutral-100 group cursor-pointer hover:-translate-y-1">
+                                            <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[350px] border border-neutral-100 hover:-translate-y-1">
                                                 {/* Image Section */}
                                                 <div className="md:w-2/5 relative h-64 md:h-full overflow-hidden">
                                                     <div
                                                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                                        style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
+                                                        style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
                                                     ></div>
-                                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-
                                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
                                                         {selectedCategory}
                                                     </div>
@@ -267,12 +269,20 @@ export const ServicesPageContent = ({ locale }: { locale: string }) => {
                                                             <p className="text-2xl font-bold text-primary">{renderPrice(item)}</p>
                                                         </div>
 
-                                                        <Link
-                                                            href={`/${locale}/${selectedCategory === 'activities' ? 'activities' : selectedCategory}/${item.id}`}
-                                                            className="px-5 py-2.5 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-primary hover:text-white transition-all flex items-center gap-2"
-                                                        >
-                                                            Details <ArrowUpRight className="w-4 h-4" />
-                                                        </Link>
+                                                        <div className="flex items-center gap-2">
+                                                            <Link
+                                                                href={`/${locale}/${selectedCategory === 'activities' ? 'activities' : selectedCategory}/${item.id}`}
+                                                                className="px-5 py-2.5 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-neutral-200 transition-all flex items-center gap-2"
+                                                            >
+                                                                Details <ArrowUpRight className="w-4 h-4" />
+                                                            </Link>
+                                                            <button
+                                                                className="px-5 py-2.5 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm"
+                                                                onClick={(e) => { e.stopPropagation(); setModalItem(item as ServiceModalItem); }}
+                                                            >
+                                                                Quick View
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -284,6 +294,15 @@ export const ServicesPageContent = ({ locale }: { locale: string }) => {
                     )}
                 </AnimatePresence>
             </div>
+
+            {/* ── Creative Modal ── */}
+            <ServiceModal
+                item={modalItem}
+                category={selectedCategory || 'services'}
+                locale={locale}
+                label={selectedCategory ? categories[selectedCategory as keyof typeof categories]?.label : undefined}
+                onClose={() => setModalItem(null)}
+            />
         </div>
     );
 };

@@ -16,6 +16,9 @@ export default function Header() {
     const [isPending, startTransition] = useTransition();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => { setMounted(true); }, []);
 
     // Keep header background check but handle Home page specific logic via CSS or simple condition
     useEffect(() => {
@@ -75,6 +78,13 @@ export default function Header() {
         ? 'bg-primary text-white hover:bg-primary/90 shadow-md'
         : 'bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white/30';
 
+    // Helper: returns typed motion props for a staggered slide-in from top
+    const slideDown = (delay: number) => ({
+        initial: { opacity: 0, y: -14 },
+        animate: mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: -14 },
+        transition: { duration: 0.55, ease: 'easeOut' as const, delay },
+    });
+
     return (
         <>
             <header
@@ -85,33 +95,42 @@ export default function Header() {
             >
                 <div className="container mx-auto px-6 md:px-4 flex items-center justify-between relative">
 
-                    {/* Logo Section */}
-                    <Link href={`/${locale}`} className="flex items-center gap-2 z-50 relative">
-                        <Image
-                            src="/images/logo.png"
-                            alt="YooMarrakech"
-                            width={64}
-                            height={64}
-                            className="object-contain"
-                            priority
-                        />
-                    </Link>
+                    {/* Logo Section — first to appear */}
+                    <motion.div {...slideDown(0.05)}>
+                        <Link href={`/${locale}`} className="flex items-center gap-2 z-50 relative">
+                            <Image
+                                src="/images/logo.png"
+                                alt="YooMarrakech"
+                                width={64}
+                                height={64}
+                                className="object-contain"
+                                priority
+                            />
+                        </Link>
+                    </motion.div>
 
-                    {/* Desktop Navigation */}
+                    {/* Desktop Navigation — links stagger in */}
                     <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-                        {navLinks.map((link) => (
-                            <Link
+                        {navLinks.map((link, index) => (
+                            <motion.div
                                 key={link.href}
-                                href={link.href}
-                                className={`font-medium transition-colors text-sm tracking-wide ${navTextClass}`}
+                                {...slideDown(0.15 + index * 0.08)}
                             >
-                                {link.label}
-                            </Link>
+                                <Link
+                                    href={link.href}
+                                    className={`font-medium transition-colors text-sm tracking-wide ${navTextClass}`}
+                                >
+                                    {link.label}
+                                </Link>
+                            </motion.div>
                         ))}
                     </nav>
 
-                    {/* Desktop Right Actions */}
-                    <div className="hidden md:flex items-center gap-6 z-50">
+                    {/* Desktop Right Actions — last to appear */}
+                    <motion.div
+                        className="hidden md:flex items-center gap-6 z-50"
+                        {...slideDown(0.6)}
+                    >
                         <select
                             defaultValue={locale}
                             onChange={handleLocaleChange}
@@ -128,13 +147,14 @@ export default function Header() {
                         >
                             {t('tripNow')} &rarr;
                         </Link>
-                    </div>
+                    </motion.div>
 
                     {/* Mobile Menu Toggle */}
-                    <button
+                    <motion.button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden z-50 relative w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm active:scale-95 transition-all"
                         aria-label="Toggle menu"
+                        {...slideDown(0.2)}
                     >
                         <AnimatePresence mode="wait">
                             {isMenuOpen ? (
@@ -159,7 +179,7 @@ export default function Header() {
                                 </motion.div>
                             )}
                         </AnimatePresence>
-                    </button>
+                    </motion.button>
                 </div>
             </header>
 

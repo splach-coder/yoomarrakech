@@ -239,15 +239,6 @@ const siteData = {
                 ]
             },
             {
-                id: "hot-air-balloon",
-                type: "balloon",
-                location: "Marrakech",
-                price: 180,
-                duration: "3_hours",
-                image: "/images/airballon/manoa-angelo-w7jeZ5NFSvQ-unsplash.jpg",
-                gallery: []
-            },
-            {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
@@ -626,15 +617,6 @@ const siteDataFr = {
                 ]
             },
             {
-                id: "hot-air-balloon",
-                type: "balloon",
-                location: "Marrakech",
-                price: 180,
-                duration: "3_hours",
-                image: "/images/airballon/manoa-angelo-w7jeZ5NFSvQ-unsplash.jpg",
-                gallery: []
-            },
-            {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
@@ -795,6 +777,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-intl/dist/esm/development/react-client/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/config/site.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar.js [app-client] (ecmascript) <export default as Calendar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
@@ -809,6 +792,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 const BookingForm = ({ serviceName, serviceType, basePrice = 0, variants = [], pricingRules = [], maxGuests = 20 })=>{
     _s();
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
@@ -816,11 +800,13 @@ const BookingForm = ({ serviceName, serviceType, basePrice = 0, variants = [], p
         guests: 2,
         selectedVariant: variants.length > 0 ? variants[0].id : null
     });
+    const t = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"])('Common');
     const [showPriceBreakdown, setShowPriceBreakdown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [pricing, setPricing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         basePrice: 0,
         guestsTotal: 0,
-        total: 0
+        total: 0,
+        hasDiscount: false
     });
     // Calculate pricing whenever form data changes
     // Calculate pricing whenever form data changes
@@ -868,10 +854,24 @@ const BookingForm = ({ serviceName, serviceType, basePrice = 0, variants = [], p
                 price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice) || 0;
                 guestsTotal = price * formData.guests;
             }
+            // Determine if a group discount is active
+            let originalPerPerson = price;
+            if (pricingRules && pricingRules.length > 0) {
+                const ruleForOne = pricingRules[0];
+                if (ruleForOne) {
+                    if (ruleForOne.totalPrice) {
+                        originalPerPerson = Math.round(ruleForOne.totalPrice / (ruleForOne.minPeople || 1));
+                    } else if (ruleForOne.pricePerPerson) {
+                        originalPerPerson = ruleForOne.pricePerPerson;
+                    }
+                }
+            }
+            const hasDiscount = price < originalPerPerson;
             setPricing({
                 basePrice: price,
                 guestsTotal: guestsTotal,
-                total: guestsTotal
+                total: guestsTotal,
+                hasDiscount: hasDiscount
             });
         }
     }["BookingForm.useEffect"], [
@@ -928,7 +928,7 @@ Please confirm availability. Thank you!`;
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 171,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -936,13 +936,13 @@ Please confirm availability. Thank you!`;
                                         children: "Book Now"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 172,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 150,
+                                lineNumber: 170,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             !isTransport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -953,18 +953,18 @@ Please confirm availability. Thank you!`;
                                     className: `w-5 h-5 transition-transform ${showPriceBreakdown ? 'rotate-180' : ''}`
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 180,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 155,
+                                lineNumber: 175,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 149,
+                        lineNumber: 169,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -976,7 +976,7 @@ Please confirm availability. Thank you!`;
                                     children: "Contact for Price"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 167,
+                                    lineNumber: 187,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -984,13 +984,13 @@ Please confirm availability. Thank you!`;
                                     children: "Custom quote based on your needs"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 168,
+                                    lineNumber: 188,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/BookingForm.tsx",
-                            lineNumber: 166,
+                            lineNumber: 186,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
@@ -1002,7 +1002,7 @@ Please confirm availability. Thank you!`;
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 192,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1010,20 +1010,38 @@ Please confirm availability. Thank you!`;
                                     children: "total"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 193,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true)
                     }, void 0, false, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 164,
+                        lineNumber: 184,
                         columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    !isTransport && pricing.hasDiscount && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-3 inline-flex items-center gap-1.5 bg-[#25D366]/20 text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border border-[#25D366]/40",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "flex w-2 h-2 rounded-full bg-[#25D366] animate-pulse"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/BookingForm.tsx",
+                                lineNumber: 199,
+                                columnNumber: 25
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            " ",
+                            t('groupDiscount')
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/BookingForm.tsx",
+                        lineNumber: 198,
+                        columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BookingForm.tsx",
-                lineNumber: 148,
+                lineNumber: 168,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             !isTransport && showPriceBreakdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1039,7 +1057,7 @@ Please confirm availability. Thank you!`;
                                         children: "Price per person"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 209,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1050,13 +1068,13 @@ Please confirm availability. Thank you!`;
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 210,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 183,
+                                lineNumber: 208,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1066,7 +1084,7 @@ Please confirm availability. Thank you!`;
                                         children: "Number of travelers"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 188,
+                                        lineNumber: 213,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1077,13 +1095,13 @@ Please confirm availability. Thank you!`;
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 189,
+                                        lineNumber: 214,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 187,
+                                lineNumber: 212,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1093,7 +1111,7 @@ Please confirm availability. Thank you!`;
                                         children: "Subtotal"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 217,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1104,19 +1122,19 @@ Please confirm availability. Thank you!`;
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 193,
+                                        lineNumber: 218,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 191,
+                                lineNumber: 216,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 182,
+                        lineNumber: 207,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     selectedVariant?.location && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1126,26 +1144,26 @@ Please confirm availability. Thank you!`;
                                 className: "w-3 h-3"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 198,
+                                lineNumber: 223,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: selectedVariant.location
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 199,
+                                lineNumber: 224,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 197,
+                        lineNumber: 222,
                         columnNumber: 25
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BookingForm.tsx",
-                lineNumber: 181,
+                lineNumber: 206,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1162,14 +1180,14 @@ Please confirm availability. Thank you!`;
                                         className: "w-4 h-4 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 236,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     " Choose Experience"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 210,
+                                lineNumber: 235,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1188,7 +1206,7 @@ Please confirm availability. Thank you!`;
                                                             children: variant.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 225,
+                                                            lineNumber: 250,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1196,13 +1214,13 @@ Please confirm availability. Thank you!`;
                                                             children: variant.location
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 226,
+                                                            lineNumber: 251,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 249,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1218,12 +1236,12 @@ Please confirm availability. Thank you!`;
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                                lineNumber: 230,
+                                                                lineNumber: 255,
                                                                 columnNumber: 49
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 229,
+                                                            lineNumber: 254,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         formData.selectedVariant === variant.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1232,40 +1250,40 @@ Please confirm availability. Thank you!`;
                                                                 className: "w-3 h-3 text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                                lineNumber: 234,
+                                                                lineNumber: 259,
                                                                 columnNumber: 53
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 233,
+                                                            lineNumber: 258,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                                    lineNumber: 228,
+                                                    lineNumber: 253,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                            lineNumber: 223,
+                                            lineNumber: 248,
                                             columnNumber: 37
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, variant.id, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 215,
+                                        lineNumber: 240,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 213,
+                                lineNumber: 238,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 209,
+                        lineNumber: 234,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1278,14 +1296,14 @@ Please confirm availability. Thank you!`;
                                         className: "w-4 h-4 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 248,
+                                        lineNumber: 273,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     " Travel Date"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 247,
+                                lineNumber: 272,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1301,13 +1319,13 @@ Please confirm availability. Thank you!`;
                                 className: "w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-neutral-dark text-sm"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 250,
+                                lineNumber: 275,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 246,
+                        lineNumber: 271,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1320,14 +1338,14 @@ Please confirm availability. Thank you!`;
                                         className: "w-4 h-4 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 264,
+                                        lineNumber: 289,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     " Travelers"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 263,
+                                lineNumber: 288,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1341,7 +1359,7 @@ Please confirm availability. Thank you!`;
                                         children: "−"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 267,
+                                        lineNumber: 292,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1352,7 +1370,7 @@ Please confirm availability. Thank you!`;
                                                 children: formData.guests
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                lineNumber: 276,
+                                                lineNumber: 301,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1360,13 +1378,13 @@ Please confirm availability. Thank you!`;
                                                 children: formData.guests === 1 ? 'person' : 'people'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                lineNumber: 277,
+                                                lineNumber: 302,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 275,
+                                        lineNumber: 300,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1377,26 +1395,26 @@ Please confirm availability. Thank you!`;
                                         children: "+"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 279,
+                                        lineNumber: 304,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 266,
+                                lineNumber: 291,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 262,
+                        lineNumber: 287,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "border-t border-neutral-200 my-6"
                     }, void 0, false, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 291,
+                        lineNumber: 316,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1407,20 +1425,20 @@ Please confirm availability. Thank you!`;
                                 className: "w-5 h-5 fill-current"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 298,
+                                lineNumber: 323,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "Confirm via WhatsApp"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 299,
+                                lineNumber: 324,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 294,
+                        lineNumber: 319,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1428,23 +1446,27 @@ Please confirm availability. Thank you!`;
                         children: "💳 No payment now • Pay on arrival"
                     }, void 0, false, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 302,
+                        lineNumber: 327,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BookingForm.tsx",
-                lineNumber: 206,
+                lineNumber: 231,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/BookingForm.tsx",
-        lineNumber: 146,
+        lineNumber: 166,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(BookingForm, "PGZgoct2MFiJSd+1Bs3l52Pgtag=");
+_s(BookingForm, "EiJh/HHK/yjqVNmAyvtdILfJSJQ=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"]
+    ];
+});
 _c = BookingForm;
 var _c;
 __turbopack_context__.k.register(_c, "BookingForm");

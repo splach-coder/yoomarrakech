@@ -253,15 +253,6 @@ const siteData = {
                 ]
             },
             {
-                id: "hot-air-balloon",
-                type: "balloon",
-                location: "Marrakech",
-                price: 180,
-                duration: "3_hours",
-                image: "/images/airballon/manoa-angelo-w7jeZ5NFSvQ-unsplash.jpg",
-                gallery: []
-            },
-            {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
@@ -638,15 +629,6 @@ const siteDataFr = {
                     "/images/camel-riding/dave-meckler-ZzVc3uZXnr8-unsplash.jpg",
                     "/images/camel-riding/peter-thomas-nF8-ekoE0qw-unsplash.jpg"
                 ]
-            },
-            {
-                id: "hot-air-balloon",
-                type: "balloon",
-                location: "Marrakech",
-                price: 180,
-                duration: "3_hours",
-                image: "/images/airballon/manoa-angelo-w7jeZ5NFSvQ-unsplash.jpg",
-                gallery: []
             },
             {
                 id: "cooking-class",

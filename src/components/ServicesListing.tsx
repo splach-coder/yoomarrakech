@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { siteData } from '@/data/siteData';
+import { ServiceModal, ServiceModalItem } from '@/components/ServiceModal';
 import { ArrowUpRight, Clock, Star, Map, Compass, Palmtree, Car } from 'lucide-react';
 import Link from 'next/link';
 
@@ -62,10 +63,22 @@ const categories = [
 
 export const ServicesListing = ({ locale }: ServicesListingProps) => {
     const t = useTranslations('ServicesPage');
+    const tCommon = useTranslations('Common');
+    const [modalItem, setModalItem] = useState<ServiceModalItem | null>(null);
+    const [modalCategory, setModalCategory] = useState<string>('services');
+    const [modalLabel, setModalLabel] = useState<string | undefined>(undefined);
+
+    const openModal = (item: any, categoryId: string, categoryLabel: string) => {
+        setModalCategory(categoryId);
+        setModalLabel(categoryLabel);
+        setModalItem(item as ServiceModalItem);
+    };
+
     const renderPrice = (item: any, categoryId: string) => {
+        const perPerson = tCommon('perPerson');
         if (categoryId === 'tours' && item.pricing && item.pricing[0]) {
             const p = item.pricing[0] as any;
-            return p.totalPrice ? `${p.totalPrice}€` : `${p.pricePerPerson}€/p`;
+            return p.totalPrice ? `${p.totalPrice}€` : `€${p.pricePerPerson} ${perPerson}`;
         }
         if (categoryId === 'packages' || categoryId === 'activities') {
             return item.price ? `${item.price}€` : t('onRequest');
@@ -142,14 +155,13 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                         transition={{ delay: (catIdx * 0.1) + (idx * 0.05) }}
                                         className="group"
                                     >
-                                        <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[280px] border border-neutral-100 cursor-pointer hover:-translate-y-1">
+                                        <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[280px] border border-neutral-100 hover:-translate-y-1">
                                             {/* Image Section */}
                                             <div className="md:w-2/5 relative h-48 md:h-full overflow-hidden">
                                                 <div
                                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                                     style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
                                                 ></div>
-                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
                                                     {t(category.id === 'tours' ? 'culturalTours' : category.id === 'activities' ? 'adventures' : category.id === 'packages' ? 'curatedPacks' : 'transport')}
                                                 </div>
@@ -190,12 +202,20 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                                         <p className="text-xl font-bold text-primary">{renderPrice(item, category.id)}</p>
                                                     </div>
 
-                                                    <Link
-                                                        href={`/${locale}/${category.route}/${item.id}`}
-                                                        className="px-4 py-2 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-primary hover:text-white transition-all flex items-center gap-2"
-                                                    >
-                                                        {t('details')} <ArrowUpRight className="w-4 h-4" />
-                                                    </Link>
+                                                    <div className="flex items-center gap-2">
+                                                        <Link
+                                                            href={`/${locale}/${category.route}/${item.id}`}
+                                                            className="px-4 py-2 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-neutral-200 transition-all flex items-center gap-2"
+                                                        >
+                                                            {t('details')} <ArrowUpRight className="w-4 h-4" />
+                                                        </Link>
+                                                        <button
+                                                            className="px-4 py-2 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm"
+                                                            onClick={(e) => { e.stopPropagation(); openModal(item, category.id, category.label); }}
+                                                        >
+                                                            Quick View
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -206,6 +226,15 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                     );
                 })}
             </div>
+
+            {/* ── Creative Modal ── */}
+            <ServiceModal
+                item={modalItem}
+                category={modalCategory}
+                locale={locale}
+                label={modalLabel}
+                onClose={() => setModalItem(null)}
+            />
         </div>
     );
 };

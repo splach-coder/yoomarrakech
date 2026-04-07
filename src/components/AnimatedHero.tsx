@@ -8,12 +8,17 @@ interface AnimatedHeroProps {
     lang: string;
 }
 
+const fadeUp = (delay: number) => ({
+    initial: { opacity: 0, y: 28 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.75, ease: 'easeOut' as const, delay },
+});
+
 export const AnimatedHero: React.FC<AnimatedHeroProps> = ({ lang }) => {
     const t = useTranslations('HomePage');
     const containerRef = useRef(null);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const [isVideoReady, setIsVideoReady] = useState(false);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -27,101 +32,78 @@ export const AnimatedHero: React.FC<AnimatedHeroProps> = ({ lang }) => {
         const video = videoRef.current;
         if (!video) return;
 
-        // Set slow motion playback speed (0.5 = half speed)
         video.playbackRate = 0.5;
 
-        // Play video only after it's fully loaded
-        const handleCanPlayThrough = () => {
-            setIsVideoLoaded(true);
-            video.play().then(() => {
-                setIsVideoPlaying(true);
-            }).catch((error) => {
-                console.error('Video autoplay prevented:', error);
-            });
+        const handleCanPlay = () => {
+            video.play().catch(() => {});
+            setTimeout(() => setIsVideoReady(true), 100);
         };
 
-        const videoEl = video;
-        videoEl.addEventListener('canplaythrough', handleCanPlayThrough);
-
-        // Force load
-        videoEl.load();
+        video.addEventListener('canplaythrough', handleCanPlay);
+        video.load();
 
         return () => {
-            videoEl.removeEventListener('canplaythrough', handleCanPlayThrough);
+            video.removeEventListener('canplaythrough', handleCanPlay);
         };
     }, []);
 
     return (
-        <section ref={containerRef} className="relative h-screen min-h-[700px] w-full overflow-hidden bg-neutral-dark flex flex-col justify-center">
+        <section
+            ref={containerRef}
+            className="relative h-screen min-h-[700px] w-full overflow-hidden bg-neutral-dark flex flex-col justify-center"
+        >
             {/* Video Background with Parallax */}
-            <motion.div
-                style={{ y, opacity }}
-                className="absolute inset-0 z-0"
-            >
-                {/* Video Element with Zoom Animation */}
-                <motion.video
+            <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+                {/* Video — starts invisible, fades in only when ready. No fallback image = no flash. */}
+                <video
                     ref={videoRef}
                     loop
                     muted
                     playsInline
                     preload="auto"
-                    initial={{ scale: 1.1 }}
-                    animate={{ scale: isVideoPlaying ? 1 : 1.1 }}
-                    transition={{ duration: 8, ease: "easeOut" }}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+                    className="absolute inset-0 w-full h-full object-cover"
                     aria-label="Background video showcasing Marrakech, Morocco"
                     style={{
-                        opacity: isVideoLoaded ? 1 : 0,
-                        zIndex: isVideoLoaded ? 10 : 0
+                        opacity: isVideoReady ? 1 : 0,
+                        transition: 'opacity 1s ease',
                     }}
                 >
                     <source src="/videos/159727-819369000.mp4" type="video/mp4" />
-                </motion.video>
+                </video>
 
-                {/* Fallback image while video loads */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
-                    style={{
-                        backgroundImage: 'url(https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=2070)',
-                        opacity: isVideoLoaded ? 0 : 1,
-                        zIndex: 5
-                    }}
-                />
-
-                {/* Overlays - Above video */}
-                <div className="absolute inset-0 bg-black/30 z-20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-20" />
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-black/35 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30 z-10" />
             </motion.div>
 
-            {/* Central Content */}
+            {/* Central Content — staggered entrance */}
             <div className="relative z-10 container mx-auto px-4 text-center pb-24 flex flex-col items-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                {/* Tag line */}
+                <motion.p
+                    className="font-dancing text-2xl md:text-3xl text-white mb-4 italic drop-shadow-md"
+                    {...fadeUp(0.3)}
                 >
-                    <p className="font-dancing text-2xl md:text-3xl text-white mb-4 italic drop-shadow-md">
-                        {t('heroTag')}
-                    </p>
-                </motion.div>
+                    {t('heroTag')}
+                </motion.p>
 
+                {/* Main title */}
                 <motion.h1
                     className="max-w-6xl mx-auto text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-8 font-poppins tracking-tight leading-tight drop-shadow-lg"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    {...fadeUp(0.55)}
                 >
                     {t('heroTitle')}
                 </motion.h1>
             </div>
 
-            {/* Bottom Footer Info */}
+            {/* Bottom footer text */}
             <div className="absolute bottom-8 left-0 right-0 z-10 container mx-auto px-6">
                 <div className="flex justify-center items-center">
-                    {/* Center: Description Text */}
-                    <div className="max-w-lg text-center text-white/90 text-sm font-light leading-relaxed hidden md:block animate-fade-in-up delay-700">
+                    <motion.div
+                        className="max-w-lg text-center text-white/90 text-sm font-light leading-relaxed hidden md:block"
+                        {...fadeUp(0.85)}
+                    >
                         {t('heroFooter')}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

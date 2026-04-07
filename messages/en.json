@@ -107,7 +107,8 @@
     "contactUs": "Contact Us",
     "priceFrom": "From",
     "duration": "Duration",
-    "perPerson": "per person"
+    "perPerson": "per person",
+    "groupDiscount": "Group Discount Applied"
   },
   "AboutPage": {
     "title": "About Us",
