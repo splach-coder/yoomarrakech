@@ -110,10 +110,6 @@ export default function ToursPage({ params }: PageProps) {
                                                 <Clock className="w-3 h-3 text-primary" />
                                                 <span>{item.duration ? t(`duration_${item.duration}`) : t('duration_full_day')}</span>
                                             </div>
-                                            <div className="flex items-center gap-1 text-yellow-500 text-sm font-bold bg-yellow-50 px-2 py-1 rounded-md">
-                                                <Star className="w-3 h-3 fill-current" />
-                                                <span>4.9</span>
-                                            </div>
                                         </div>
 
                                         <h3 className="text-2xl font-bold font-poppins text-neutral-dark mb-3 leading-tight group-hover:text-primary transition-colors">

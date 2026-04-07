@@ -179,10 +179,6 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                                                         category.id === 'packages' ? t('duration_4_hours') : t('flexible')}
                                                             </span>
                                                         </div>
-                                                        <div className="flex items-center gap-1 text-yellow-500 text-sm font-bold bg-yellow-50 px-2 py-1 rounded-md">
-                                                            <Star className="w-3 h-3 fill-current" />
-                                                            <span>4.9</span>
-                                                        </div>
                                                     </div>
 
                                                     <h3 className="text-xl font-bold font-poppins text-neutral-dark mb-2 leading-tight group-hover:text-primary transition-colors uppercase">
@@ -194,7 +190,7 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                                     </p>
                                                 </div>
 
-                                                <div className="pt-4 mt-3 border-t border-neutral-100 flex items-center justify-between">
+                                                <div className="pt-4 mt-3 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-2">
                                                     <div>
                                                         <p className="text-xs text-gray-400 font-medium mb-0.5">
                                                             {category.id === 'transport' ? t('price') : t('startingFrom')}
@@ -202,15 +198,15 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                                         <p className="text-xl font-bold text-primary">{renderPrice(item, category.id)}</p>
                                                     </div>
 
-                                                    <div className="flex items-center gap-2">
+                                                    <div className="flex items-center gap-2 w-full sm:w-auto">
                                                         <Link
                                                             href={`/${locale}/${category.route}/${item.id}`}
-                                                            className="px-4 py-2 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-neutral-200 transition-all flex items-center gap-2"
+                                                            className="flex-1 sm:flex-none justify-center px-4 py-2 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-neutral-200 transition-all flex items-center gap-2"
                                                         >
                                                             {t('details')} <ArrowUpRight className="w-4 h-4" />
                                                         </Link>
                                                         <button
-                                                            className="px-4 py-2 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm"
+                                                            className="flex-1 sm:flex-none justify-center px-4 py-2 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm"
                                                             onClick={(e) => { e.stopPropagation(); openModal(item, category.id, category.label); }}
                                                         >
                                                             Quick View

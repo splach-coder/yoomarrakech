@@ -1488,7 +1488,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/check.js [app-client] (ecmascript) <export default as Check>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star.js [app-client] (ecmascript) <export default as Star>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-client] (ecmascript) <export default as ArrowLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 'use client';
@@ -1618,29 +1617,6 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
                                                 lineNumber: 92,
                                                 columnNumber: 37
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                        className: "w-4 h-4 text-yellow-500 fill-current"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                        lineNumber: 98,
-                                                        columnNumber: 37
-                                                    }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        children: "4.9 (120 reviews)"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                        lineNumber: 99,
-                                                        columnNumber: 37
-                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                lineNumber: 97,
-                                                columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
@@ -1686,7 +1662,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: "Overview"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 116,
+                                            lineNumber: 112,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1694,13 +1670,13 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: description
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 117,
+                                            lineNumber: 113,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 115,
+                                    lineNumber: 111,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 gallery && gallery.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1711,7 +1687,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: "Gallery"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 121,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1737,31 +1713,31 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 135,
+                                                            lineNumber: 131,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 135,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, idx, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 128,
+                                                    lineNumber: 124,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 126,
+                                            lineNumber: 122,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 124,
+                                    lineNumber: 120,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 subItems.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1772,7 +1748,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: "Available Options"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 145,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1788,7 +1764,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     children: item.location || item.type
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 154,
+                                                                    lineNumber: 150,
                                                                     columnNumber: 49
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1799,13 +1775,13 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 155,
+                                                                    lineNumber: 151,
                                                                     columnNumber: 49
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 149,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1817,24 +1793,24 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 159,
+                                                            lineNumber: 155,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, item.id, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 148,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 146,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 144,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1852,19 +1828,19 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                 className: "w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 171,
+                                                                lineNumber: 167,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 170,
+                                                            lineNumber: 166,
                                                             columnNumber: 37
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Included"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 165,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1876,20 +1852,20 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     className: "w-4 h-4 text-green-500 mt-0.5 shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 178,
+                                                                    lineNumber: 174,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: inc
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 179,
+                                                                    lineNumber: 175,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 173,
                                                             columnNumber: 41
                                                         }, ("TURBOPACK compile-time value", void 0))) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
@@ -1900,14 +1876,14 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-green-500 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 183,
+                                                                        lineNumber: 179,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Hotel Pickup & Drop-off"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 183,
+                                                                lineNumber: 179,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1917,14 +1893,14 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-green-500 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 184,
+                                                                        lineNumber: 180,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Professional Guide"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 184,
+                                                                lineNumber: 180,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1934,27 +1910,27 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-green-500 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 185,
+                                                                        lineNumber: 181,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Transport A/C"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 185,
+                                                                lineNumber: 181,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 175,
+                                                    lineNumber: 171,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 168,
+                                            lineNumber: 164,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1969,19 +1945,19 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                 className: "w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 194,
+                                                                lineNumber: 190,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 193,
+                                                            lineNumber: 189,
                                                             columnNumber: 37
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         "Not Included"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 192,
+                                                    lineNumber: 188,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1993,20 +1969,20 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     className: "w-4 h-4 text-red-400 mt-0.5 shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 201,
+                                                                    lineNumber: 197,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: exc
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 202,
+                                                                    lineNumber: 198,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 200,
+                                                            lineNumber: 196,
                                                             columnNumber: 41
                                                         }, ("TURBOPACK compile-time value", void 0))) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
@@ -2017,14 +1993,14 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-red-400 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 206,
+                                                                        lineNumber: 202,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Personal Expenses"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 206,
+                                                                lineNumber: 202,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2034,33 +2010,33 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-red-400 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 207,
+                                                                        lineNumber: 203,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Tips"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 207,
+                                                                lineNumber: 203,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 198,
+                                                    lineNumber: 194,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 191,
+                                            lineNumber: 187,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 167,
+                                    lineNumber: 163,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2073,7 +2049,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                     children: "Need a Custom Plan?"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 213,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2081,13 +2057,13 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                     children: "We can customize this experience for large groups, special events, or specific requirements."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 218,
+                                                    lineNumber: 214,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 216,
+                                            lineNumber: 212,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2095,19 +2071,19 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: "Contact Support"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 220,
+                                            lineNumber: 216,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 215,
+                                    lineNumber: 211,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                            lineNumber: 112,
+                            lineNumber: 108,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2127,23 +2103,23 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                     }))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                lineNumber: 229,
+                                lineNumber: 225,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                            lineNumber: 228,
+                            lineNumber: 224,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                    lineNumber: 109,
+                    lineNumber: 105,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                lineNumber: 108,
+                lineNumber: 104,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

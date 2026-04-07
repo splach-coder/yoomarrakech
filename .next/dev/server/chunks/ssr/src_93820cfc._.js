@@ -782,7 +782,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up-right.js [app-ssr] (ecmascript) <export default as ArrowUpRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript) <export default as Clock>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star.js [app-ssr] (ecmascript) <export default as Star>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-ssr] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript) <export default as Users>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-ssr] (ecmascript) <export default as ChevronRight>");
@@ -1093,43 +1092,6 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                     fileName: "[project]/src/components/ServiceModal.tsx",
                                     lineNumber: 178,
                                     columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                    initial: {
-                                        opacity: 0,
-                                        scale: 0.8
-                                    },
-                                    animate: {
-                                        opacity: 1,
-                                        scale: 1
-                                    },
-                                    transition: {
-                                        delay: 0.55
-                                    },
-                                    className: "absolute bottom-5 right-6 flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2",
-                                    children: [
-                                        [
-                                            ...Array(5)
-                                        ].map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                className: "w-3 h-3 fill-[#FDC82F] text-[#FDC82F]"
-                                            }, i, false, {
-                                                fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 198,
-                                                columnNumber: 37
-                                            }, ("TURBOPACK compile-time value", void 0))),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-white text-xs font-bold ml-1",
-                                            children: "4.9"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/ServiceModal.tsx",
-                                            lineNumber: 200,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/ServiceModal.tsx",
-                                    lineNumber: 191,
-                                    columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
@@ -1153,7 +1115,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                 children: title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 214,
+                                                lineNumber: 201,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1163,33 +1125,33 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         className: "h-0.5 w-12 bg-[#FDC82F]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 219,
+                                                        lineNumber: 206,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MoroccanDiamond, {
                                                         className: "w-4 h-4 text-[#FDC82F]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 220,
+                                                        lineNumber: 207,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "h-0.5 w-6 bg-[#FDC82F]/40"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 221,
+                                                        lineNumber: 208,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 218,
+                                                lineNumber: 205,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 200,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1203,7 +1165,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         className: "w-4 h-4 text-[#FDC82F]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 215,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1211,13 +1173,13 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         children: formatDuration(item.duration)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 229,
+                                                        lineNumber: 216,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 227,
+                                                lineNumber: 214,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             item.location && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1227,7 +1189,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         className: "w-4 h-4 text-[#FDC82F]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 233,
+                                                        lineNumber: 220,
                                                         columnNumber: 45
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1235,13 +1197,13 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         children: item.location
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 234,
+                                                        lineNumber: 221,
                                                         columnNumber: 45
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 219,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             item.pricing?.[0]?.maxPeople && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1251,7 +1213,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         className: "w-4 h-4 text-[#FDC82F]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 226,
                                                         columnNumber: 45
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1263,19 +1225,19 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 240,
+                                                        lineNumber: 227,
                                                         columnNumber: 45
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 238,
+                                                lineNumber: 225,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 226,
+                                        lineNumber: 213,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1285,12 +1247,12 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                             children: item.description || `Experience the authentic beauty of Morocco with our expertly curated ${title}. Designed for unforgettable memories in the heart of Marrakech.`
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceModal.tsx",
-                                            lineNumber: 247,
+                                            lineNumber: 234,
                                             columnNumber: 37
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 246,
+                                        lineNumber: 233,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     item.included && item.included.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1301,7 +1263,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                 children: "What's Included"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 256,
+                                                lineNumber: 243,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1313,7 +1275,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                                 className: "w-3 h-3 text-[#FDC82F]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                                lineNumber: 260,
+                                                                lineNumber: 247,
                                                                 columnNumber: 53
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1321,24 +1283,24 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                                 children: inc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                                lineNumber: 261,
+                                                                lineNumber: 248,
                                                                 columnNumber: 53
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, inc, true, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 259,
+                                                        lineNumber: 246,
                                                         columnNumber: 49
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 244,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 255,
+                                        lineNumber: 242,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     item.gallery && item.gallery.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1349,7 +1311,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                 children: "Gallery"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 271,
+                                                lineNumber: 258,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1363,23 +1325,23 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                             className: "object-cover hover:scale-110 transition-transform duration-500"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceModal.tsx",
-                                                            lineNumber: 275,
+                                                            lineNumber: 262,
                                                             columnNumber: 53
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, i, false, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 274,
+                                                        lineNumber: 261,
                                                         columnNumber: 49
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 272,
+                                                lineNumber: 259,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 270,
+                                        lineNumber: 257,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     item.pricing && item.pricing.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1390,7 +1352,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                 children: "Pricing"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 285,
+                                                lineNumber: 272,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1405,20 +1367,20 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                                         className: "w-3.5 h-3.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                                        lineNumber: 290,
+                                                                        lineNumber: 277,
                                                                         columnNumber: 57
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: p.minPeople && p.maxPeople ? `${p.minPeople}–${p.maxPeople} people` : p.maxPeople ? `Up to ${p.maxPeople} people` : `${p.minPeople}+ people`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                                        lineNumber: 291,
+                                                                        lineNumber: 278,
                                                                         columnNumber: 57
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                                lineNumber: 289,
+                                                                lineNumber: 276,
                                                                 columnNumber: 53
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1426,35 +1388,35 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                                 children: p.totalPrice ? `€${p.totalPrice}` : `€${p.pricePerPerson} ${perPerson}`
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                                lineNumber: 299,
+                                                                lineNumber: 286,
                                                                 columnNumber: 53
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, i, true, {
                                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                                        lineNumber: 288,
+                                                        lineNumber: 275,
                                                         columnNumber: 49
                                                     }, ("TURBOPACK compile-time value", void 0)))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                                lineNumber: 286,
+                                                lineNumber: 273,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 284,
+                                        lineNumber: 271,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ServiceModal.tsx",
-                                lineNumber: 206,
+                                lineNumber: 193,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ServiceModal.tsx",
-                            lineNumber: 205,
+                            lineNumber: 192,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1471,15 +1433,6 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                             },
                             className: "flex-shrink-0 border-t border-white/10 bg-[#0f0e0c] px-8 py-5 flex items-center gap-4",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: onClose,
-                                    className: "flex-shrink-0 px-5 py-3 rounded-full border border-white/20 text-white/70 text-sm font-medium hover:border-white/40 hover:text-white transition-all",
-                                    children: "Back"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/ServiceModal.tsx",
-                                    lineNumber: 317,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     href: detailHref,
                                     className: "relative flex-1 overflow-hidden group rounded-full bg-[#FDC82F] text-[#1A1A1A] font-black text-sm py-3 flex items-center justify-center gap-2 shadow-lg shadow-[#FDC82F]/20 hover:shadow-[#FDC82F]/40 transition-shadow",
@@ -1488,27 +1441,27 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                             className: "absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceModal.tsx",
-                                            lineNumber: 330,
+                                            lineNumber: 310,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Book This Experience"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceModal.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 311,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                             className: "w-4 h-4 group-hover:translate-x-1 transition-transform"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceModal.tsx",
-                                            lineNumber: 332,
+                                            lineNumber: 312,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceModal.tsx",
-                                    lineNumber: 325,
+                                    lineNumber: 305,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1519,18 +1472,18 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ServiceModal.tsx",
-                                        lineNumber: 340,
+                                        lineNumber: 320,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ServiceModal.tsx",
-                                    lineNumber: 335,
+                                    lineNumber: 315,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ServiceModal.tsx",
-                            lineNumber: 311,
+                            lineNumber: 298,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -1563,7 +1516,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$t
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceModal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ServiceModal.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up-right.js [app-ssr] (ecmascript) <export default as ArrowUpRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript) <export default as Clock>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/star.js [app-ssr] (ecmascript) <export default as Star>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map.js [app-ssr] (ecmascript) <export default as Map>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$compass$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Compass$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/compass.js [app-ssr] (ecmascript) <export default as Compass>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$tree$2d$palm$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Palmtree$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/tree-palm.js [app-ssr] (ecmascript) <export default as Palmtree>");
@@ -1879,55 +1831,30 @@ const ServicesListing = ({ locale })=>{
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "flex justify-between items-start mb-2",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "flex items-center gap-2 text-gray-500 text-xs font-semibold uppercase tracking-wider",
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                                                    className: "w-3 h-3 text-primary"
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                    lineNumber: 175,
-                                                                                    columnNumber: 61
-                                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    children: category.id === 'tours' && item.duration ? t(`duration_${item.duration}`) : category.id === 'activities' ? t('duration_2_hours') : category.id === 'packages' ? t('duration_4_hours') : t('flexible')
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                    lineNumber: 176,
-                                                                                    columnNumber: 61
-                                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 174,
-                                                                            columnNumber: 57
-                                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "flex items-center gap-1 text-yellow-500 text-sm font-bold bg-yellow-50 px-2 py-1 rounded-md",
-                                                                            children: [
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                                                    className: "w-3 h-3 fill-current"
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                    lineNumber: 183,
-                                                                                    columnNumber: 61
-                                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                    children: "4.9"
-                                                                                }, void 0, false, {
-                                                                                    fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                    lineNumber: 184,
-                                                                                    columnNumber: 61
-                                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 182,
-                                                                            columnNumber: 57
-                                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                                    ]
-                                                                }, void 0, true, {
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex items-center gap-2 text-gray-500 text-xs font-semibold uppercase tracking-wider",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
+                                                                                className: "w-3 h-3 text-primary"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/components/ServicesListing.tsx",
+                                                                                lineNumber: 175,
+                                                                                columnNumber: 61
+                                                                            }, ("TURBOPACK compile-time value", void 0)),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                children: category.id === 'tours' && item.duration ? t(`duration_${item.duration}`) : category.id === 'activities' ? t('duration_2_hours') : category.id === 'packages' ? t('duration_4_hours') : t('flexible')
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/components/ServicesListing.tsx",
+                                                                                lineNumber: 176,
+                                                                                columnNumber: 61
+                                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/ServicesListing.tsx",
+                                                                        lineNumber: 174,
+                                                                        columnNumber: 57
+                                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                                }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
                                                                     lineNumber: 173,
                                                                     columnNumber: 53
@@ -1937,7 +1864,7 @@ const ServicesListing = ({ locale })=>{
                                                                     children: item.name || item.type
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 188,
+                                                                    lineNumber: 184,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1945,7 +1872,7 @@ const ServicesListing = ({ locale })=>{
                                                                     children: item.desc || `Experience the best of Morocco with our ${item.name || item.type}.`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 192,
+                                                                    lineNumber: 188,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
@@ -1955,7 +1882,7 @@ const ServicesListing = ({ locale })=>{
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "pt-4 mt-3 border-t border-neutral-100 flex items-center justify-between",
+                                                            className: "pt-4 mt-3 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-2",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     children: [
@@ -1964,7 +1891,7 @@ const ServicesListing = ({ locale })=>{
                                                                             children: category.id === 'transport' ? t('price') : t('startingFrom')
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 199,
+                                                                            lineNumber: 195,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1972,21 +1899,21 @@ const ServicesListing = ({ locale })=>{
                                                                             children: renderPrice(item, category.id)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 202,
+                                                                            lineNumber: 198,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 198,
+                                                                    lineNumber: 194,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex items-center gap-2",
+                                                                    className: "flex items-center gap-2 w-full sm:w-auto",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                                             href: `/${locale}/${category.route}/${item.id}`,
-                                                                            className: "px-4 py-2 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-neutral-200 transition-all flex items-center gap-2",
+                                                                            className: "flex-1 sm:flex-none justify-center px-4 py-2 rounded-full bg-neutral-100 text-neutral-dark font-medium text-sm hover:bg-neutral-200 transition-all flex items-center gap-2",
                                                                             children: [
                                                                                 t('details'),
                                                                                 " ",
@@ -1994,17 +1921,17 @@ const ServicesListing = ({ locale })=>{
                                                                                     className: "w-4 h-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                    lineNumber: 210,
+                                                                                    lineNumber: 206,
                                                                                     columnNumber: 76
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 206,
+                                                                            lineNumber: 202,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                            className: "px-4 py-2 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm",
+                                                                            className: "flex-1 sm:flex-none justify-center px-4 py-2 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm",
                                                                             onClick: (e)=>{
                                                                                 e.stopPropagation();
                                                                                 openModal(item, category.id, category.label);
@@ -2012,19 +1939,19 @@ const ServicesListing = ({ locale })=>{
                                                                             children: "Quick View"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 212,
+                                                                            lineNumber: 208,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 205,
+                                                                    lineNumber: 201,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                            lineNumber: 197,
+                                                            lineNumber: 193,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
@@ -2069,7 +1996,7 @@ const ServicesListing = ({ locale })=>{
                 onClose: ()=>setModalItem(null)
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesListing.tsx",
-                lineNumber: 231,
+                lineNumber: 227,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

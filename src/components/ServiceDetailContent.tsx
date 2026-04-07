@@ -94,10 +94,6 @@ export const ServiceDetailContent = ({
                                         <span>{renderDuration(duration)}</span>
                                     </div>
                                 )}
-                                <div className="flex items-center gap-2">
-                                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                                    <span>4.9 (120 reviews)</span>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -186,19 +186,6 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
                                     <p className="text-2xl font-black font-poppins leading-none">{renderPrice(item)}</p>
                                 </div>
                             </motion.div>
-
-                            {/* ── Rating ── */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.55 }}
-                                className="absolute bottom-5 right-6 flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2"
-                            >
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-3 h-3 fill-[#FDC82F] text-[#FDC82F]" />
-                                ))}
-                                <span className="text-white text-xs font-bold ml-1">4.9</span>
-                            </motion.div>
                         </div>
 
                         {/* ── Scrollable Content ── */}
@@ -314,13 +301,6 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
                             transition={{ delay: 0.5 }}
                             className="flex-shrink-0 border-t border-white/10 bg-[#0f0e0c] px-8 py-5 flex items-center gap-4"
                         >
-                            <button
-                                onClick={onClose}
-                                className="flex-shrink-0 px-5 py-3 rounded-full border border-white/20 text-white/70 text-sm font-medium hover:border-white/40 hover:text-white transition-all"
-                            >
-                                Back
-                            </button>
-
                             {/* Shimmer CTA */}
                             <Link
                                 href={detailHref}
