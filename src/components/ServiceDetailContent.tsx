@@ -65,22 +65,20 @@ export const ServiceDetailContent = ({
                     className="absolute inset-0 bg-cover bg-center fixed-bg" // simple parallax if implemented in css
                     style={{ backgroundImage: `url(${image})` }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-
-
-                <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white z-10">
-                    <div className="container mx-auto px-6 md:px-4">
+                <div className="absolute bottom-0 left-0 w-full pb-10 md:pb-16 pt-20 text-white z-10">
+                    <div className="container mx-auto px-4">
                         <div className="max-w-4xl">
                             <div className="mb-6">
-                                <Link href={`/${locale}/services`} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors bg-white/10 backdrop-blur-md px-4 py-2 rounded-full w-fit">
+                                <Link href={`/${locale}/services`} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors bg-black/20 backdrop-blur-md px-4 py-2 rounded-full w-fit text-sm border border-white/10">
                                     <ArrowLeft className="w-4 h-4" /> Back to Services
                                 </Link>
                             </div>
-                            <span className="inline-block px-3 py-1 rounded-md bg-primary text-white text-xs font-bold uppercase tracking-wider mb-4">
+                            <span className="inline-block px-3 py-1 rounded-md bg-[#FDC82F] text-[#1A1A1A] text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 shadow-sm">
                                 {type}
                             </span>
-                            <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white">{title}</h1>
+                            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-tight text-white uppercase tracking-tight">{title}</h1>
                             <div className="flex flex-wrap items-center gap-6 text-sm font-medium opacity-90">
                                 {location && (
                                     <div className="flex items-center gap-2">
