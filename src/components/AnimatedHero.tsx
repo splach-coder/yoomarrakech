@@ -1,8 +1,10 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { HeroSearchBar } from './HeroSearchBar';
 
 interface AnimatedHeroProps {
     lang: string;
@@ -17,8 +19,6 @@ const fadeUp = (delay: number) => ({
 export const AnimatedHero: React.FC<AnimatedHeroProps> = ({ lang }) => {
     const t = useTranslations('HomePage');
     const containerRef = useRef(null);
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const [isVideoReady, setIsVideoReady] = useState(false);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -28,48 +28,21 @@ export const AnimatedHero: React.FC<AnimatedHeroProps> = ({ lang }) => {
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        video.playbackRate = 0.5;
-
-        const handleCanPlay = () => {
-            video.play().catch(() => {});
-            setTimeout(() => setIsVideoReady(true), 100);
-        };
-
-        video.addEventListener('canplaythrough', handleCanPlay);
-        video.load();
-
-        return () => {
-            video.removeEventListener('canplaythrough', handleCanPlay);
-        };
-    }, []);
-
     return (
         <section
             ref={containerRef}
             className="relative h-screen min-h-[700px] w-full overflow-hidden bg-neutral-dark flex flex-col justify-center"
         >
-            {/* Video Background with Parallax */}
+            {/* Image Background with Parallax */}
             <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
-                {/* Video — starts invisible, fades in only when ready. No fallback image = no flash. */}
-                <video
-                    ref={videoRef}
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    aria-label="Background video showcasing Marrakech, Morocco"
-                    style={{
-                        opacity: isVideoReady ? 1 : 0,
-                        transition: 'opacity 1s ease',
-                    }}
-                >
-                    <source src="/videos/159727-819369000.mp4" type="video/mp4" />
-                </video>
+                <Image
+                    src="/images/hero-marrakech.jpg"
+                    alt="Minaret silhouette against a sunset sky in Marrakech"
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover"
+                />
 
                 {/* Overlays */}
                 <div className="absolute inset-0 bg-black/35 z-10" />
@@ -88,23 +61,24 @@ export const AnimatedHero: React.FC<AnimatedHeroProps> = ({ lang }) => {
 
                 {/* Main title */}
                 <motion.h1
-                    className="max-w-6xl mx-auto text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-8 font-poppins tracking-tight leading-tight drop-shadow-lg"
+                    className="max-w-6xl mx-auto text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 font-poppins tracking-tight leading-tight drop-shadow-lg"
                     {...fadeUp(0.55)}
                 >
                     {t('heroTitle')}
                 </motion.h1>
-            </div>
 
-            {/* Bottom footer text */}
-            <div className="absolute bottom-8 left-0 right-0 z-10 container mx-auto px-6">
-                <div className="flex justify-center items-center">
-                    <motion.div
-                        className="max-w-lg text-center text-white/90 text-sm font-light leading-relaxed hidden md:block"
-                        {...fadeUp(0.85)}
-                    >
-                        {t('heroFooter')}
-                    </motion.div>
-                </div>
+                {/* Subtitle */}
+                <motion.p
+                    className="max-w-xl mx-auto text-white/90 text-base md:text-lg font-light leading-relaxed mb-10 drop-shadow-md"
+                    {...fadeUp(0.7)}
+                >
+                    {t('heroFooter')}
+                </motion.p>
+
+                {/* Search bar — date + travelers, shared booking state */}
+                <motion.div className="w-full" {...fadeUp(0.85)}>
+                    <HeroSearchBar />
+                </motion.div>
             </div>
         </section>
     );

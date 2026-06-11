@@ -3,14 +3,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { siteData } from '@/data/siteData';
+import { getSiteData } from '@/data/siteData';
 import { ServiceModal, ServiceModalItem } from '@/components/ServiceModal';
 import { ArrowUpRight, Clock, Star, Map, Compass, Palmtree, Car } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ServicesListingProps {
     locale: string;
 }
+
+type SiteDataset = ReturnType<typeof getSiteData>;
 
 const categories = [
     {
@@ -18,23 +21,21 @@ const categories = [
         label: 'Cultural Tours',
         icon: Map,
         route: 'tours',
-        data: () => siteData.tours
+        data: (sd: SiteDataset) => sd.tours
     },
     {
         id: 'activities',
         label: 'Adventures',
         icon: Compass,
         route: 'activities',
-        data: () => {
-            const experiences = siteData.activities.experiences || [];
+        data: (sd: SiteDataset) => {
+            const experiences = sd.activities.experiences || [];
             const grouped = experiences.reduce((acc: any, curr: any) => {
                 const type = curr.type;
                 if (!acc[type]) {
                     acc[type] = {
                         ...curr,
                         id: curr.type,
-                        name: `${curr.type} Adventures`,
-                        desc: `Experience our exclusive ${curr.type} activities.`,
                     };
                 }
                 if (curr.price < acc[type].price) {
@@ -50,14 +51,14 @@ const categories = [
         label: 'Curated Packs',
         icon: Palmtree,
         route: 'packages',
-        data: () => siteData.packages
+        data: (sd: SiteDataset) => sd.packages
     },
     {
         id: 'transport',
         label: 'Transport',
         icon: Car,
         route: 'transport',
-        data: () => siteData.transport
+        data: (sd: SiteDataset) => sd.transport
     },
 ];
 
@@ -90,10 +91,15 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
         <div className="min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark">
             {/* Hero Section */}
             <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
-                ></div>
+                <div className="absolute inset-0" aria-hidden="true">
+                    <Image
+                        src="/images/hero-marrakech.jpg"
+                        alt=""
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                    />
+                </div>
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="relative z-10 container mx-auto px-4 text-center">
                     <motion.div
@@ -117,7 +123,7 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
             {/* Services Sections */}
             <div className="container mx-auto px-4 py-16">
                 {categories.map((category, catIdx) => {
-                    const items = category.data();
+                    const items = category.data(getSiteData(locale));
                     if (!items || items.length === 0) return null;
 
                     return (
@@ -158,10 +164,13 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                         <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[280px] border border-neutral-100 hover:-translate-y-1">
                                             {/* Image Section */}
                                             <div className="md:w-2/5 relative h-48 md:h-full overflow-hidden">
-                                                <div
-                                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                                    style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
-                                                ></div>
+                                                <Image
+                                                    src={item.image || '/images/hero-marrakech.jpg'}
+                                                    alt={item.name || item.type || ''}
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, 40vw"
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                />
                                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
                                                     {t(category.id === 'tours' ? 'culturalTours' : category.id === 'activities' ? 'adventures' : category.id === 'packages' ? 'curatedPacks' : 'transport')}
                                                 </div>
@@ -186,7 +195,7 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                                     </h3>
 
                                                     <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
-                                                        {item.desc || `Experience the best of Morocco with our ${item.name || item.type}.`}
+                                                        {item.desc || item.description}
                                                     </p>
                                                 </div>
 
@@ -209,7 +218,7 @@ export const ServicesListing = ({ locale }: ServicesListingProps) => {
                                                             className="flex-1 sm:flex-none justify-center px-4 py-2 rounded-full bg-[#FDC82F] text-[#1A1A1A] font-bold text-sm hover:bg-[#e6b528] transition-all flex items-center gap-2 shadow-sm"
                                                             onClick={(e) => { e.stopPropagation(); openModal(item, category.id, category.label); }}
                                                         >
-                                                            Quick View
+                                                            {t('quickView')}
                                                         </button>
                                                     </div>
                                                 </div>

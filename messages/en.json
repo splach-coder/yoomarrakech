@@ -6,6 +6,13 @@
     "heroTitle": "A Journey of Tradition, Innovation, and Natural Beauty",
     "heroFooter": "Curated travel experiences showcasing the timeless beauty of Marrakech.",
     "cta": "Explore Services",
+    "search": {
+      "pickDate": "Pick a date",
+      "travelers": "{count, plural, =1 {1 Traveler} other {# Travelers}}",
+      "travelersLabel": "Travelers",
+      "search": "Search",
+      "done": "Done"
+    },
     "PopularDestinations": {
       "title": "Popular Destinations",
       "heading1": "Journey Through Morocco's",
@@ -99,7 +106,11 @@
     "legal": "Legal",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "home": "Home",
+    "gallery": "Gallery",
+    "travelServices": "Travel Services",
+    "craftedBy": "Crafted by"
   },
   "Common": {
     "bookNow": "Book Now",
@@ -108,7 +119,42 @@
     "priceFrom": "From",
     "duration": "Duration",
     "perPerson": "per person",
-    "groupDiscount": "Group Discount Applied"
+    "groupDiscount": "Group Discount Applied",
+    "backToServices": "Back to Services",
+    "overview": "Overview",
+    "gallery": "Gallery",
+    "availableOptions": "Available Options",
+    "included": "Included",
+    "notIncluded": "Not Included",
+    "needCustomPlan": "Need a Custom Plan?",
+    "customPlanText": "We can customize this experience for large groups, special events, or specific requirements.",
+    "contactSupport": "Contact Support",
+    "chooseExperience": "Choose Experience",
+    "travelDate": "Travel Date",
+    "travelers": "Travelers",
+    "personCount": "{count, plural, =1 {person} other {people}}",
+    "pricePerPerson": "Price per person",
+    "numberOfTravelers": "Number of travelers",
+    "subtotal": "Subtotal",
+    "total": "total",
+    "contactForPrice": "Contact for Price",
+    "customQuote": "Custom quote based on your needs",
+    "confirmWhatsApp": "Confirm via WhatsApp",
+    "noPaymentNow": "💳 No payment now • Pay on arrival",
+    "flexible": "Flexible",
+    "decrease": "Decrease",
+    "increase": "Increase"
+  },
+  "Reviews": {
+    "reviews": "Reviews",
+    "travelerStories": "Traveler Stories",
+    "basedOn": "Based on 150+ reviews",
+    "postedOnGoogle": "Posted on Google"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "text": "The page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
   },
   "AboutPage": {
     "title": "About Us",
@@ -166,6 +212,7 @@
     "startingFrom": "Starting from",
     "price": "Price",
     "onRequest": "On Request",
+    "quickView": "Quick View",
     "duration_1_day": "1 Day",
     "duration_half_day": "Half Day",
     "duration_2_hours": "2 hours",
@@ -182,6 +229,9 @@
     "duration_1_day": "1 Day",
     "duration_half_day": "Half Day",
     "duration_full_day": "Full Day",
+    "duration_2_hours": "2 hours",
+    "activityGroupTitle": "{type} Adventures",
+    "activityGroupDesc": "Make the most of your time in Marrakech with our {type} experiences. Choose the option that suits you below — every outing comes with professional guides and full safety equipment.",
     "toursTitle": "Cultural Tours",
     "toursSubtitle": "Immerse yourself in history.",
     "toursLabel": "Tours",

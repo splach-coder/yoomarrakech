@@ -6,6 +6,13 @@
     "heroTitle": "Un voyage de tradition, d'innovation et de beauté naturelle",
     "heroFooter": "Des expériences de voyage organisées mettant en valeur la beauté intemporelle de Marrakech.",
     "cta": "Explorer les Services",
+    "search": {
+      "pickDate": "Choisissez une date",
+      "travelers": "{count, plural, =1 {1 Voyageur} other {# Voyageurs}}",
+      "travelersLabel": "Voyageurs",
+      "search": "Rechercher",
+      "done": "Valider"
+    },
     "PopularDestinations": {
       "title": "Destinations Populaires",
       "heading1": "Voyagez à travers les",
@@ -99,7 +106,11 @@
     "legal": "Mentions Légales",
     "terms": "Conditions de Service",
     "privacy": "Politique de Confidentialité",
-    "contact": "Contact"
+    "contact": "Contact",
+    "home": "Accueil",
+    "gallery": "Galerie",
+    "travelServices": "Services de Voyage",
+    "craftedBy": "Réalisé par"
   },
   "Common": {
     "bookNow": "Réserver",
@@ -108,7 +119,42 @@
     "priceFrom": "À partir de",
     "duration": "Durée",
     "perPerson": "par personne",
-    "groupDiscount": "Remise de Groupe Appliquée"
+    "groupDiscount": "Remise de Groupe Appliquée",
+    "backToServices": "Retour aux Services",
+    "overview": "Aperçu",
+    "gallery": "Galerie",
+    "availableOptions": "Options Disponibles",
+    "included": "Inclus",
+    "notIncluded": "Non Inclus",
+    "needCustomPlan": "Besoin d'un Plan Sur Mesure ?",
+    "customPlanText": "Nous pouvons personnaliser cette expérience pour les grands groupes, événements spéciaux ou demandes spécifiques.",
+    "contactSupport": "Contacter le Support",
+    "chooseExperience": "Choisissez l'Expérience",
+    "travelDate": "Date du Voyage",
+    "travelers": "Voyageurs",
+    "personCount": "{count, plural, =1 {personne} other {personnes}}",
+    "pricePerPerson": "Prix par personne",
+    "numberOfTravelers": "Nombre de voyageurs",
+    "subtotal": "Sous-total",
+    "total": "total",
+    "contactForPrice": "Prix sur Demande",
+    "customQuote": "Devis personnalisé selon vos besoins",
+    "confirmWhatsApp": "Confirmer via WhatsApp",
+    "noPaymentNow": "💳 Aucun paiement maintenant • Payez à l'arrivée",
+    "flexible": "Flexible",
+    "decrease": "Diminuer",
+    "increase": "Augmenter"
+  },
+  "Reviews": {
+    "reviews": "Avis",
+    "travelerStories": "Témoignages de Voyageurs",
+    "basedOn": "Basé sur plus de 150 avis",
+    "postedOnGoogle": "Publié sur Google"
+  },
+  "NotFound": {
+    "title": "Page Introuvable",
+    "text": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'Accueil"
   },
   "AboutPage": {
     "title": "À Propos de Nous",
@@ -166,6 +212,7 @@
     "startingFrom": "À partir de",
     "price": "Prix",
     "onRequest": "Sur Demande",
+    "quickView": "Aperçu Rapide",
     "duration_1_day": "1 Jour",
     "duration_half_day": "Demi-journée",
     "duration_2_hours": "2 heures",
@@ -182,6 +229,9 @@
     "duration_1_day": "1 Jour",
     "duration_half_day": "Demi-journée",
     "duration_full_day": "Journée Complète",
+    "duration_2_hours": "2 heures",
+    "activityGroupTitle": "Aventures {type}",
+    "activityGroupDesc": "Profitez au maximum de votre séjour à Marrakech avec nos expériences {type}. Choisissez l'option qui vous convient ci-dessous — chaque sortie est encadrée par des guides professionnels avec équipement de sécurité complet.",
     "toursTitle": "Visites Culturelles",
     "toursSubtitle": "Plongez-vous dans l'histoire.",
     "toursLabel": "Visites",

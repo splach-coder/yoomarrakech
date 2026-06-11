@@ -97,7 +97,7 @@ export const GallerySection = ({ locale, dict }: { locale: string, dict: any }) 
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block">
                     <Link
                         href={`/${locale}/gallery`}
-                        className="bg-white text-primary px-10 py-4 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-2xl flex items-center gap-2 transform hover:scale-105 border border-primary/10"
+                        className="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-all shadow-2xl flex items-center gap-2 transform hover:scale-105 border border-primary/10"
                     >
                         {dict.explore} <ArrowUpRight className="w-5 h-5" />
                     </Link>

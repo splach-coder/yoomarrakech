@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale } from 'next-intl';
 
 export const CTASection = ({ locale, dict }: { locale: string, dict: any }) => {
@@ -9,10 +10,15 @@ export const CTASection = ({ locale, dict }: { locale: string, dict: any }) => {
         <section className="py-8 container mx-auto px-6 md:px-4">
             <div className="relative w-full rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center p-12 md:p-24 shadow-2xl group">
                 {/* Background Image with Blur */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center scale-110"
-                    style={{ backgroundImage: 'url(/images/marrakech/marrakech4.jpg)', filter: 'blur(8px)' }}
-                ></div>
+                <div className="absolute inset-0" aria-hidden="true">
+                    <Image
+                        src="/images/marrakech/marrakech4.jpg"
+                        alt=""
+                        fill
+                        sizes="100vw"
+                        className="object-cover scale-110 blur-[8px]"
+                    />
+                </div>
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40"></div>
@@ -30,7 +36,7 @@ export const CTASection = ({ locale, dict }: { locale: string, dict: any }) => {
                     <div className="flex justify-center">
                         <Link
                             href={`/${locale}/contact`}
-                            className="px-10 py-4 rounded-full bg-white text-neutral-dark font-bold hover:bg-gray-100 transition-all font-poppins shadow-xl transform hover:scale-105"
+                            className="px-8 py-3 rounded-full bg-white text-neutral-dark font-bold hover:bg-gray-100 transition-all font-poppins shadow-xl transform hover:scale-105"
                         >
                             {dict.button}
                         </Link>

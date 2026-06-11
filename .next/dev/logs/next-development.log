@@ -1,55 +1,166 @@
-[00:00:01.237] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:01.367] Server  LOG      ✓ Ready in 1055ms
-[00:00:24.367] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:24.555] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:33.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:33.384] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:34.196] Browser WARN    Image with src "/images/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:00:01.406] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.571] Server  LOG      ✓ Ready in 1251ms
+[00:00:11.124] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.316] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:02:39.712] Server  LOG      ✓ Compiled in 237ms
+[00:02:42.111] Server  LOG      ✓ Compiled in 743ms
+[00:02:42.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:01.661] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:03:07.809] Server  LOG      ✓ Compiled in 234ms
+[00:03:15.226] Server  LOG      ✓ Compiled in 123ms
+[00:03:19.435] Server  LOG      ✓ Compiled in 522ms
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:03:19.546] Browser ERROR   {"code":"MISSING_MESSAGE","originalMessage":"Could not resolve `HomePage.search` in messages for locale `en`."}
+[00:06:22.844] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:22:20.565] Server  LOG      ✓ Compiled in 193ms
+[00:23:07.470] Server  LOG      ✓ Compiled in 183ms
+[00:23:10.746] Server  LOG      ✓ Compiled in 128ms
+[00:23:14.549] Server  LOG      ✓ Compiled in 129ms
+[00:23:25.718] Server  LOG      ✓ Compiled in 284ms
+[00:23:26.042] Browser ERROR   ./src/components/BookingForm.tsx:277:29
+Parsing ecmascript source code failed
+  275 |                                     </div>
+  276 |                                 </div>
+> 277 |                             ))}
+      |                             ^
+  278 |                         </div>
+  279 |                     </div>
+  280 |                 )}
+
+Expected '</', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./src/components/BookingForm.tsx [Client Component Browser]
+    ./src/components/ServiceDetailContent.tsx [Client Component Browser]
+    ./src/app/[locale]/tours/[id]/page.tsx [Client Component Browser]
+    ./src/app/[locale]/tours/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/BookingForm.tsx [Client Component SSR]
+    ./src/components/ServiceDetailContent.tsx [Client Component SSR]
+    ./src/app/[locale]/tours/[id]/page.tsx [Client Component SSR]
+    ./src/app/[locale]/tours/[id]/page.tsx [Server Component]
+[00:23:35.177] Server  LOG      ✓ Compiled in 43ms
+[00:23:37.515] Server  LOG      ✓ Compiled in 45ms
+[00:23:42.186] Server  LOG      ✓ Compiled in 37ms
+[00:23:55.067] Server  LOG      ✓ Compiled in 39ms
+[00:23:57.480] Server  LOG      ✓ Compiled in 36ms
+[00:24:08.636] Server  LOG      ✓ Compiled in 43ms
+[00:24:10.622] Server  LOG      ✓ Compiled in 145ms
+[00:24:13.792] Server  LOG      ✓ Compiled in 37ms
+[00:24:16.642] Server  LOG      ✓ Compiled in 48ms
+[00:24:18.066] Server  LOG      ✓ Compiled in 35ms
+[00:24:20.091] Server  LOG      ✓ Compiled in 35ms
+[00:24:30.545] Server  LOG      ✓ Compiled in 32ms
+[00:24:33.045] Server  LOG      ✓ Compiled in 33ms
+[00:24:37.895] Server  LOG      ✓ Compiled in 39ms
+[00:24:47.104] Server  LOG      ✓ Compiled in 43ms
+[00:24:51.198] Server  LOG      ✓ Compiled in 31ms
+[00:24:53.131] Server  LOG      ✓ Compiled in 33ms
+[00:25:00.056] Server  LOG      ✓ Compiled in 34ms
+[00:25:01.956] Server  LOG      ✓ Compiled in 58ms
+[00:25:05.231] Server  LOG      ✓ Compiled in 34ms
+[00:25:07.135] Server  LOG      ✓ Compiled in 47ms
+[00:25:08.526] Server  LOG      ✓ Compiled in 34ms
+[00:25:12.257] Server  LOG      ✓ Compiled in 209ms
+[00:25:29.100] Server  LOG      ✓ Compiled in 44ms
+[00:25:31.861] Server  LOG      ✓ Compiled in 31ms
+[00:25:39.740] Server  LOG      ✓ Compiled in 35ms
+[00:25:43.026] Server  LOG      ✓ Compiled in 65ms
+[00:25:46.100] Server  LOG      ✓ Compiled in 32ms
+[00:25:48.595] Server  LOG      ✓ Compiled in 67ms
+[00:25:56.492] Server  LOG      ✓ Compiled in 65ms
+[00:25:59.385] Server  LOG      ✓ Compiled in 73ms
+[00:26:20.552] Server  LOG      ✓ Compiled in 64ms
+[00:26:35.944] Server  LOG      ✓ Compiled in 61ms
+[00:44:57.542] Server  LOG      ✓ Compiled in 119ms
+[00:45:00.227] Server  LOG      ✓ Compiled in 43ms
+[00:45:03.529] Server  LOG      ✓ Compiled in 52ms
+[00:45:06.901] Server  LOG      ✓ Compiled in 73ms
+[00:45:10.148] Server  LOG      ✓ Compiled in 69ms
+[00:45:13.017] Server  LOG      ✓ Compiled in 76ms
+[00:45:21.711] Server  LOG      ✓ Compiled in 66ms
+[00:45:24.534] Server  LOG      ✓ Compiled in 65ms
+[00:45:28.360] Server  LOG      ✓ Compiled in 119ms
+[00:45:30.881] Server  LOG      ✓ Compiled in 118ms
+[00:45:46.033] Server  LOG      ✓ Compiled in 90ms
+[00:45:48.553] Server  LOG      ✓ Compiled in 207ms
+[00:45:56.715] Server  LOG      ✓ Compiled in 59ms
+[00:46:00.009] Server  LOG      ✓ Compiled in 68ms
+[00:46:00.194] Server  LOG      ✓ Compiled in 65ms
+[00:46:03.015] Server  LOG      ✓ Compiled in 61ms
+[00:46:05.427] Server  LOG      ✓ Compiled in 72ms
+[00:46:07.849] Server  LOG      ✓ Compiled in 71ms
+[00:46:11.164] Server  LOG      ✓ Compiled in 61ms
+[00:46:14.197] Server  LOG      ✓ Compiled in 218ms
+[00:46:15.880] Server  LOG      ✓ Compiled in 66ms
+[00:46:17.390] Server  LOG      ✓ Compiled in 62ms
+[00:46:20.637] Server  LOG      ✓ Compiled in 64ms
+[00:46:24.431] Server  LOG      ✓ Compiled in 70ms
+[00:46:27.696] Server  LOG      ✓ Compiled in 54ms
+[00:46:31.379] Server  LOG      ✓ Compiled in 0ms
+[00:46:31.427] Server  LOG      ✓ Compiled in 32ms
+[00:46:32.577] Server  LOG      ✓ Compiled in 31ms
+[00:46:34.428] Server  LOG      ✓ Compiled in 34ms
+[00:46:35.355] Server  LOG      ✓ Compiled in 35ms
+[00:46:42.966] Server  LOG      ✓ Compiled in 36ms
+[00:46:43.870] Server  LOG      ✓ Compiled in 39ms
+[00:46:47.165] Server  LOG      ✓ Compiled in 43ms
+[00:46:51.300] Server  LOG      ✓ Compiled in 60ms
+[00:46:51.416] Server  LOG      ✓ Compiled in 44ms
+[00:46:53.649] Server  LOG      ✓ Compiled in 64ms
+[00:46:54.120] Server  LOG      ✓ Compiled in 39ms
+[00:47:05.862] Server  LOG      ✓ Compiled in 39ms
+[00:47:08.695] Server  LOG      ✓ Compiled in 40ms
+[00:47:11.615] Server  LOG      ✓ Compiled in 34ms
+[00:47:13.864] Server  LOG      ✓ Compiled in 35ms
+[00:47:16.217] Server  LOG      ✓ Compiled in 39ms
+[00:47:18.824] Server  LOG      ✓ Compiled in 49ms
+[00:47:31.087] Server  LOG      ✓ Compiled in 41ms
+[00:47:33.321] Server  LOG      ✓ Compiled in 34ms
+[00:47:36.526] Server  LOG      ✓ Compiled in 32ms
+[00:47:38.709] Server  LOG      ✓ Compiled in 49ms
+[00:49:18.907] Server  LOG      ✓ Compiled in 45ms
+[00:49:21.731] Server  LOG      ✓ Compiled in 40ms
+[00:49:24.122] Server  LOG      ✓ Compiled in 53ms
+[00:49:26.928] Server  LOG      ✓ Compiled in 63ms
+[00:49:29.242] Server  LOG      ✓ Compiled in 41ms
+[00:49:31.646] Server  LOG      ✓ Compiled in 56ms
+[00:49:40.174] Server  LOG      ✓ Compiled in 44ms
+[00:49:43.029] Server  LOG      ✓ Compiled in 66ms
+[00:49:46.283] Server  LOG      ✓ Compiled in 40ms
+[00:49:49.105] Server  LOG      ✓ Compiled in 39ms
+[00:49:51.957] Server  LOG      ✓ Compiled in 51ms
+[00:49:54.829] Server  LOG      ✓ Compiled in 44ms
+[00:50:01.955] Server  LOG      ✓ Compiled in 59ms
+[00:50:04.291] Server  LOG      ✓ Compiled in 48ms
+[00:50:06.166] Server  LOG      ✓ Compiled in 44ms
+[00:50:08.591] Server  LOG      ✓ Compiled in 63ms
+[00:50:12.337] Server  LOG      ✓ Compiled in 57ms
+[00:50:13.357] Server  LOG      ✓ Compiled in 49ms
+[00:50:37.882] Server  LOG      ✓ Compiled in 181ms
+[00:50:42.031] Server  LOG      ✓ Compiled in 87ms
+[00:50:52.709] Server  LOG      ✓ Compiled in 117ms
+[00:50:59.857] Server  LOG      ✓ Compiled in 150ms
+[00:52:23.054] Server  LOG      ✓ Compiled in 296ms
+[00:52:30.796] Server  LOG      ✓ Compiled in 40ms
+[00:52:32.825] Server  LOG      ✓ Compiled in 158ms
+[00:52:34.459] Server  LOG      ✓ Compiled in 45ms
+[00:54:25.310] Server  LOG      ✓ Compiled in 667ms
+[00:56:07.012] Server  LOG      ✓ Compiled in 296ms
+[00:56:09.502] Server  LOG      ✓ Compiled in 458ms
+[00:56:11.743] Server  LOG      ✓ Compiled in 126ms
+[00:56:19.284] Server  LOG      ✓ Compiled in 103ms
+[00:56:21.692] Server  LOG      ✓ Compiled in 207ms
+[00:56:24.210] Server  LOG      ✓ Compiled in 104ms
+[04:11:52.387] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:11:52.700] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[04:11:52.813] Browser WARN    Image with src "/images/marrakech/marrakech1.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:01:26.292] Server  LOG      ✓ Compiled in 155ms
-[00:01:26.527] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:26.693] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:29.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:30.065] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:31.774] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:31.926] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:34.012] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:34.167] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:37.668] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:37.838] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:02:03.125] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:03.281] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:02:06.390] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:06.558] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:03:39.948] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:03:41.238] Server  LOG      ✓ Compiled in 112ms
-[00:04:14.100] Server  LOG      ✓ Compiled in 64ms
-[00:04:41.074] Server  LOG      ✓ Compiled in 53ms
-[00:05:13.013] Server  LOG      ✓ Compiled in 54ms
-[00:08:10.194] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:10.360] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:08:12.825] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:12.984] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:09:02.674] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:11:40.158] Server  LOG      ✓ Compiled in 34ms
-[00:15:04.920] Server  LOG      ✓ Compiled in 90ms
-[00:16:51.075] Server  LOG      ✓ Compiled in 45ms
-[00:17:10.098] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:12.255] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:17:12.255] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:20:45.117] Server  LOG      ✓ Compiled in 67ms
-[00:21:21.944] Server  LOG      ✓ Compiled in 56ms
-[00:24:29.496] Server  LOG      ✓ Compiled in 34ms
-[00:25:15.254] Server  LOG      ✓ Compiled in 34ms
-[00:27:02.575] Server  LOG      ✓ Compiled in 114ms
-[00:32:33.027] Server  LOG      ✓ Compiled in 64ms
-[00:33:07.306] Server  LOG      ✓ Compiled in 34ms
-[01:06:48.651] Server  LOG      ✓ Compiled in 62ms
-[01:08:27.232] Server  LOG      ✓ Compiled in 70ms
-[01:08:29.237] Server  LOG      ✓ Compiled in 63ms
-[01:09:28.158] Server  LOG      ✓ Compiled in 38ms
-[01:09:30.172] Server  LOG      ✓ Compiled in 39ms
-[01:09:57.074] Server  LOG      ✓ Compiled in 85ms
-[01:10:31.768] Server  LOG      ✓ Compiled in 94ms
-[01:10:33.782] Server  LOG      ✓ Compiled in 96ms
-[01:14:44.908] Server  LOG      ✓ Compiled in 57ms

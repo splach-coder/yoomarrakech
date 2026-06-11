@@ -2,7 +2,7 @@
 
 import React, { use } from 'react';
 import { notFound } from 'next/navigation';
-import { siteData } from '@/data/siteData';
+import { getSiteData } from '@/data/siteData';
 import { ServiceDetailContent } from '@/components/ServiceDetailContent';
 
 interface PageProps {
@@ -15,13 +15,13 @@ interface PageProps {
 export default function TransportDetailPage({ params }: PageProps) {
     const { id, locale } = use(params);
 
-    const item = siteData.transport.find(t => t.id === id);
+    const item = getSiteData(locale).transport.find(t => t.id === id);
 
     if (!item) {
         return notFound();
     }
 
-    const description = `Enjoy a comfortable and safe journey with our ${item.name}. Our professional drivers ensure punctuality and comfort for all your travel needs in and around Marrakech.`;
+    const description = item.description;
 
     return (
         <ServiceDetailContent
@@ -34,8 +34,8 @@ export default function TransportDetailPage({ params }: PageProps) {
             price={item.price || 0}
             duration="Flexible"
             location="Marrakech"
-            included={['Professional Driver', 'A/C Vehicle', 'Fuel', 'Insurance']}
-            excluded={['Tips', 'Extra Stops']}
+            included={item.included}
+            excluded={item.excluded}
             subItems={[]}
             gallery={[]}
         />

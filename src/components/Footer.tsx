@@ -37,10 +37,10 @@ export default function Footer() {
                     <div className="md:col-span-3">
                         <h4 className="text-white/80 font-medium mb-6 text-sm">{t('quickLinks')}</h4>
                         <ul className="space-y-4 font-light">
-                            <li><Link href={`/${locale}`} className="hover:text-white text-white/70 transition-colors">Home</Link></li>
+                            <li><Link href={`/${locale}`} className="hover:text-white text-white/70 transition-colors">{t('home')}</Link></li>
                             <li><Link href={`/${locale}/about`} className="hover:text-white text-white/70 transition-colors">{t('about')}</Link></li>
-                            <li><Link href={`/${locale}/gallery`} className="hover:text-white text-white/70 transition-colors">Gallery</Link></li>
-                            <li><Link href={`/${locale}/services`} className="hover:text-white text-white/70 transition-colors">Travel Services</Link></li>
+                            <li><Link href={`/${locale}/gallery`} className="hover:text-white text-white/70 transition-colors">{t('gallery')}</Link></li>
+                            <li><Link href={`/${locale}/services`} className="hover:text-white text-white/70 transition-colors">{t('travelServices')}</Link></li>
                             <li><Link href={`/${locale}/contact`} className="hover:text-white text-white/70 transition-colors">{t('contact')}</Link></li>
                         </ul>
                     </div>
@@ -63,7 +63,7 @@ export default function Footer() {
                         </p>
                         <span className="hidden md:block mx-2">|</span>
                         <p>
-                            Crafted by <Link href="https://wereact.agency" target="_blank" className="text-white/80 hover:text-primary transition-colors font-medium">WeReact Agency</Link>
+                            {t('craftedBy')} <Link href="https://wereact.agency" target="_blank" className="text-white/80 hover:text-primary transition-colors font-medium">WeReact Agency</Link>
                         </p>
                     </div>
 

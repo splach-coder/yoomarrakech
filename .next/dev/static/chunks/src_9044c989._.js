@@ -2,12 +2,18 @@
 "[project]/src/data/siteData.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/**
+ * Returns the locale-specific dataset. siteData (en) and siteDataFr must keep
+ * the same shape and ids — only text differs.
+ */ __turbopack_context__.s([
+    "getSiteData",
+    ()=>getSiteData,
     "siteData",
     ()=>siteData,
     "siteDataFr",
     ()=>siteDataFr
 ]);
+const getSiteData = (locale)=>locale === 'fr' ? siteDataFr : siteData;
 const siteData = {
     currency: "EUR",
     location: "Marrakech",
@@ -15,6 +21,17 @@ const siteData = {
         {
             id: "marrakech-full-day",
             name: "1 Day Visit to Marrakech City",
+            desc: "Discover the best of Marrakech in one day with a licensed local guide: the Koutoubia Mosque, the Bahia Palace, the Saadian Tombs, the vibrant souks of the Medina and the legendary Jemaa el-Fna square as it comes alive at sunset.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Licensed local guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Monument entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             image: "/images/marrakech/marrakech1.jpg",
             gallery: [
@@ -37,6 +54,17 @@ const siteData = {
         {
             id: "marrakech-half-day",
             name: "Half Day Visit to Marrakech City",
+            desc: "Short on time? This half-day tour covers the essentials of the Red City: the Koutoubia Mosque, the Bahia Palace, the historic Medina alleys and the colourful souks, finishing at Jemaa el-Fna square.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Licensed local guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Monument entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "half_day",
             image: "/images/marrakech/marrakech6.jpg",
             gallery: [
@@ -58,6 +86,17 @@ const siteData = {
         {
             id: "ourika-day-trip",
             name: "1 Day Trip to Ourika",
+            desc: "Escape the city heat to the Ourika Valley in the foothills of the Atlas Mountains. Walk to the Setti Fatma waterfalls, visit a traditional Berber house and enjoy lunch by the river surrounded by terraced gardens.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Local mountain guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Mule or camel rides",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
@@ -78,6 +117,17 @@ const siteData = {
         {
             id: "essaouira-day-trip",
             name: "1 Day Trip to Essaouira",
+            desc: "Head to the Atlantic coast and the laid-back port town of Essaouira. Stroll the UNESCO-listed medina and its ramparts, watch the fishing boats come in and stop at a women's argan oil cooperative on the way.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Free time in the medina"
+            ],
+            excluded: [
+                "Lunch",
+                "Guided city tour",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 7,
             image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
@@ -91,6 +141,17 @@ const siteData = {
         {
             id: "ouzoud-day-trip",
             name: "1 Day Trip to Ouzoud",
+            desc: "Visit the spectacular Ouzoud Waterfalls, the highest in North Africa, tumbling 110 metres into a lush canyon. Spot wild Barbary macaques, take an optional boat ride at the base of the falls and lunch with a panoramic view.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Local guide at the falls"
+            ],
+            excluded: [
+                "Lunch",
+                "Boat ride",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouzoud/danai-tsoutreli-tqLc6On9KIA-unsplash.jpg",
@@ -104,6 +165,17 @@ const siteData = {
         {
             id: "imlil-day-trip",
             name: "1 Day Trip to Imlil",
+            desc: "Travel into the High Atlas to the mountain village of Imlil, at the foot of Mount Toubkal. Hike scenic mule trails between Berber hamlets, share mint tea with a local family and breathe the fresh mountain air.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Local mountain guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Mule hire",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/hero-marrakech.jpg",
@@ -124,6 +196,16 @@ const siteData = {
         {
             id: "fes-day-trip",
             name: "1 Day Trip to Fes",
+            desc: "Discover Fes, Morocco's spiritual capital and home to the world's oldest university. Explore the maze-like Fes el-Bali medina, the famous tanneries, ornate medersas and artisan quarters on this full-day trip.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Local guide in Fes",
+                "Monument entrance fees"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/fes/ben-ostrower-bjNv5Bg6h4U-unsplash.jpg",
@@ -137,6 +219,16 @@ const siteData = {
         {
             id: "casablanca-day-trip",
             name: "1 Day Trip to Casablanca",
+            desc: "Explore Morocco's economic capital: the breathtaking Hassan II Mosque on the ocean, the Art Deco city centre, Mohammed V Square and the seaside Corniche, with free time for shopping and cafés.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Mosque entrance fee",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/casablanca/eka-maitri-viryani-qL3_NSPo9o8-unsplash.jpg",
@@ -150,6 +242,16 @@ const siteData = {
         {
             id: "ouarzazate-day-trip",
             name: "1 Day Trip to Ouarzazate",
+            desc: "Cross the dramatic Tizi n'Tichka pass to Ouarzazate, the gateway to the Sahara. Visit the UNESCO-listed kasbah of Aït Ben Haddou, famous from countless films, and the Taourirt Kasbah in the 'Hollywood of Morocco'.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouarzazate/abdou-faiz-lA-P8-vagrI-unsplash.jpg",
@@ -163,6 +265,16 @@ const siteData = {
         {
             id: "rabat-day-trip",
             name: "1 Day Trip to Rabat",
+            desc: "Spend a day in Morocco's elegant capital. Visit the Hassan Tower, the Mausoleum of Mohammed V, the picturesque blue-and-white Kasbah of the Udayas and the ancient Chellah necropolis.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/rabat/framopia-EZqHkkyc0wg-unsplash.jpg",
@@ -192,6 +304,17 @@ const siteData = {
                 id: "quad-agafay",
                 type: "quad",
                 location: "Agafay",
+                desc: "Ride a quad bike across the lunar landscapes of the Agafay stone desert, through dry hills and Berber villages, with a tea break and panoramic Atlas views.",
+                included: [
+                    "Professional guide",
+                    "Helmet & safety equipment",
+                    "Tea break"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 50,
                 duration: "2_hours",
                 image: "/images/quad-biking/haris-khan-v40H7tLOZII-unsplash.jpg",
@@ -205,6 +328,17 @@ const siteData = {
                 id: "quad-palmeraie",
                 type: "quad",
                 location: "Palmeraie",
+                desc: "An adrenaline ride through the Palmeraie's palm groves and dusty trails on the edge of Marrakech — perfect for a quick adventure fix.",
+                included: [
+                    "Professional guide",
+                    "Helmet & safety equipment",
+                    "Tea break"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 30,
                 duration: "2_hours",
                 image: "/images/quad-biking/adrien-delforge-VH2HRylVsiM-unsplash.jpg",
@@ -217,6 +351,17 @@ const siteData = {
                 id: "camel-agafay",
                 type: "camel",
                 location: "Agafay",
+                desc: "A peaceful camel ride through the rocky Agafay desert at sunset, dressed in traditional Tuareg style, with mint tea in a desert camp.",
+                included: [
+                    "Camel guide",
+                    "Traditional dress & mint tea",
+                    "Photo stops"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 25,
                 duration: "1_hour",
                 image: "/images/camel-riding/oussama-rahib-f7F8URbIx08-unsplash.jpg",
@@ -230,6 +375,17 @@ const siteData = {
                 id: "camel-palmeraie",
                 type: "camel",
                 location: "Palmeraie",
+                desc: "Sway through Marrakech's famous palm grove on a friendly dromedary — a classic, family-friendly Moroccan experience.",
+                included: [
+                    "Camel guide",
+                    "Traditional dress & mint tea",
+                    "Photo stops"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 15,
                 duration: "1_hour",
                 image: "/images/camel-riding/dan-calderwood-7CPopIsaCkc-unsplash.jpg",
@@ -242,6 +398,16 @@ const siteData = {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
+                desc: "Learn the secrets of Moroccan cuisine with a local chef: shop for spices in the souk, then cook (and eat) your own tagine, couscous and Moroccan salads.",
+                included: [
+                    "Local chef",
+                    "All ingredients",
+                    "Lunch — your own creations"
+                ],
+                excluded: [
+                    "Drinks",
+                    "Tips"
+                ],
                 price: 60,
                 duration: "4_hours",
                 image: "/images/cooking-class/aziz-acharki-UBEcFUvkrcc-unsplash.jpg",
@@ -251,6 +417,15 @@ const siteData = {
                 id: "food-tour",
                 type: "food",
                 location: "Marrakech",
+                desc: "Taste your way through the Medina: street-food stalls, hidden bakeries, olive and spice stands, and the smoky grills of Jemaa el-Fna.",
+                included: [
+                    "Local foodie guide",
+                    "All tastings"
+                ],
+                excluded: [
+                    "Extra drinks",
+                    "Tips"
+                ],
                 price: 45,
                 duration: "3_hours",
                 image: "/images/food-tour/annie-spratt-_V4v7BbG338-unsplash.jpg",
@@ -273,6 +448,16 @@ const siteData = {
             name: "Private Transport",
             image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Comfortable private vehicle with professional driver",
+            included: [
+                "Professional driver",
+                "Air-conditioned vehicle",
+                "Fuel",
+                "Insurance"
+            ],
+            excluded: [
+                "Tips",
+                "Extra stops"
+            ],
             price: 50
         },
         {
@@ -280,6 +465,16 @@ const siteData = {
             name: "Airport Transport",
             image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Reliable airport transfers, meet & greet service",
+            included: [
+                "Professional driver",
+                "Air-conditioned vehicle",
+                "Meet & greet",
+                "Flight tracking"
+            ],
+            excluded: [
+                "Tips",
+                "Extra stops"
+            ],
             price: 30
         },
         {
@@ -287,6 +482,16 @@ const siteData = {
             name: "On-demand Transport",
             image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Flexible transportation for your custom itinerary",
+            included: [
+                "Professional driver",
+                "Air-conditioned vehicle",
+                "Fuel",
+                "Insurance"
+            ],
+            excluded: [
+                "Tips",
+                "Waiting time beyond schedule"
+            ],
             price: 20
         }
     ],
@@ -295,6 +500,7 @@ const siteData = {
             id: "agafay-full-experience",
             name: "Quad + Camel + Dinner",
             location: "Agafay",
+            desc: "The complete Agafay evening: a quad ride through the stone desert, a sunset camel trek, then a traditional dinner under the stars in a desert camp.",
             included: [
                 "quad",
                 "camel",
@@ -311,6 +517,7 @@ const siteData = {
             id: "palmeraie-adventure",
             name: "Camel + Quad",
             location: "Palmeraie",
+            desc: "Combine a camel ride and a quad session in the Palmeraie for a half-day of contrasts — serenity first, adrenaline after.",
             included: [
                 "camel",
                 "quad"
@@ -325,6 +532,7 @@ const siteData = {
             id: "desert-experience",
             name: "Desert Full Experience",
             location: "Merzouga",
+            desc: "An overnight Sahara escape to Merzouga: a camel trek over the Erg Chebbi dunes, sunset and sunrise in the sand, dinner, drums and a night in a desert camp.",
             included: [
                 "camel",
                 "dinner",
@@ -393,6 +601,17 @@ const siteDataFr = {
         {
             id: "marrakech-full-day",
             name: "Visite d'une journée de la ville de Marrakech",
+            desc: "Découvrez le meilleur de Marrakech en une journée avec un guide local agréé : la mosquée Koutoubia, le palais de la Bahia, les tombeaux saadiens, les souks animés de la médina et la légendaire place Jemaa el-Fna au coucher du soleil.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide local agréé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées des monuments",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             image: "/images/marrakech/marrakech1.jpg",
             gallery: [
@@ -415,6 +634,17 @@ const siteDataFr = {
         {
             id: "marrakech-half-day",
             name: "Visite d'une demi-journée de la ville de Marrakech",
+            desc: "Peu de temps ? Cette visite d'une demi-journée couvre l'essentiel de la ville rouge : la mosquée Koutoubia, le palais de la Bahia, les ruelles historiques de la médina et les souks colorés, pour finir sur la place Jemaa el-Fna.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide local agréé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées des monuments",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "half_day",
             image: "/images/marrakech/marrakech6.jpg",
             gallery: [
@@ -436,6 +666,17 @@ const siteDataFr = {
         {
             id: "ourika-day-trip",
             name: "Excursion d'une journée à la vallée de l'Ourika",
+            desc: "Échappez à la chaleur de la ville vers la vallée de l'Ourika, au pied de l'Atlas. Marchez jusqu'aux cascades de Setti Fatma, visitez une maison berbère traditionnelle et déjeunez au bord de la rivière, entouré de jardins en terrasses.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide de montagne local"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Balade à dos de mule ou de dromadaire",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
@@ -456,8 +697,19 @@ const siteDataFr = {
         {
             id: "essaouira-day-trip",
             name: "Excursion d'une journée à Essaouira",
+            desc: "Cap sur la côte atlantique et la paisible ville portuaire d'Essaouira. Flânez dans la médina classée à l'UNESCO et ses remparts, observez le retour des bateaux de pêche et visitez une coopérative féminine d'huile d'argan en chemin.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Temps libre dans la médina"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Visite guidée de la ville",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
-            maxPeople: 8,
+            maxPeople: 7,
             image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
             gallery: [],
             pricing: [
@@ -469,6 +721,17 @@ const siteDataFr = {
         {
             id: "ouzoud-day-trip",
             name: "Excursion d'une journée aux cascades d'Ouzoud",
+            desc: "Visitez les spectaculaires cascades d'Ouzoud, les plus hautes d'Afrique du Nord, qui plongent de 110 mètres dans un canyon verdoyant. Observez les macaques de Barbarie, embarquez pour un tour en barque en option et déjeunez avec vue panoramique.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide local aux cascades"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Tour en barque",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouzoud/danai-tsoutreli-tqLc6On9KIA-unsplash.jpg",
@@ -482,6 +745,17 @@ const siteDataFr = {
         {
             id: "imlil-day-trip",
             name: "Excursion d'une journée à Imlil",
+            desc: "Partez dans le Haut Atlas jusqu'au village de montagne d'Imlil, au pied du mont Toubkal. Randonnez sur des sentiers muletiers entre les hameaux berbères, partagez un thé à la menthe chez l'habitant et respirez l'air pur de la montagne.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide de montagne local"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Location de mule",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/hero-marrakech.jpg",
@@ -502,6 +776,16 @@ const siteDataFr = {
         {
             id: "fes-day-trip",
             name: "Excursion d'une journée à Fès",
+            desc: "Découvrez Fès, capitale spirituelle du Maroc et siège de la plus ancienne université au monde. Explorez la médina labyrinthique de Fès el-Bali, les célèbres tanneries, les médersas ornées et les quartiers d'artisans.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Guide local à Fès",
+                "Entrées des monuments"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/fes/ben-ostrower-bjNv5Bg6h4U-unsplash.jpg",
@@ -515,6 +799,16 @@ const siteDataFr = {
         {
             id: "casablanca-day-trip",
             name: "Excursion d'une journée à Casablanca",
+            desc: "Explorez la capitale économique du Maroc : l'impressionnante mosquée Hassan II face à l'océan, le centre-ville Art déco, la place Mohammed V et la Corniche, avec du temps libre pour le shopping et les cafés.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrée de la mosquée",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/casablanca/eka-maitri-viryani-qL3_NSPo9o8-unsplash.jpg",
@@ -528,6 +822,16 @@ const siteDataFr = {
         {
             id: "ouarzazate-day-trip",
             name: "Excursion d'une journée à Ouarzazate",
+            desc: "Franchissez le spectaculaire col du Tizi n'Tichka jusqu'à Ouarzazate, porte du Sahara. Visitez la kasbah d'Aït Ben Haddou, classée à l'UNESCO et célèbre pour ses décors de films, ainsi que la kasbah de Taourirt dans le « Hollywood marocain ».",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouarzazate/abdou-faiz-lA-P8-vagrI-unsplash.jpg",
@@ -541,6 +845,16 @@ const siteDataFr = {
         {
             id: "rabat-day-trip",
             name: "Excursion d'une journée à Rabat",
+            desc: "Passez une journée dans l'élégante capitale du Maroc. Visitez la tour Hassan, le mausolée Mohammed V, la pittoresque kasbah des Oudayas en bleu et blanc et l'ancienne nécropole du Chellah.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/rabat/framopia-EZqHkkyc0wg-unsplash.jpg",
@@ -570,6 +884,17 @@ const siteDataFr = {
                 id: "quad-agafay",
                 type: "quad",
                 location: "Agafay",
+                desc: "Pilotez un quad à travers les paysages lunaires du désert de pierre d'Agafay, entre collines arides et villages berbères, avec pause thé et vue panoramique sur l'Atlas.",
+                included: [
+                    "Guide professionnel",
+                    "Casque & équipement de sécurité",
+                    "Pause thé"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 50,
                 duration: "2_hours",
                 image: "/images/quad-biking/haris-khan-v40H7tLOZII-unsplash.jpg",
@@ -583,6 +908,17 @@ const siteDataFr = {
                 id: "quad-palmeraie",
                 type: "quad",
                 location: "Palmeraie",
+                desc: "Une virée pleine d'adrénaline dans la palmeraie de Marrakech et ses pistes poussiéreuses — parfait pour une dose d'aventure express.",
+                included: [
+                    "Guide professionnel",
+                    "Casque & équipement de sécurité",
+                    "Pause thé"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 30,
                 duration: "2_hours",
                 image: "/images/quad-biking/adrien-delforge-VH2HRylVsiM-unsplash.jpg",
@@ -595,6 +931,17 @@ const siteDataFr = {
                 id: "camel-agafay",
                 type: "camel",
                 location: "Agafay",
+                desc: "Une balade paisible à dos de dromadaire dans le désert rocailleux d'Agafay au coucher du soleil, en tenue touareg traditionnelle, avec thé à la menthe dans un campement.",
+                included: [
+                    "Chamelier",
+                    "Tenue traditionnelle & thé à la menthe",
+                    "Pauses photo"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 25,
                 duration: "1_hour",
                 image: "/images/camel-riding/oussama-rahib-f7F8URbIx08-unsplash.jpg",
@@ -608,6 +955,17 @@ const siteDataFr = {
                 id: "camel-palmeraie",
                 type: "camel",
                 location: "Palmeraie",
+                desc: "Laissez-vous porter à travers la célèbre palmeraie de Marrakech à dos de dromadaire — une expérience marocaine classique et familiale.",
+                included: [
+                    "Chamelier",
+                    "Tenue traditionnelle & thé à la menthe",
+                    "Pauses photo"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 15,
                 duration: "1_hour",
                 image: "/images/camel-riding/dan-calderwood-7CPopIsaCkc-unsplash.jpg",
@@ -620,6 +978,16 @@ const siteDataFr = {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
+                desc: "Apprenez les secrets de la cuisine marocaine avec un chef local : achat d'épices au souk, puis préparation (et dégustation) de votre tajine, couscous et salades marocaines.",
+                included: [
+                    "Chef local",
+                    "Tous les ingrédients",
+                    "Déjeuner — vos propres créations"
+                ],
+                excluded: [
+                    "Boissons",
+                    "Pourboires"
+                ],
                 price: 60,
                 duration: "4_hours",
                 image: "/images/cooking-class/aziz-acharki-UBEcFUvkrcc-unsplash.jpg",
@@ -629,6 +997,15 @@ const siteDataFr = {
                 id: "food-tour",
                 type: "food",
                 location: "Marrakech",
+                desc: "Régalez-vous à travers la médina : stands de street-food, boulangeries cachées, étals d'olives et d'épices, et les grillades fumantes de Jemaa el-Fna.",
+                included: [
+                    "Guide gastronomique local",
+                    "Toutes les dégustations"
+                ],
+                excluded: [
+                    "Boissons supplémentaires",
+                    "Pourboires"
+                ],
                 price: 45,
                 duration: "3_hours",
                 image: "/images/food-tour/annie-spratt-_V4v7BbG338-unsplash.jpg",
@@ -651,6 +1028,16 @@ const siteDataFr = {
             name: "Transport privé",
             image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Véhicule privé confortable avec chauffeur professionnel",
+            included: [
+                "Chauffeur professionnel",
+                "Véhicule climatisé",
+                "Carburant",
+                "Assurance"
+            ],
+            excluded: [
+                "Pourboires",
+                "Arrêts supplémentaires"
+            ],
             price: 50
         },
         {
@@ -658,6 +1045,16 @@ const siteDataFr = {
             name: "Transfert aéroport",
             image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Transferts aéroport fiables, service d'accueil",
+            included: [
+                "Chauffeur professionnel",
+                "Véhicule climatisé",
+                "Accueil personnalisé",
+                "Suivi des vols"
+            ],
+            excluded: [
+                "Pourboires",
+                "Arrêts supplémentaires"
+            ],
             price: 30
         },
         {
@@ -665,6 +1062,16 @@ const siteDataFr = {
             name: "Transport sur demande",
             image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Transport flexible pour votre itinéraire personnalisé",
+            included: [
+                "Chauffeur professionnel",
+                "Véhicule climatisé",
+                "Carburant",
+                "Assurance"
+            ],
+            excluded: [
+                "Pourboires",
+                "Temps d'attente hors planning"
+            ],
             price: 20
         }
     ],
@@ -673,6 +1080,7 @@ const siteDataFr = {
             id: "agafay-full-experience",
             name: "Quad + Dromadaire + Dîner",
             location: "Agafay",
+            desc: "La soirée complète à Agafay : sortie en quad dans le désert de pierre, balade à dos de dromadaire au coucher du soleil, puis dîner traditionnel sous les étoiles dans un campement.",
             included: [
                 "quad",
                 "camel",
@@ -689,6 +1097,7 @@ const siteDataFr = {
             id: "palmeraie-adventure",
             name: "Dromadaire + Quad",
             location: "Palmeraie",
+            desc: "Combinez balade à dos de dromadaire et session de quad dans la Palmeraie pour une demi-journée de contrastes — sérénité d'abord, adrénaline ensuite.",
             included: [
                 "camel",
                 "quad"
@@ -703,6 +1112,7 @@ const siteDataFr = {
             id: "desert-experience",
             name: "Expérience Complète du Désert",
             location: "Merzouga",
+            desc: "Une escapade saharienne d'une nuit à Merzouga : trek à dos de dromadaire sur les dunes de l'Erg Chebbi, coucher et lever du soleil dans le sable, dîner, tambours et nuit en campement.",
             included: [
                 "camel",
                 "dinner",
@@ -1332,7 +1742,7 @@ const ServiceModal = ({ item, category, locale, onClose, label })=>{
                                                         className: "relative flex-shrink-0 w-24 h-20 rounded-xl overflow-hidden border border-white/10",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             src: img,
-                                                            alt: "",
+                                                            alt: `${title} — photo ${i + 1}`,
                                                             fill: true,
                                                             className: "object-cover hover:scale-110 transition-transform duration-500"
                                                         }, void 0, false, {
@@ -1545,9 +1955,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$tree$2d$palm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palmtree$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/tree-palm.js [app-client] (ecmascript) <export default as Palmtree>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$car$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Car$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/car.js [app-client] (ecmascript) <export default as Car>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
+;
 ;
 ;
 ;
@@ -1561,23 +1973,21 @@ const categories = [
         label: 'Cultural Tours',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Map$3e$__["Map"],
         route: 'tours',
-        data: ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["siteData"].tours
+        data: (sd)=>sd.tours
     },
     {
         id: 'activities',
         label: 'Adventures',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$compass$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Compass$3e$__["Compass"],
         route: 'activities',
-        data: ()=>{
-            const experiences = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["siteData"].activities.experiences || [];
+        data: (sd)=>{
+            const experiences = sd.activities.experiences || [];
             const grouped = experiences.reduce((acc, curr)=>{
                 const type = curr.type;
                 if (!acc[type]) {
                     acc[type] = {
                         ...curr,
-                        id: curr.type,
-                        name: `${curr.type} Adventures`,
-                        desc: `Experience our exclusive ${curr.type} activities.`
+                        id: curr.type
                     };
                 }
                 if (curr.price < acc[type].price) {
@@ -1593,14 +2003,14 @@ const categories = [
         label: 'Curated Packs',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$tree$2d$palm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palmtree$3e$__["Palmtree"],
         route: 'packages',
-        data: ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["siteData"].packages
+        data: (sd)=>sd.packages
     },
     {
         id: 'transport',
         label: 'Transport',
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$car$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Car$3e$__["Car"],
         route: 'transport',
-        data: ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["siteData"].transport
+        data: (sd)=>sd.transport
     }
 ];
 const ServicesListing = ({ locale })=>{
@@ -1633,20 +2043,29 @@ const ServicesListing = ({ locale })=>{
                 className: "relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-cover bg-center",
-                        style: {
-                            backgroundImage: 'url(/images/hero-marrakech.jpg)'
-                        }
+                        className: "absolute inset-0",
+                        "aria-hidden": "true",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: "/images/hero-marrakech.jpg",
+                            alt: "",
+                            fill: true,
+                            sizes: "100vw",
+                            className: "object-cover"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ServicesListing.tsx",
+                            lineNumber: 95,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServicesListing.tsx",
-                        lineNumber: 93,
+                        lineNumber: 94,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-black/50"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServicesListing.tsx",
-                        lineNumber: 97,
+                        lineNumber: 103,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1669,7 +2088,7 @@ const ServicesListing = ({ locale })=>{
                                     children: t('tag')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 110,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1682,13 +2101,13 @@ const ServicesListing = ({ locale })=>{
                                             children: t('titlePart2')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                            lineNumber: 108,
+                                            lineNumber: 114,
                                             columnNumber: 47
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 113,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1696,30 +2115,30 @@ const ServicesListing = ({ locale })=>{
                                     children: t('subtitle')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 116,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ServicesListing.tsx",
-                            lineNumber: 99,
+                            lineNumber: 105,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServicesListing.tsx",
-                        lineNumber: 98,
+                        lineNumber: 104,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ServicesListing.tsx",
-                lineNumber: 92,
+                lineNumber: 93,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "container mx-auto px-4 py-16",
                 children: categories.map((category, catIdx)=>{
-                    const items = category.data();
+                    const items = category.data((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSiteData"])(locale));
                     if (!items || items.length === 0) return null;
                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-20",
@@ -1736,12 +2155,12 @@ const ServicesListing = ({ locale })=>{
                                                     className: "w-6 h-6 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 135,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 134,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1751,7 +2170,7 @@ const ServicesListing = ({ locale })=>{
                                                         children: t(category.id === 'tours' ? 'culturalTours' : category.id === 'activities' ? 'adventures' : category.id === 'packages' ? 'curatedPacks' : 'transport')
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServicesListing.tsx",
-                                                        lineNumber: 132,
+                                                        lineNumber: 138,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1765,19 +2184,19 @@ const ServicesListing = ({ locale })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ServicesListing.tsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 141,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 137,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServicesListing.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 133,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1790,19 +2209,19 @@ const ServicesListing = ({ locale })=>{
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                                lineNumber: 144,
+                                                lineNumber: 150,
                                                 columnNumber: 52
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServicesListing.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 146,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                lineNumber: 126,
+                                lineNumber: 132,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1826,14 +2245,15 @@ const ServicesListing = ({ locale })=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "md:w-2/5 relative h-48 md:h-full overflow-hidden",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110",
-                                                            style: {
-                                                                backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})`
-                                                            }
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            src: item.image || '/images/hero-marrakech.jpg',
+                                                            alt: item.name || item.type || '',
+                                                            fill: true,
+                                                            sizes: "(max-width: 768px) 100vw, 40vw",
+                                                            className: "object-cover transition-transform duration-700 group-hover:scale-110"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                            lineNumber: 161,
+                                                            lineNumber: 167,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1841,13 +2261,13 @@ const ServicesListing = ({ locale })=>{
                                                             children: t(category.id === 'tours' ? 'culturalTours' : category.id === 'activities' ? 'adventures' : category.id === 'packages' ? 'curatedPacks' : 'transport')
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                            lineNumber: 165,
+                                                            lineNumber: 174,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                    lineNumber: 160,
+                                                    lineNumber: 166,
                                                     columnNumber: 45
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1864,25 +2284,25 @@ const ServicesListing = ({ locale })=>{
                                                                                 className: "w-3 h-3 text-primary"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                lineNumber: 175,
+                                                                                lineNumber: 184,
                                                                                 columnNumber: 61
                                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: category.id === 'tours' && item.duration ? t(`duration_${item.duration}`) : category.id === 'activities' ? t('duration_2_hours') : category.id === 'packages' ? t('duration_4_hours') : t('flexible')
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                lineNumber: 176,
+                                                                                lineNumber: 185,
                                                                                 columnNumber: 61
                                                                             }, ("TURBOPACK compile-time value", void 0))
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                        lineNumber: 174,
+                                                                        lineNumber: 183,
                                                                         columnNumber: 57
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 173,
+                                                                    lineNumber: 182,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1890,21 +2310,21 @@ const ServicesListing = ({ locale })=>{
                                                                     children: item.name || item.type
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 184,
+                                                                    lineNumber: 193,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-gray-500 text-sm leading-relaxed line-clamp-2",
-                                                                    children: item.desc || `Experience the best of Morocco with our ${item.name || item.type}.`
+                                                                    children: item.desc || item.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 188,
+                                                                    lineNumber: 197,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                            lineNumber: 172,
+                                                            lineNumber: 181,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1917,7 +2337,7 @@ const ServicesListing = ({ locale })=>{
                                                                             children: category.id === 'transport' ? t('price') : t('startingFrom')
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 195,
+                                                                            lineNumber: 204,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1925,13 +2345,13 @@ const ServicesListing = ({ locale })=>{
                                                                             children: renderPrice(item, category.id)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 198,
+                                                                            lineNumber: 207,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 194,
+                                                                    lineNumber: 203,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1947,13 +2367,13 @@ const ServicesListing = ({ locale })=>{
                                                                                     className: "w-4 h-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                                    lineNumber: 206,
+                                                                                    lineNumber: 215,
                                                                                     columnNumber: 76
                                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 202,
+                                                                            lineNumber: 211,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1962,56 +2382,56 @@ const ServicesListing = ({ locale })=>{
                                                                                 e.stopPropagation();
                                                                                 openModal(item, category.id, category.label);
                                                                             },
-                                                                            children: "Quick View"
+                                                                            children: t('quickView')
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                            lineNumber: 208,
+                                                                            lineNumber: 217,
                                                                             columnNumber: 57
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                                    lineNumber: 201,
+                                                                    lineNumber: 210,
                                                                     columnNumber: 53
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                                            lineNumber: 193,
+                                                            lineNumber: 202,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ServicesListing.tsx",
-                                                    lineNumber: 171,
+                                                    lineNumber: 180,
                                                     columnNumber: 45
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServicesListing.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 164,
                                             columnNumber: 41
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, item.id, false, {
                                         fileName: "[project]/src/components/ServicesListing.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 157,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ServicesListing.tsx",
-                                lineNumber: 149,
+                                lineNumber: 155,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, category.id, true, {
                         fileName: "[project]/src/components/ServicesListing.tsx",
-                        lineNumber: 124,
+                        lineNumber: 130,
                         columnNumber: 25
                     }, ("TURBOPACK compile-time value", void 0));
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesListing.tsx",
-                lineNumber: 118,
+                lineNumber: 124,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceModal$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ServiceModal"], {
@@ -2022,13 +2442,13 @@ const ServicesListing = ({ locale })=>{
                 onClose: ()=>setModalItem(null)
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesListing.tsx",
-                lineNumber: 227,
+                lineNumber: 236,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ServicesListing.tsx",
-        lineNumber: 90,
+        lineNumber: 91,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

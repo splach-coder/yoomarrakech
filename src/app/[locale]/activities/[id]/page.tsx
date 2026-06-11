@@ -2,7 +2,8 @@
 
 import React, { use } from 'react';
 import { notFound } from 'next/navigation';
-import { siteData } from '@/data/siteData';
+import { useTranslations } from 'next-intl';
+import { getSiteData } from '@/data/siteData';
 import { ServiceDetailContent } from '@/components/ServiceDetailContent';
 
 interface PageProps {
@@ -14,9 +15,10 @@ interface PageProps {
 
 export default function ActivityDetailPage({ params }: PageProps) {
     const { id, locale } = use(params);
+    const t = useTranslations('ListingPage');
 
     // Logic to find activity or GROUP of activities
-    const experiences = siteData.activities.experiences;
+    const experiences = getSiteData(locale).activities.experiences;
 
     // 1. Check if ID matches a Type (e.g., "quad")
     const groupedItems = experiences.filter(item => item.type === id);
@@ -31,19 +33,13 @@ export default function ActivityDetailPage({ params }: PageProps) {
 
     const item = isGroup ? groupedItems[0] : specificItem;
 
-    // Prepare data
-    const title = isGroup
-        ? `${item?.type} Adventures`
-        : (item?.type || 'Activity'); // Specific items might need a name map if name is missing
-
-    // If specific item lacks name, we construct it. siteData activities don't have 'name' field in experiences array shown previously, just type/location/price.
-    // We should probably Map type to a nice name.
-
-    const displayTitle = (isGroup ? title : `${item?.type} in ${item?.location}`).toUpperCase();
+    const displayTitle = (isGroup
+        ? t('activityGroupTitle', { type: item?.type ?? '' })
+        : `${item?.type} — ${item?.location}`).toUpperCase();
 
     const description = isGroup
-        ? `Make the most of your time in Marrakech with our premium ${item?.type} experiences. Whether you prefer the morning breeze or the golden sunset light, we have the perfect adventure for you. Ride through the palm groves or the Agafay desert with professional guides.`
-        : `Enjoy a thrilling ${item?.type} experience in ${item?.location}. This activity offers a unique way to explore the landscape.`;
+        ? t('activityGroupDesc', { type: item?.type ?? '' })
+        : (item?.desc || '');
 
     const subItems = isGroup ? groupedItems.map(g => ({
         id: g.id,
@@ -74,8 +70,8 @@ export default function ActivityDetailPage({ params }: PageProps) {
             duration="2_hours"
             location={isGroup ? 'Various Locations' : item?.location}
             subItems={subItems}
-            included={['Professional Guide', 'Safety Equipment', 'Tea Break']}
-            excluded={['Tips', 'Personal Expenses']}
+            included={item?.included}
+            excluded={item?.excluded}
             gallery={galleryImages}
         />
     );

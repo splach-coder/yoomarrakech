@@ -4,6 +4,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import { Star } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -32,6 +33,8 @@ interface ReviewsSliderProps {
 }
 
 export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews }) => {
+    const t = useTranslations('Reviews');
+
     return (
         <section className="py-8 overflow-hidden bg-neutral-50/50">
             <div className="container mx-auto px-4">
@@ -39,10 +42,10 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews }) => {
                 <div className="text-center mb-16">
                     <div className="flex items-center justify-center gap-2 mb-4">
                         <GIcon className="w-8 h-8" />
-                        <span className="text-2xl font-medium text-gray-600">Reviews</span>
+                        <span className="text-2xl font-medium text-gray-600">{t('reviews')}</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold font-poppins text-neutral-dark mb-6">
-                        Traveler Stories
+                        {t('travelerStories')}
                     </h2>
                     <div className="flex items-center justify-center gap-4">
                         <div className="flex items-center gap-1">
@@ -54,7 +57,7 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews }) => {
                             </div>
                         </div>
                         <span className="text-gray-400">|</span>
-                        <span className="text-gray-500">Based on 150+ reviews</span>
+                        <span className="text-gray-500">{t('basedOn')}</span>
                     </div>
                 </div>
 
@@ -112,7 +115,7 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews }) => {
 
                                 {/* Read More Link (Decoration) */}
                                 <div className="mt-4 pt-4 border-t border-gray-50">
-                                    <span className="text-xs font-medium text-gray-400">Posted on Google</span>
+                                    <span className="text-xs font-medium text-gray-400">{t('postedOnGoogle')}</span>
                                 </div>
                             </div>
                         </SwiperSlide>

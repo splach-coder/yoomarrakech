@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const WhyTravelWithUs = ({ dict }: { dict: any }) => {
     return (
@@ -104,10 +105,15 @@ export const WhyTravelWithUs = ({ dict }: { dict: any }) => {
                         className="relative rounded-2xl p-6 shadow-lg overflow-hidden h-[200px] flex flex-col justify-between group text-white md:mt-6"
                     >
                         {/* Background Image */}
-                        <div
-                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
-                        ></div>
+                        <div className="absolute inset-0" aria-hidden="true">
+                            <Image
+                                src="/images/hero-marrakech.jpg"
+                                alt=""
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
                         <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors"></div>
 
                         <span className="relative z-10 text-4xl font-medium text-white/50 font-poppins">02</span>

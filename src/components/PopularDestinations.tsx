@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
 const getDestinations = (dict: any) => [
@@ -80,10 +81,13 @@ export const PopularDestinations = ({ locale, dict }: { locale: string, dict: an
                         >
                             {/* Image Card */}
                             <div className="relative h-[400px] rounded-3xl overflow-hidden mb-6">
-                                <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                    style={{ backgroundImage: `url(${dest.image})` }}
-                                ></div>
+                                <Image
+                                    src={dest.image}
+                                    alt={dest.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
                             </div>
 

@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
 const AnimatedCounter = ({ value, suffix = '', decimals = 0 }: { value: number, suffix?: string, decimals?: number }) => {
@@ -55,10 +56,13 @@ export const AboutPreview = ({ locale, dict }: { locale: string, dict: any }) =>
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
             >
-                <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=2070)' }}
-                ></div>
+                <Image
+                    src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?q=80&w=2070"
+                    alt="Camel caravan crossing the Moroccan desert"
+                    fill
+                    sizes="100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
 

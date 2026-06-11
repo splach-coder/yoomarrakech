@@ -259,7 +259,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
                                         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
                                             {item.gallery.map((img, i) => (
                                                 <div key={i} className="relative flex-shrink-0 w-24 h-20 rounded-xl overflow-hidden border border-white/10">
-                                                    <Image src={img} alt="" fill className="object-cover hover:scale-110 transition-transform duration-500" />
+                                                    <Image src={img} alt={`${title} — photo ${i + 1}`} fill className="object-cover hover:scale-110 transition-transform duration-500" />
                                                 </div>
                                             ))}
                                         </div>

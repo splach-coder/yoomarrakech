@@ -2,12 +2,18 @@
 "[project]/src/data/siteData.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/**
+ * Returns the locale-specific dataset. siteData (en) and siteDataFr must keep
+ * the same shape and ids — only text differs.
+ */ __turbopack_context__.s([
+    "getSiteData",
+    ()=>getSiteData,
     "siteData",
     ()=>siteData,
     "siteDataFr",
     ()=>siteDataFr
 ]);
+const getSiteData = (locale)=>locale === 'fr' ? siteDataFr : siteData;
 const siteData = {
     currency: "EUR",
     location: "Marrakech",
@@ -15,6 +21,17 @@ const siteData = {
         {
             id: "marrakech-full-day",
             name: "1 Day Visit to Marrakech City",
+            desc: "Discover the best of Marrakech in one day with a licensed local guide: the Koutoubia Mosque, the Bahia Palace, the Saadian Tombs, the vibrant souks of the Medina and the legendary Jemaa el-Fna square as it comes alive at sunset.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Licensed local guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Monument entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             image: "/images/marrakech/marrakech1.jpg",
             gallery: [
@@ -37,6 +54,17 @@ const siteData = {
         {
             id: "marrakech-half-day",
             name: "Half Day Visit to Marrakech City",
+            desc: "Short on time? This half-day tour covers the essentials of the Red City: the Koutoubia Mosque, the Bahia Palace, the historic Medina alleys and the colourful souks, finishing at Jemaa el-Fna square.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Licensed local guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Monument entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "half_day",
             image: "/images/marrakech/marrakech6.jpg",
             gallery: [
@@ -58,6 +86,17 @@ const siteData = {
         {
             id: "ourika-day-trip",
             name: "1 Day Trip to Ourika",
+            desc: "Escape the city heat to the Ourika Valley in the foothills of the Atlas Mountains. Walk to the Setti Fatma waterfalls, visit a traditional Berber house and enjoy lunch by the river surrounded by terraced gardens.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Local mountain guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Mule or camel rides",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
@@ -78,6 +117,17 @@ const siteData = {
         {
             id: "essaouira-day-trip",
             name: "1 Day Trip to Essaouira",
+            desc: "Head to the Atlantic coast and the laid-back port town of Essaouira. Stroll the UNESCO-listed medina and its ramparts, watch the fishing boats come in and stop at a women's argan oil cooperative on the way.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Free time in the medina"
+            ],
+            excluded: [
+                "Lunch",
+                "Guided city tour",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 7,
             image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
@@ -91,6 +141,17 @@ const siteData = {
         {
             id: "ouzoud-day-trip",
             name: "1 Day Trip to Ouzoud",
+            desc: "Visit the spectacular Ouzoud Waterfalls, the highest in North Africa, tumbling 110 metres into a lush canyon. Spot wild Barbary macaques, take an optional boat ride at the base of the falls and lunch with a panoramic view.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Local guide at the falls"
+            ],
+            excluded: [
+                "Lunch",
+                "Boat ride",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouzoud/danai-tsoutreli-tqLc6On9KIA-unsplash.jpg",
@@ -104,6 +165,17 @@ const siteData = {
         {
             id: "imlil-day-trip",
             name: "1 Day Trip to Imlil",
+            desc: "Travel into the High Atlas to the mountain village of Imlil, at the foot of Mount Toubkal. Hike scenic mule trails between Berber hamlets, share mint tea with a local family and breathe the fresh mountain air.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport",
+                "Local mountain guide"
+            ],
+            excluded: [
+                "Lunch",
+                "Mule hire",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/hero-marrakech.jpg",
@@ -124,6 +196,16 @@ const siteData = {
         {
             id: "fes-day-trip",
             name: "1 Day Trip to Fes",
+            desc: "Discover Fes, Morocco's spiritual capital and home to the world's oldest university. Explore the maze-like Fes el-Bali medina, the famous tanneries, ornate medersas and artisan quarters on this full-day trip.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Local guide in Fes",
+                "Monument entrance fees"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/fes/ben-ostrower-bjNv5Bg6h4U-unsplash.jpg",
@@ -137,6 +219,16 @@ const siteData = {
         {
             id: "casablanca-day-trip",
             name: "1 Day Trip to Casablanca",
+            desc: "Explore Morocco's economic capital: the breathtaking Hassan II Mosque on the ocean, the Art Deco city centre, Mohammed V Square and the seaside Corniche, with free time for shopping and cafés.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Mosque entrance fee",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/casablanca/eka-maitri-viryani-qL3_NSPo9o8-unsplash.jpg",
@@ -150,6 +242,16 @@ const siteData = {
         {
             id: "ouarzazate-day-trip",
             name: "1 Day Trip to Ouarzazate",
+            desc: "Cross the dramatic Tizi n'Tichka pass to Ouarzazate, the gateway to the Sahara. Visit the UNESCO-listed kasbah of Aït Ben Haddou, famous from countless films, and the Taourirt Kasbah in the 'Hollywood of Morocco'.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouarzazate/abdou-faiz-lA-P8-vagrI-unsplash.jpg",
@@ -163,6 +265,16 @@ const siteData = {
         {
             id: "rabat-day-trip",
             name: "1 Day Trip to Rabat",
+            desc: "Spend a day in Morocco's elegant capital. Visit the Hassan Tower, the Mausoleum of Mohammed V, the picturesque blue-and-white Kasbah of the Udayas and the ancient Chellah necropolis.",
+            included: [
+                "Hotel pickup & drop-off",
+                "Air-conditioned transport"
+            ],
+            excluded: [
+                "Lunch",
+                "Entrance fees",
+                "Personal expenses & tips"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/rabat/framopia-EZqHkkyc0wg-unsplash.jpg",
@@ -192,6 +304,17 @@ const siteData = {
                 id: "quad-agafay",
                 type: "quad",
                 location: "Agafay",
+                desc: "Ride a quad bike across the lunar landscapes of the Agafay stone desert, through dry hills and Berber villages, with a tea break and panoramic Atlas views.",
+                included: [
+                    "Professional guide",
+                    "Helmet & safety equipment",
+                    "Tea break"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 50,
                 duration: "2_hours",
                 image: "/images/quad-biking/haris-khan-v40H7tLOZII-unsplash.jpg",
@@ -205,6 +328,17 @@ const siteData = {
                 id: "quad-palmeraie",
                 type: "quad",
                 location: "Palmeraie",
+                desc: "An adrenaline ride through the Palmeraie's palm groves and dusty trails on the edge of Marrakech — perfect for a quick adventure fix.",
+                included: [
+                    "Professional guide",
+                    "Helmet & safety equipment",
+                    "Tea break"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 30,
                 duration: "2_hours",
                 image: "/images/quad-biking/adrien-delforge-VH2HRylVsiM-unsplash.jpg",
@@ -217,6 +351,17 @@ const siteData = {
                 id: "camel-agafay",
                 type: "camel",
                 location: "Agafay",
+                desc: "A peaceful camel ride through the rocky Agafay desert at sunset, dressed in traditional Tuareg style, with mint tea in a desert camp.",
+                included: [
+                    "Camel guide",
+                    "Traditional dress & mint tea",
+                    "Photo stops"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 25,
                 duration: "1_hour",
                 image: "/images/camel-riding/oussama-rahib-f7F8URbIx08-unsplash.jpg",
@@ -230,6 +375,17 @@ const siteData = {
                 id: "camel-palmeraie",
                 type: "camel",
                 location: "Palmeraie",
+                desc: "Sway through Marrakech's famous palm grove on a friendly dromedary — a classic, family-friendly Moroccan experience.",
+                included: [
+                    "Camel guide",
+                    "Traditional dress & mint tea",
+                    "Photo stops"
+                ],
+                excluded: [
+                    "Hotel pickup",
+                    "Tips",
+                    "Personal expenses"
+                ],
                 price: 15,
                 duration: "1_hour",
                 image: "/images/camel-riding/dan-calderwood-7CPopIsaCkc-unsplash.jpg",
@@ -242,6 +398,16 @@ const siteData = {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
+                desc: "Learn the secrets of Moroccan cuisine with a local chef: shop for spices in the souk, then cook (and eat) your own tagine, couscous and Moroccan salads.",
+                included: [
+                    "Local chef",
+                    "All ingredients",
+                    "Lunch — your own creations"
+                ],
+                excluded: [
+                    "Drinks",
+                    "Tips"
+                ],
                 price: 60,
                 duration: "4_hours",
                 image: "/images/cooking-class/aziz-acharki-UBEcFUvkrcc-unsplash.jpg",
@@ -251,6 +417,15 @@ const siteData = {
                 id: "food-tour",
                 type: "food",
                 location: "Marrakech",
+                desc: "Taste your way through the Medina: street-food stalls, hidden bakeries, olive and spice stands, and the smoky grills of Jemaa el-Fna.",
+                included: [
+                    "Local foodie guide",
+                    "All tastings"
+                ],
+                excluded: [
+                    "Extra drinks",
+                    "Tips"
+                ],
                 price: 45,
                 duration: "3_hours",
                 image: "/images/food-tour/annie-spratt-_V4v7BbG338-unsplash.jpg",
@@ -273,6 +448,16 @@ const siteData = {
             name: "Private Transport",
             image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Comfortable private vehicle with professional driver",
+            included: [
+                "Professional driver",
+                "Air-conditioned vehicle",
+                "Fuel",
+                "Insurance"
+            ],
+            excluded: [
+                "Tips",
+                "Extra stops"
+            ],
             price: 50
         },
         {
@@ -280,6 +465,16 @@ const siteData = {
             name: "Airport Transport",
             image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Reliable airport transfers, meet & greet service",
+            included: [
+                "Professional driver",
+                "Air-conditioned vehicle",
+                "Meet & greet",
+                "Flight tracking"
+            ],
+            excluded: [
+                "Tips",
+                "Extra stops"
+            ],
             price: 30
         },
         {
@@ -287,6 +482,16 @@ const siteData = {
             name: "On-demand Transport",
             image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Flexible transportation for your custom itinerary",
+            included: [
+                "Professional driver",
+                "Air-conditioned vehicle",
+                "Fuel",
+                "Insurance"
+            ],
+            excluded: [
+                "Tips",
+                "Waiting time beyond schedule"
+            ],
             price: 20
         }
     ],
@@ -295,6 +500,7 @@ const siteData = {
             id: "agafay-full-experience",
             name: "Quad + Camel + Dinner",
             location: "Agafay",
+            desc: "The complete Agafay evening: a quad ride through the stone desert, a sunset camel trek, then a traditional dinner under the stars in a desert camp.",
             included: [
                 "quad",
                 "camel",
@@ -311,6 +517,7 @@ const siteData = {
             id: "palmeraie-adventure",
             name: "Camel + Quad",
             location: "Palmeraie",
+            desc: "Combine a camel ride and a quad session in the Palmeraie for a half-day of contrasts — serenity first, adrenaline after.",
             included: [
                 "camel",
                 "quad"
@@ -325,6 +532,7 @@ const siteData = {
             id: "desert-experience",
             name: "Desert Full Experience",
             location: "Merzouga",
+            desc: "An overnight Sahara escape to Merzouga: a camel trek over the Erg Chebbi dunes, sunset and sunrise in the sand, dinner, drums and a night in a desert camp.",
             included: [
                 "camel",
                 "dinner",
@@ -393,6 +601,17 @@ const siteDataFr = {
         {
             id: "marrakech-full-day",
             name: "Visite d'une journée de la ville de Marrakech",
+            desc: "Découvrez le meilleur de Marrakech en une journée avec un guide local agréé : la mosquée Koutoubia, le palais de la Bahia, les tombeaux saadiens, les souks animés de la médina et la légendaire place Jemaa el-Fna au coucher du soleil.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide local agréé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées des monuments",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             image: "/images/marrakech/marrakech1.jpg",
             gallery: [
@@ -415,6 +634,17 @@ const siteDataFr = {
         {
             id: "marrakech-half-day",
             name: "Visite d'une demi-journée de la ville de Marrakech",
+            desc: "Peu de temps ? Cette visite d'une demi-journée couvre l'essentiel de la ville rouge : la mosquée Koutoubia, le palais de la Bahia, les ruelles historiques de la médina et les souks colorés, pour finir sur la place Jemaa el-Fna.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide local agréé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées des monuments",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "half_day",
             image: "/images/marrakech/marrakech6.jpg",
             gallery: [
@@ -436,6 +666,17 @@ const siteDataFr = {
         {
             id: "ourika-day-trip",
             name: "Excursion d'une journée à la vallée de l'Ourika",
+            desc: "Échappez à la chaleur de la ville vers la vallée de l'Ourika, au pied de l'Atlas. Marchez jusqu'aux cascades de Setti Fatma, visitez une maison berbère traditionnelle et déjeunez au bord de la rivière, entouré de jardins en terrasses.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide de montagne local"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Balade à dos de mule ou de dromadaire",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ourika/abdelhamid-azoui-BGU0uaY0tJs-unsplash.jpg",
@@ -456,8 +697,19 @@ const siteDataFr = {
         {
             id: "essaouira-day-trip",
             name: "Excursion d'une journée à Essaouira",
+            desc: "Cap sur la côte atlantique et la paisible ville portuaire d'Essaouira. Flânez dans la médina classée à l'UNESCO et ses remparts, observez le retour des bateaux de pêche et visitez une coopérative féminine d'huile d'argan en chemin.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Temps libre dans la médina"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Visite guidée de la ville",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
-            maxPeople: 8,
+            maxPeople: 7,
             image: "/images/essaouira/hamza-omlacho-M9GO4Gsd2SM-unsplash.jpg",
             gallery: [],
             pricing: [
@@ -469,6 +721,17 @@ const siteDataFr = {
         {
             id: "ouzoud-day-trip",
             name: "Excursion d'une journée aux cascades d'Ouzoud",
+            desc: "Visitez les spectaculaires cascades d'Ouzoud, les plus hautes d'Afrique du Nord, qui plongent de 110 mètres dans un canyon verdoyant. Observez les macaques de Barbarie, embarquez pour un tour en barque en option et déjeunez avec vue panoramique.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide local aux cascades"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Tour en barque",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouzoud/danai-tsoutreli-tqLc6On9KIA-unsplash.jpg",
@@ -482,6 +745,17 @@ const siteDataFr = {
         {
             id: "imlil-day-trip",
             name: "Excursion d'une journée à Imlil",
+            desc: "Partez dans le Haut Atlas jusqu'au village de montagne d'Imlil, au pied du mont Toubkal. Randonnez sur des sentiers muletiers entre les hameaux berbères, partagez un thé à la menthe chez l'habitant et respirez l'air pur de la montagne.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé",
+                "Guide de montagne local"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Location de mule",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/hero-marrakech.jpg",
@@ -502,6 +776,16 @@ const siteDataFr = {
         {
             id: "fes-day-trip",
             name: "Excursion d'une journée à Fès",
+            desc: "Découvrez Fès, capitale spirituelle du Maroc et siège de la plus ancienne université au monde. Explorez la médina labyrinthique de Fès el-Bali, les célèbres tanneries, les médersas ornées et les quartiers d'artisans.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Guide local à Fès",
+                "Entrées des monuments"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/fes/ben-ostrower-bjNv5Bg6h4U-unsplash.jpg",
@@ -515,6 +799,16 @@ const siteDataFr = {
         {
             id: "casablanca-day-trip",
             name: "Excursion d'une journée à Casablanca",
+            desc: "Explorez la capitale économique du Maroc : l'impressionnante mosquée Hassan II face à l'océan, le centre-ville Art déco, la place Mohammed V et la Corniche, avec du temps libre pour le shopping et les cafés.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrée de la mosquée",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/casablanca/eka-maitri-viryani-qL3_NSPo9o8-unsplash.jpg",
@@ -528,6 +822,16 @@ const siteDataFr = {
         {
             id: "ouarzazate-day-trip",
             name: "Excursion d'une journée à Ouarzazate",
+            desc: "Franchissez le spectaculaire col du Tizi n'Tichka jusqu'à Ouarzazate, porte du Sahara. Visitez la kasbah d'Aït Ben Haddou, classée à l'UNESCO et célèbre pour ses décors de films, ainsi que la kasbah de Taourirt dans le « Hollywood marocain ».",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/ouarzazate/abdou-faiz-lA-P8-vagrI-unsplash.jpg",
@@ -541,6 +845,16 @@ const siteDataFr = {
         {
             id: "rabat-day-trip",
             name: "Excursion d'une journée à Rabat",
+            desc: "Passez une journée dans l'élégante capitale du Maroc. Visitez la tour Hassan, le mausolée Mohammed V, la pittoresque kasbah des Oudayas en bleu et blanc et l'ancienne nécropole du Chellah.",
+            included: [
+                "Prise en charge à l'hôtel",
+                "Transport climatisé"
+            ],
+            excluded: [
+                "Déjeuner",
+                "Entrées",
+                "Dépenses personnelles & pourboires"
+            ],
             duration: "1_day",
             maxPeople: 8,
             image: "/images/rabat/framopia-EZqHkkyc0wg-unsplash.jpg",
@@ -570,6 +884,17 @@ const siteDataFr = {
                 id: "quad-agafay",
                 type: "quad",
                 location: "Agafay",
+                desc: "Pilotez un quad à travers les paysages lunaires du désert de pierre d'Agafay, entre collines arides et villages berbères, avec pause thé et vue panoramique sur l'Atlas.",
+                included: [
+                    "Guide professionnel",
+                    "Casque & équipement de sécurité",
+                    "Pause thé"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 50,
                 duration: "2_hours",
                 image: "/images/quad-biking/haris-khan-v40H7tLOZII-unsplash.jpg",
@@ -583,6 +908,17 @@ const siteDataFr = {
                 id: "quad-palmeraie",
                 type: "quad",
                 location: "Palmeraie",
+                desc: "Une virée pleine d'adrénaline dans la palmeraie de Marrakech et ses pistes poussiéreuses — parfait pour une dose d'aventure express.",
+                included: [
+                    "Guide professionnel",
+                    "Casque & équipement de sécurité",
+                    "Pause thé"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 30,
                 duration: "2_hours",
                 image: "/images/quad-biking/adrien-delforge-VH2HRylVsiM-unsplash.jpg",
@@ -595,6 +931,17 @@ const siteDataFr = {
                 id: "camel-agafay",
                 type: "camel",
                 location: "Agafay",
+                desc: "Une balade paisible à dos de dromadaire dans le désert rocailleux d'Agafay au coucher du soleil, en tenue touareg traditionnelle, avec thé à la menthe dans un campement.",
+                included: [
+                    "Chamelier",
+                    "Tenue traditionnelle & thé à la menthe",
+                    "Pauses photo"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 25,
                 duration: "1_hour",
                 image: "/images/camel-riding/oussama-rahib-f7F8URbIx08-unsplash.jpg",
@@ -608,6 +955,17 @@ const siteDataFr = {
                 id: "camel-palmeraie",
                 type: "camel",
                 location: "Palmeraie",
+                desc: "Laissez-vous porter à travers la célèbre palmeraie de Marrakech à dos de dromadaire — une expérience marocaine classique et familiale.",
+                included: [
+                    "Chamelier",
+                    "Tenue traditionnelle & thé à la menthe",
+                    "Pauses photo"
+                ],
+                excluded: [
+                    "Prise en charge à l'hôtel",
+                    "Pourboires",
+                    "Dépenses personnelles"
+                ],
                 price: 15,
                 duration: "1_hour",
                 image: "/images/camel-riding/dan-calderwood-7CPopIsaCkc-unsplash.jpg",
@@ -620,6 +978,16 @@ const siteDataFr = {
                 id: "cooking-class",
                 type: "cooking",
                 location: "Marrakech",
+                desc: "Apprenez les secrets de la cuisine marocaine avec un chef local : achat d'épices au souk, puis préparation (et dégustation) de votre tajine, couscous et salades marocaines.",
+                included: [
+                    "Chef local",
+                    "Tous les ingrédients",
+                    "Déjeuner — vos propres créations"
+                ],
+                excluded: [
+                    "Boissons",
+                    "Pourboires"
+                ],
                 price: 60,
                 duration: "4_hours",
                 image: "/images/cooking-class/aziz-acharki-UBEcFUvkrcc-unsplash.jpg",
@@ -629,6 +997,15 @@ const siteDataFr = {
                 id: "food-tour",
                 type: "food",
                 location: "Marrakech",
+                desc: "Régalez-vous à travers la médina : stands de street-food, boulangeries cachées, étals d'olives et d'épices, et les grillades fumantes de Jemaa el-Fna.",
+                included: [
+                    "Guide gastronomique local",
+                    "Toutes les dégustations"
+                ],
+                excluded: [
+                    "Boissons supplémentaires",
+                    "Pourboires"
+                ],
                 price: 45,
                 duration: "3_hours",
                 image: "/images/food-tour/annie-spratt-_V4v7BbG338-unsplash.jpg",
@@ -651,6 +1028,16 @@ const siteDataFr = {
             name: "Transport privé",
             image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070",
             description: "Véhicule privé confortable avec chauffeur professionnel",
+            included: [
+                "Chauffeur professionnel",
+                "Véhicule climatisé",
+                "Carburant",
+                "Assurance"
+            ],
+            excluded: [
+                "Pourboires",
+                "Arrêts supplémentaires"
+            ],
             price: 50
         },
         {
@@ -658,6 +1045,16 @@ const siteDataFr = {
             name: "Transfert aéroport",
             image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074",
             description: "Transferts aéroport fiables, service d'accueil",
+            included: [
+                "Chauffeur professionnel",
+                "Véhicule climatisé",
+                "Accueil personnalisé",
+                "Suivi des vols"
+            ],
+            excluded: [
+                "Pourboires",
+                "Arrêts supplémentaires"
+            ],
             price: 30
         },
         {
@@ -665,6 +1062,16 @@ const siteDataFr = {
             name: "Transport sur demande",
             image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2069",
             description: "Transport flexible pour votre itinéraire personnalisé",
+            included: [
+                "Chauffeur professionnel",
+                "Véhicule climatisé",
+                "Carburant",
+                "Assurance"
+            ],
+            excluded: [
+                "Pourboires",
+                "Temps d'attente hors planning"
+            ],
             price: 20
         }
     ],
@@ -673,6 +1080,7 @@ const siteDataFr = {
             id: "agafay-full-experience",
             name: "Quad + Dromadaire + Dîner",
             location: "Agafay",
+            desc: "La soirée complète à Agafay : sortie en quad dans le désert de pierre, balade à dos de dromadaire au coucher du soleil, puis dîner traditionnel sous les étoiles dans un campement.",
             included: [
                 "quad",
                 "camel",
@@ -689,6 +1097,7 @@ const siteDataFr = {
             id: "palmeraie-adventure",
             name: "Dromadaire + Quad",
             location: "Palmeraie",
+            desc: "Combinez balade à dos de dromadaire et session de quad dans la Palmeraie pour une demi-journée de contrastes — sérénité d'abord, adrénaline ensuite.",
             included: [
                 "camel",
                 "quad"
@@ -703,6 +1112,7 @@ const siteDataFr = {
             id: "desert-experience",
             name: "Expérience Complète du Désert",
             location: "Merzouga",
+            desc: "Une escapade saharienne d'une nuit à Merzouga : trek à dos de dromadaire sur les dunes de l'Erg Chebbi, coucher et lever du soleil dans le sable, dîner, tambours et nuit en campement.",
             included: [
                 "camel",
                 "dinner",
@@ -779,6 +1189,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-intl/dist/esm/development/react-client/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/config/site.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/context/BookingContext.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar.js [app-client] (ecmascript) <export default as Calendar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/message-circle.js [app-client] (ecmascript) <export default as MessageCircle>");
@@ -793,14 +1204,28 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 const BookingForm = ({ serviceName, serviceType, basePrice = 0, variants = [], pricingRules = [], maxGuests = 20 })=>{
     _s();
-    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
-        date: '',
-        guests: 2,
-        selectedVariant: variants.length > 0 ? variants[0].id : null
-    });
+    // Date and travelers live in the shared booking context (hero search bar,
+    // detail pages and this form all read/write the same state)
+    const { date, travelers, setDate, setTravelers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useBooking"])();
+    const guests = Math.min(travelers, maxGuests);
+    const [selectedVariantId, setSelectedVariantId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(variants.length > 0 ? variants[0].id : null);
     const t = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"])('Common');
+    // A larger group may have been picked elsewhere — clamp the shared state
+    // to this service's capacity
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "BookingForm.useEffect": ()=>{
+            if (travelers > maxGuests) {
+                setTravelers(maxGuests);
+            }
+        }
+    }["BookingForm.useEffect"], [
+        travelers,
+        maxGuests,
+        setTravelers
+    ]);
     const [showPriceBreakdown, setShowPriceBreakdown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [pricing, setPricing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         basePrice: 0,
@@ -815,44 +1240,44 @@ const BookingForm = ({ serviceName, serviceType, basePrice = 0, variants = [], p
             let price = 0;
             let guestsTotal = 0;
             // Logic for variants
-            if (variants.length > 0 && formData.selectedVariant) {
+            if (variants.length > 0 && selectedVariantId) {
                 const variant = variants.find({
-                    "BookingForm.useEffect.variant": (v)=>v.id === formData.selectedVariant
+                    "BookingForm.useEffect.variant": (v)=>v.id === selectedVariantId
                 }["BookingForm.useEffect.variant"]);
                 price = variant?.price || 0;
-                guestsTotal = price * formData.guests;
+                guestsTotal = price * guests;
             } else if (pricingRules && pricingRules.length > 0) {
                 // Find applicable rule for current guest count
                 const rule = pricingRules.find({
-                    "BookingForm.useEffect.rule": (r)=>formData.guests >= (r.minPeople || 0) && formData.guests <= (r.maxPeople || Infinity)
+                    "BookingForm.useEffect.rule": (r)=>guests >= (r.minPeople || 0) && guests <= (r.maxPeople || Infinity)
                 }["BookingForm.useEffect.rule"]);
                 if (rule) {
                     if (rule.totalPrice) {
                         // Fixed price for the group size range
                         guestsTotal = rule.totalPrice;
-                        price = Math.round(rule.totalPrice / formData.guests); // Average per person for display
+                        price = Math.round(rule.totalPrice / guests); // Average per person for display
                     } else if (rule.pricePerPerson) {
                         // Per person price for the group size range
                         price = rule.pricePerPerson;
-                        guestsTotal = price * formData.guests;
+                        guestsTotal = price * guests;
                     }
                 } else {
                     // Fallback if no rule matches (e.g. exceeding max people defined in rules)
                     const lastRule = pricingRules[pricingRules.length - 1];
                     if (lastRule.totalPrice) {
                         guestsTotal = lastRule.totalPrice;
-                        price = Math.round(lastRule.totalPrice / formData.guests);
+                        price = Math.round(lastRule.totalPrice / guests);
                     } else if (lastRule.pricePerPerson) {
                         price = lastRule.pricePerPerson;
-                        guestsTotal = price * formData.guests;
+                        guestsTotal = price * guests;
                     } else {
                         price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice) || 0;
-                        guestsTotal = price * formData.guests;
+                        guestsTotal = price * guests;
                     }
                 }
             } else {
                 price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice) || 0;
-                guestsTotal = price * formData.guests;
+                guestsTotal = price * guests;
             }
             // Determine if a group discount is active
             let originalPerPerson = price;
@@ -875,33 +1300,27 @@ const BookingForm = ({ serviceName, serviceType, basePrice = 0, variants = [], p
             });
         }
     }["BookingForm.useEffect"], [
-        formData.guests,
-        formData.selectedVariant,
+        guests,
+        selectedVariantId,
         basePrice,
         variants,
         pricingRules
     ]);
     const handleGuestsChange = (increment)=>{
-        setFormData((prev)=>({
-                ...prev,
-                guests: Math.max(1, Math.min(maxGuests, prev.guests + increment))
-            }));
+        setTravelers(Math.max(1, Math.min(maxGuests, guests + increment)));
     };
     const handleVariantChange = (variantId)=>{
-        setFormData((prev)=>({
-                ...prev,
-                selectedVariant: variantId
-            }));
+        setSelectedVariantId(variantId);
     };
     const handleWhatsAppSubmit = (e)=>{
         e.preventDefault();
-        const selectedVariant = variants.find((v)=>v.id === formData.selectedVariant);
+        const selectedVariant = variants.find((v)=>v.id === selectedVariantId);
         const variantInfo = selectedVariant ? `\n🎯 Option: ${selectedVariant.name} (${selectedVariant.location})` : '';
         const text = `Hello! I would like to book "${serviceName}".
-        
+
 📋 Booking Details:
-📅 Date: ${formData.date}
-👥 Guests: ${formData.guests}${variantInfo}
+📅 Date: ${date}
+👥 Guests: ${guests}${variantInfo}
 
 💰 Total Price: ${pricing.total}€
 
@@ -910,7 +1329,7 @@ Please confirm availability. Thank you!`;
         const phoneNumber = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["siteConfig"].contact.whatsapp.replace('+', '');
         window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
     };
-    const selectedVariant = variants.find((v)=>v.id === formData.selectedVariant);
+    const selectedVariant = variants.find((v)=>v.id === selectedVariantId);
     const isTransport = serviceType === 'transport';
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-white rounded-2xl shadow-xl border border-neutral-100 sticky top-24 overflow-hidden",
@@ -928,21 +1347,21 @@ Please confirm availability. Thank you!`;
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 180,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-lg font-bold",
-                                        children: "Book Now"
+                                        children: t('bookNow')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 181,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 170,
+                                lineNumber: 179,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             !isTransport && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -953,18 +1372,18 @@ Please confirm availability. Thank you!`;
                                     className: `w-5 h-5 transition-transform ${showPriceBreakdown ? 'rotate-180' : ''}`
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 189,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 175,
+                                lineNumber: 184,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 169,
+                        lineNumber: 178,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -973,24 +1392,24 @@ Please confirm availability. Thank you!`;
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-2xl font-bold block",
-                                    children: "Contact for Price"
+                                    children: t('contactForPrice')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 187,
+                                    lineNumber: 196,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-white/70 text-sm",
-                                    children: "Custom quote based on your needs"
+                                    children: t('customQuote')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 188,
+                                    lineNumber: 197,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/BookingForm.tsx",
-                            lineNumber: 186,
+                            lineNumber: 195,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
@@ -1002,22 +1421,22 @@ Please confirm availability. Thank you!`;
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 201,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-white/70 text-sm",
-                                    children: "total"
+                                    children: t('total')
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                    lineNumber: 193,
+                                    lineNumber: 202,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true)
                     }, void 0, false, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 184,
+                        lineNumber: 193,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     !isTransport && pricing.hasDiscount && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1027,7 +1446,7 @@ Please confirm availability. Thank you!`;
                                 className: "flex w-2 h-2 rounded-full bg-[#25D366] animate-pulse"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 199,
+                                lineNumber: 208,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             " ",
@@ -1035,13 +1454,13 @@ Please confirm availability. Thank you!`;
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 198,
+                        lineNumber: 207,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BookingForm.tsx",
-                lineNumber: 168,
+                lineNumber: 177,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             !isTransport && showPriceBreakdown && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1054,10 +1473,10 @@ Please confirm availability. Thank you!`;
                                 className: "flex justify-between text-gray-600",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "Price per person"
+                                        children: t('pricePerPerson')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 218,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1068,50 +1487,50 @@ Please confirm availability. Thank you!`;
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 210,
+                                        lineNumber: 219,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 208,
+                                lineNumber: 217,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex justify-between text-gray-600",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "Number of travelers"
+                                        children: t('numberOfTravelers')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 222,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "font-semibold",
                                         children: [
                                             "× ",
-                                            formData.guests
+                                            guests
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 223,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 212,
+                                lineNumber: 221,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "pt-2 border-t border-neutral-200 flex justify-between font-bold text-neutral-dark",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "Subtotal"
+                                        children: t('subtotal')
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 217,
+                                        lineNumber: 226,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1122,19 +1541,19 @@ Please confirm availability. Thank you!`;
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 227,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 216,
+                                lineNumber: 225,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 207,
+                        lineNumber: 216,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     selectedVariant?.location && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1144,26 +1563,26 @@ Please confirm availability. Thank you!`;
                                 className: "w-3 h-3"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 223,
+                                lineNumber: 232,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: selectedVariant.location
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 224,
+                                lineNumber: 233,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 222,
+                        lineNumber: 231,
                         columnNumber: 25
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BookingForm.tsx",
-                lineNumber: 206,
+                lineNumber: 215,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1180,21 +1599,27 @@ Please confirm availability. Thank you!`;
                                         className: "w-4 h-4 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 236,
+                                        lineNumber: 245,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
-                                    " Choose Experience"
+                                    " ",
+                                    t('chooseExperience')
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 235,
+                                lineNumber: 244,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-2",
-                                children: variants.map((variant)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                role: "radiogroup",
+                                "aria-label": t('chooseExperience'),
+                                children: variants.map((variant)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        role: "radio",
+                                        "aria-checked": selectedVariantId === variant.id,
                                         onClick: ()=>handleVariantChange(variant.id),
-                                        className: `relative p-3 rounded-lg border-2 cursor-pointer transition-all ${formData.selectedVariant === variant.id ? 'border-primary bg-primary/5 shadow-sm' : 'border-neutral-200 hover:border-primary/30 hover:bg-neutral-50'}`,
+                                        className: `relative w-full text-left p-3 rounded-lg border-2 cursor-pointer transition-all focus-visible:ring-2 focus-visible:ring-primary/40 outline-none ${selectedVariantId === variant.id ? 'border-primary bg-primary/5 shadow-sm' : 'border-neutral-200 hover:border-primary/30 hover:bg-neutral-50'}`,
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center justify-between",
                                             children: [
@@ -1206,7 +1631,7 @@ Please confirm availability. Thank you!`;
                                                             children: variant.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 250,
+                                                            lineNumber: 262,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1214,13 +1639,13 @@ Please confirm availability. Thank you!`;
                                                             children: variant.location
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 251,
+                                                            lineNumber: 263,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 261,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1236,54 +1661,54 @@ Please confirm availability. Thank you!`;
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                                lineNumber: 255,
+                                                                lineNumber: 267,
                                                                 columnNumber: 49
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 254,
+                                                            lineNumber: 266,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
-                                                        formData.selectedVariant === variant.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        selectedVariantId === variant.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                                                 className: "w-3 h-3 text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                                lineNumber: 259,
+                                                                lineNumber: 271,
                                                                 columnNumber: 53
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                                            lineNumber: 258,
+                                                            lineNumber: 270,
                                                             columnNumber: 49
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/BookingForm.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 265,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/BookingForm.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 260,
                                             columnNumber: 37
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, variant.id, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 240,
+                                        lineNumber: 249,
                                         columnNumber: 33
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 238,
+                                lineNumber: 247,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 234,
+                        lineNumber: 243,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1296,14 +1721,15 @@ Please confirm availability. Thank you!`;
                                         className: "w-4 h-4 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 285,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
-                                    " Travel Date"
+                                    " ",
+                                    t('travelDate')
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 272,
+                                lineNumber: 284,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1311,21 +1737,18 @@ Please confirm availability. Thank you!`;
                                 name: "date",
                                 required: true,
                                 min: new Date().toISOString().split('T')[0],
-                                value: formData.date,
-                                onChange: (e)=>setFormData((prev)=>({
-                                            ...prev,
-                                            date: e.target.value
-                                        })),
+                                value: date,
+                                onChange: (e)=>setDate(e.target.value),
                                 className: "w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-neutral-dark text-sm"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 275,
+                                lineNumber: 287,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 271,
+                        lineNumber: 283,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1338,14 +1761,15 @@ Please confirm availability. Thank you!`;
                                         className: "w-4 h-4 text-primary"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 289,
+                                        lineNumber: 301,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
-                                    " Travelers"
+                                    " ",
+                                    t('travelers')
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 288,
+                                lineNumber: 300,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1354,12 +1778,13 @@ Please confirm availability. Thank you!`;
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "button",
                                         onClick: ()=>handleGuestsChange(-1),
+                                        "aria-label": `${t('decrease')} — ${t('numberOfTravelers')}`,
                                         className: "w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-neutral-dark hover:bg-neutral-200 transition-colors font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed",
-                                        disabled: formData.guests <= 1,
+                                        disabled: guests <= 1,
                                         children: "−"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 292,
+                                        lineNumber: 304,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1367,54 +1792,57 @@ Please confirm availability. Thank you!`;
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "font-bold text-xl text-neutral-dark block",
-                                                children: formData.guests
+                                                children: guests
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                lineNumber: 301,
+                                                lineNumber: 314,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-xs text-gray-500",
-                                                children: formData.guests === 1 ? 'person' : 'people'
+                                                children: t('personCount', {
+                                                    count: guests
+                                                })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                                lineNumber: 302,
+                                                lineNumber: 315,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 300,
+                                        lineNumber: 313,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "button",
                                         onClick: ()=>handleGuestsChange(1),
+                                        "aria-label": `${t('increase')} — ${t('numberOfTravelers')}`,
                                         className: "w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary/10 transition-colors font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed",
-                                        disabled: formData.guests >= maxGuests,
+                                        disabled: guests >= maxGuests,
                                         children: "+"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/BookingForm.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 317,
                                         columnNumber: 25
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 291,
+                                lineNumber: 303,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 287,
+                        lineNumber: 299,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "border-t border-neutral-200 my-6"
                     }, void 0, false, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 316,
+                        lineNumber: 330,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1425,45 +1853,46 @@ Please confirm availability. Thank you!`;
                                 className: "w-5 h-5 fill-current"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 323,
+                                lineNumber: 337,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: "Confirm via WhatsApp"
+                                children: t('confirmWhatsApp')
                             }, void 0, false, {
                                 fileName: "[project]/src/components/BookingForm.tsx",
-                                lineNumber: 324,
+                                lineNumber: 338,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 319,
+                        lineNumber: 333,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xs text-center text-gray-400",
-                        children: "💳 No payment now • Pay on arrival"
+                        children: t('noPaymentNow')
                     }, void 0, false, {
                         fileName: "[project]/src/components/BookingForm.tsx",
-                        lineNumber: 327,
+                        lineNumber: 341,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/BookingForm.tsx",
-                lineNumber: 231,
+                lineNumber: 240,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/BookingForm.tsx",
-        lineNumber: 166,
+        lineNumber: 175,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(BookingForm, "EiJh/HHK/yjqVNmAyvtdILfJSJQ=", false, function() {
+_s(BookingForm, "atfnGSyUrgfo3Pix/+PzCZJ+y6E=", false, function() {
     return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useBooking"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"]
     ];
 });
@@ -1483,6 +1912,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-intl/dist/esm/development/react-client/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$BookingForm$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/BookingForm.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-client] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
@@ -1490,35 +1920,43 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-client] (ecmascript) <export default as ArrowLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
 ;
 ;
 ;
+;
 const ServiceDetailContent = ({ type, title, description, image, price, duration, location, included = [], excluded = [], subItems = [], locale, gallery = [], pricing = [], maxPeople })=>{
-    const renderDuration = (d)=>d?.replace('_', ' ') || 'Flexible';
+    _s();
+    const t = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"])('Common');
+    const renderDuration = (d)=>d?.replace('_', ' ') || t('flexible');
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark pb-20",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "relative h-[60vh] min-h-[500px] w-full overflow-hidden",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-cover bg-center fixed-bg",
-                        style: {
-                            backgroundImage: `url(${image})`
-                        }
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        src: image,
+                        alt: title,
+                        fill: true,
+                        priority: true,
+                        sizes: "100vw",
+                        className: "object-cover fixed-bg"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                        lineNumber: 64,
+                        lineNumber: 68,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                        lineNumber: 68,
+                        lineNumber: 76,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1538,19 +1976,20 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 75,
+                                                    lineNumber: 83,
                                                     columnNumber: 37
                                                 }, ("TURBOPACK compile-time value", void 0)),
-                                                " Back to Services"
+                                                " ",
+                                                t('backToServices')
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 74,
+                                            lineNumber: 82,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 81,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1558,7 +1997,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                         children: type
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 86,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1566,7 +2005,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                         children: title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 89,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1579,20 +2018,20 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                         className: "w-4 h-4 text-primary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                        lineNumber: 85,
+                                                        lineNumber: 93,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: location
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 94,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 92,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             duration && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1602,48 +2041,48 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                         className: "w-4 h-4 text-primary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                        lineNumber: 91,
+                                                        lineNumber: 99,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: renderDuration(duration)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                        lineNumber: 92,
+                                                        lineNumber: 100,
                                                         columnNumber: 41
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                lineNumber: 90,
+                                                lineNumber: 98,
                                                 columnNumber: 37
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 90,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                lineNumber: 72,
+                                lineNumber: 80,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                            lineNumber: 71,
+                            lineNumber: 79,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                        lineNumber: 70,
+                        lineNumber: 78,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                lineNumber: 63,
+                lineNumber: 67,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1659,10 +2098,10 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: "text-2xl font-bold mb-6",
-                                            children: "Overview"
+                                            children: t('overview')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 118,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1670,13 +2109,13 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: description
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 119,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 117,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 gallery && gallery.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1684,10 +2123,10 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: "text-2xl font-bold mb-6",
-                                            children: "Gallery"
+                                            children: t('gallery')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 127,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1706,38 +2145,39 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                     },
                                                     className: "relative aspect-square overflow-hidden rounded-xl group cursor-pointer",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110",
-                                                            style: {
-                                                                backgroundImage: `url(${imgSrc})`
-                                                            }
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            src: imgSrc,
+                                                            alt: `${title} — photo ${idx + 1}`,
+                                                            fill: true,
+                                                            sizes: "(max-width: 768px) 50vw, 33vw",
+                                                            className: "object-cover transition-transform duration-500 group-hover:scale-110"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 129,
+                                                            lineNumber: 137,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 133,
+                                                            lineNumber: 144,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, idx, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 122,
+                                                    lineNumber: 130,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 128,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 118,
+                                    lineNumber: 126,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 subItems.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1745,10 +2185,10 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             className: "text-2xl font-bold mb-6",
-                                            children: "Available Options"
+                                            children: t('availableOptions')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 154,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1764,7 +2204,7 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     children: item.location || item.type
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 148,
+                                                                    lineNumber: 159,
                                                                     columnNumber: 49
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1775,13 +2215,13 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 149,
+                                                                    lineNumber: 160,
                                                                     columnNumber: 49
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 147,
+                                                            lineNumber: 158,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1793,24 +2233,24 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 164,
                                                             columnNumber: 45
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, item.id, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 157,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 144,
+                                            lineNumber: 155,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 153,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1828,19 +2268,19 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                 className: "w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 165,
+                                                                lineNumber: 176,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 164,
+                                                            lineNumber: 175,
                                                             columnNumber: 37
                                                         }, ("TURBOPACK compile-time value", void 0)),
-                                                        "Included"
+                                                        t('included')
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 174,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1852,20 +2292,20 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     className: "w-4 h-4 text-green-500 mt-0.5 shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 172,
+                                                                    lineNumber: 183,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: inc
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 173,
+                                                                    lineNumber: 184,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 171,
+                                                            lineNumber: 182,
                                                             columnNumber: 41
                                                         }, ("TURBOPACK compile-time value", void 0))) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
@@ -1876,14 +2316,14 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-green-500 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 177,
+                                                                        lineNumber: 188,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Hotel Pickup & Drop-off"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 177,
+                                                                lineNumber: 188,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1893,14 +2333,14 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-green-500 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 178,
+                                                                        lineNumber: 189,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Professional Guide"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 178,
+                                                                lineNumber: 189,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1910,27 +2350,27 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-green-500 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 179,
+                                                                        lineNumber: 190,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Transport A/C"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 179,
+                                                                lineNumber: 190,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 180,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 173,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1945,19 +2385,19 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                 className: "w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 188,
+                                                                lineNumber: 199,
                                                                 columnNumber: 41
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 187,
+                                                            lineNumber: 198,
                                                             columnNumber: 37
                                                         }, ("TURBOPACK compile-time value", void 0)),
-                                                        "Not Included"
+                                                        t('notIncluded')
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 186,
+                                                    lineNumber: 197,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1969,20 +2409,20 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                     className: "w-4 h-4 text-red-400 mt-0.5 shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 195,
+                                                                    lineNumber: 206,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: exc
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                    lineNumber: 196,
+                                                                    lineNumber: 207,
                                                                     columnNumber: 45
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, i, true, {
                                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                            lineNumber: 194,
+                                                            lineNumber: 205,
                                                             columnNumber: 41
                                                         }, ("TURBOPACK compile-time value", void 0))) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
@@ -1993,14 +2433,14 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-red-400 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 200,
+                                                                        lineNumber: 211,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Personal Expenses"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 200,
+                                                                lineNumber: 211,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2010,33 +2450,33 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                                                         className: "w-4 h-4 text-red-400 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                        lineNumber: 201,
+                                                                        lineNumber: 212,
                                                                         columnNumber: 106
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     "Tips"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                                lineNumber: 201,
+                                                                lineNumber: 212,
                                                                 columnNumber: 45
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 192,
+                                                    lineNumber: 203,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 185,
+                                            lineNumber: 196,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 172,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2046,44 +2486,45 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                     className: "font-bold text-xl mb-2 text-neutral-dark",
-                                                    children: "Need a Custom Plan?"
+                                                    children: t('needCustomPlan')
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 211,
+                                                    lineNumber: 222,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-gray-500 text-sm max-w-md",
-                                                    children: "We can customize this experience for large groups, special events, or specific requirements."
+                                                    children: t('customPlanText')
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 223,
                                                     columnNumber: 33
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 221,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: `/${locale}/contact`,
                                             className: "px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors whitespace-nowrap",
-                                            children: "Contact Support"
+                                            children: t('contactSupport')
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                            lineNumber: 214,
+                                            lineNumber: 225,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                    lineNumber: 209,
+                                    lineNumber: 220,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                            lineNumber: 106,
+                            lineNumber: 114,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2103,32 +2544,37 @@ const ServiceDetailContent = ({ type, title, description, image, price, duration
                                     }))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                                lineNumber: 223,
+                                lineNumber: 237,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                            lineNumber: 222,
+                            lineNumber: 236,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                    lineNumber: 103,
+                    lineNumber: 111,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/ServiceDetailContent.tsx",
-                lineNumber: 102,
+                lineNumber: 110,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ServiceDetailContent.tsx",
-        lineNumber: 61,
+        lineNumber: 65,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
+_s(ServiceDetailContent, "h6+q2O3NJKPY5uL0BIJGLIanww8=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$intl$2f$dist$2f$esm$2f$development$2f$react$2d$client$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslations"]
+    ];
+});
 _c = ServiceDetailContent;
 var _c;
 __turbopack_context__.k.register(_c, "ServiceDetailContent");
@@ -2156,11 +2602,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Service
 ;
 function PackageDetailPage({ params }) {
     const { id, locale } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["use"])(params);
-    const item = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["siteData"].packages.find((p)=>p.id === id);
+    const item = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$data$2f$siteData$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getSiteData"])(locale).packages.find((p)=>p.id === id);
     if (!item) {
         return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["notFound"])();
     }
-    const description = `The ultimate experience: ${item.name}. This package combines our best activities into a seamless adventure. Enjoy ${item.included.join(', ')} all in one go.`;
+    const description = item.desc;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ServiceDetailContent$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ServiceDetailContent"], {
         id: id,
         locale: locale,

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plus, X } from 'lucide-react';
 
 export const FaqSection = ({ locale, dict }: { locale: string, dict: any }) => {
@@ -43,7 +44,9 @@ export const FaqSection = ({ locale, dict }: { locale: string, dict: any }) => {
                             >
                                 <button
                                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                    className="w-full flex items-center justify-between p-6 text-left"
+                                    aria-expanded={openIndex === index}
+                                    aria-controls={`faq-panel-${index}`}
+                                    className="w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary/40 rounded-2xl outline-none"
                                 >
                                     <span className="font-poppins font-semibold text-lg text-neutral-dark pr-4">
                                         {faq.question}
@@ -59,6 +62,7 @@ export const FaqSection = ({ locale, dict }: { locale: string, dict: any }) => {
                                 <AnimatePresence>
                                     {openIndex === index && (
                                         <motion.div
+                                            id={`faq-panel-${index}`}
                                             initial={{ height: 0, opacity: 0 }}
                                             animate={{ height: 'auto', opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
@@ -78,10 +82,13 @@ export const FaqSection = ({ locale, dict }: { locale: string, dict: any }) => {
 
                 {/* Right Column - Image Card */}
                 <div className="relative h-full min-h-[600px] rounded-3xl overflow-hidden hidden lg:block">
-                    <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: 'url(/images/marrakech/marrakech7.jpg)' }} // Using placeholder for now
-                    ></div>
+                    <Image
+                        src="/images/marrakech/marrakech7.jpg"
+                        alt="Marrakech"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                    />
 
                     {/* Floating Contact Card */}
                     <div className="absolute bottom-8 left-8 right-8 bg-white rounded-3xl p-8 shadow-xl">

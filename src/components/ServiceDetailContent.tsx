@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { BookingForm } from '@/components/BookingForm';
 import { Clock, MapPin, Check, X, Users, Star, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface SubItem {
     id: string;
@@ -55,16 +57,22 @@ export const ServiceDetailContent = ({
     maxPeople
 }: ServiceDetailProps) => {
 
-    const renderDuration = (d: string) => d?.replace('_', ' ') || 'Flexible';
+    const t = useTranslations('Common');
+
+    const renderDuration = (d: string) => d?.replace('_', ' ') || t('flexible');
 
     return (
         <div className="min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark pb-20">
             {/* Hero Section */}
             <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
-                <div
-                    className="absolute inset-0 bg-cover bg-center fixed-bg" // simple parallax if implemented in css
-                    style={{ backgroundImage: `url(${image})` }}
-                ></div>
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover fixed-bg"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
                 <div className="absolute bottom-0 left-0 w-full pb-10 md:pb-16 pt-20 text-white z-10">
@@ -72,7 +80,7 @@ export const ServiceDetailContent = ({
                         <div className="max-w-4xl">
                             <div className="mb-6">
                                 <Link href={`/${locale}/services`} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors bg-black/20 backdrop-blur-md px-4 py-2 rounded-full w-fit text-sm border border-white/10">
-                                    <ArrowLeft className="w-4 h-4" /> Back to Services
+                                    <ArrowLeft className="w-4 h-4" /> {t('backToServices')}
                                 </Link>
                             </div>
                             <span className="inline-block px-3 py-1 rounded-md bg-[#FDC82F] text-[#1A1A1A] text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 shadow-sm">
@@ -107,7 +115,7 @@ export const ServiceDetailContent = ({
 
                         {/* Overview */}
                         <div className="bg-white rounded-2xl shadow-sm p-8 border border-neutral-100">
-                            <h2 className="text-2xl font-bold mb-6">Overview</h2>
+                            <h2 className="text-2xl font-bold mb-6">{t('overview')}</h2>
                             <p className="text-gray-600 leading-relaxed text-lg whitespace-pre-line">
                                 {description}
                             </p>
@@ -116,7 +124,7 @@ export const ServiceDetailContent = ({
                         {/* Gallery Section */}
                         {gallery && gallery.length > 0 && (
                             <div className="bg-white rounded-2xl shadow-sm p-8 border border-neutral-100">
-                                <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+                                <h2 className="text-2xl font-bold mb-6">{t('gallery')}</h2>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     {gallery.map((imgSrc, idx) => (
                                         <motion.div
@@ -126,10 +134,13 @@ export const ServiceDetailContent = ({
                                             transition={{ delay: idx * 0.1 }}
                                             className="relative aspect-square overflow-hidden rounded-xl group cursor-pointer"
                                         >
-                                            <div
-                                                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                                style={{ backgroundImage: `url(${imgSrc})` }}
-                                            ></div>
+                                            <Image
+                                                src={imgSrc}
+                                                alt={`${title} — photo ${idx + 1}`}
+                                                fill
+                                                sizes="(max-width: 768px) 50vw, 33vw"
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                         </motion.div>
                                     ))}
@@ -140,7 +151,7 @@ export const ServiceDetailContent = ({
                         {/* Variants (If Grouped Activity) */}
                         {subItems.length > 0 && (
                             <div className="bg-white rounded-2xl shadow-sm p-8 border border-neutral-100">
-                                <h2 className="text-2xl font-bold mb-6">Available Options</h2>
+                                <h2 className="text-2xl font-bold mb-6">{t('availableOptions')}</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {subItems.map((item) => (
                                         <div key={item.id} className="border border-neutral-200 rounded-xl p-4 hover:border-primary transition-colors cursor-pointer bg-neutral-50 group">
@@ -164,7 +175,7 @@ export const ServiceDetailContent = ({
                                     <span className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                                         <Check className="w-5 h-5" />
                                     </span>
-                                    Included
+                                    {t('included')}
                                 </h3>
                                 <ul className="space-y-3">
                                     {included.length > 0 ? included.map((inc, i) => (
@@ -187,7 +198,7 @@ export const ServiceDetailContent = ({
                                     <span className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-500">
                                         <X className="w-5 h-5" />
                                     </span>
-                                    Not Included
+                                    {t('notIncluded')}
                                 </h3>
                                 <ul className="space-y-3">
                                     {excluded.length > 0 ? excluded.map((exc, i) => (
@@ -208,12 +219,15 @@ export const ServiceDetailContent = ({
                         {/* Custom Plan Block - Moved to Left Column */}
                         <div className="bg-white rounded-2xl shadow-sm p-8 border border-neutral-100 flex flex-col md:flex-row items-center justify-between gap-6">
                             <div>
-                                <h4 className="font-bold text-xl mb-2 text-neutral-dark">Need a Custom Plan?</h4>
-                                <p className="text-gray-500 text-sm max-w-md">We can customize this experience for large groups, special events, or specific requirements.</p>
+                                <h4 className="font-bold text-xl mb-2 text-neutral-dark">{t('needCustomPlan')}</h4>
+                                <p className="text-gray-500 text-sm max-w-md">{t('customPlanText')}</p>
                             </div>
-                            <button className="px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors whitespace-nowrap">
-                                Contact Support
-                            </button>
+                            <Link
+                                href={`/${locale}/contact`}
+                                className="px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors whitespace-nowrap"
+                            >
+                                {t('contactSupport')}
+                            </Link>
                         </div>
 
                     </div>

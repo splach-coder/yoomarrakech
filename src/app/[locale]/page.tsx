@@ -1,4 +1,4 @@
-import { siteData } from '@/data/siteData';
+import { getSiteData } from '@/data/siteData';
 import { AnimatedHero } from '@/components/AnimatedHero';
 import { ReviewsSlider } from '@/components/ReviewsSlider';
 import { AboutPreview } from '@/components/AboutPreview';
@@ -39,7 +39,7 @@ export default async function Home({
       <FaqSection locale={locale} dict={t.HomePage.FAQ} />
 
       {/* 4. Swiper Reviews Section */}
-      <ReviewsSlider reviews={siteData.reviews.items} />
+      <ReviewsSlider reviews={getSiteData(locale).reviews.items} />
 
       <CTASection locale={locale} dict={t.HomePage.CTA} />
     </main>

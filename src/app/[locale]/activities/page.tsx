@@ -3,9 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { siteData } from '@/data/siteData';
+import { getSiteData } from '@/data/siteData';
 import { ArrowLeft, ArrowUpRight, Clock, Star } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface PageProps {
     params: Promise<{
@@ -17,16 +18,15 @@ export default function ActivitiesPage({ params }: PageProps) {
     const { locale } = React.use(params);
     const t = useTranslations('ListingPage');
 
-    // Group activities by type
-    const experiences = siteData.activities.experiences || [];
+    // Group activities by type — name is localized, desc comes from the first experience
+    const experiences = getSiteData(locale).activities.experiences || [];
     const grouped = experiences.reduce((acc: any, curr: any) => {
         const type = curr.type;
         if (!acc[type]) {
             acc[type] = {
                 ...curr,
                 id: curr.type,
-                name: `${curr.type} Adventures`,
-                desc: `Experience our exclusive ${curr.type} activities.`,
+                name: t('activityGroupTitle', { type: curr.type }),
                 isGrouped: true
             };
         }
@@ -42,10 +42,15 @@ export default function ActivitiesPage({ params }: PageProps) {
         <div className="min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark">
             {/* Hero Banner */}
             <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
-                ></div>
+                <div className="absolute inset-0" aria-hidden="true">
+                    <Image
+                        src="/images/hero-marrakech.jpg"
+                        alt=""
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                    />
+                </div>
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="relative z-10 container mx-auto px-4 text-center">
                     <motion.div
@@ -86,10 +91,13 @@ export default function ActivitiesPage({ params }: PageProps) {
                             <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[350px] border border-neutral-100 group cursor-pointer hover:-translate-y-1">
                                 {/* Image Section */}
                                 <div className="md:w-2/5 relative h-64 md:h-full overflow-hidden">
-                                    <div
-                                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
-                                    ></div>
+                                    <Image
+                                        src={item.image || '/images/hero-marrakech.jpg'}
+                                        alt={item.name || item.type || ''}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 40vw"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
 
                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
@@ -103,7 +111,7 @@ export default function ActivitiesPage({ params }: PageProps) {
                                         <div className="flex justify-between items-start mb-2">
                                             <div className="flex items-center gap-2 text-gray-500 text-xs font-semibold uppercase tracking-wider">
                                                 <Clock className="w-3 h-3 text-primary" />
-                                                <span>2 hours</span>
+                                                <span>{t('duration_2_hours')}</span>
                                             </div>
                                         </div>
 

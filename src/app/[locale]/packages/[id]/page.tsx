@@ -2,7 +2,7 @@
 
 import React, { use } from 'react';
 import { notFound } from 'next/navigation';
-import { siteData } from '@/data/siteData';
+import { getSiteData } from '@/data/siteData';
 import { ServiceDetailContent } from '@/components/ServiceDetailContent';
 
 interface PageProps {
@@ -15,13 +15,13 @@ interface PageProps {
 export default function PackageDetailPage({ params }: PageProps) {
     const { id, locale } = use(params);
 
-    const item = siteData.packages.find(p => p.id === id);
+    const item = getSiteData(locale).packages.find(p => p.id === id);
 
     if (!item) {
         return notFound();
     }
 
-    const description = `The ultimate experience: ${item.name}. This package combines our best activities into a seamless adventure. Enjoy ${item.included.join(', ')} all in one go.`;
+    const description = item.desc;
 
     return (
         <ServiceDetailContent

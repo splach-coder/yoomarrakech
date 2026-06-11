@@ -3,9 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { siteData } from '@/data/siteData';
+import { getSiteData } from '@/data/siteData';
 import { ArrowLeft, ArrowUpRight, Clock, Star } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 interface PageProps {
@@ -19,7 +20,7 @@ export default function PackagesPage({ params }: PageProps) {
     const t = useTranslations('ListingPage');
     const searchParams = useSearchParams();
     const query = searchParams.get('search') || searchParams.get('destination');
-    const allPackages = siteData.packages || [];
+    const allPackages = getSiteData(locale).packages || [];
 
     const packages = React.useMemo(() => {
         if (!query) return allPackages;
@@ -34,10 +35,15 @@ export default function PackagesPage({ params }: PageProps) {
         <div className="min-h-screen bg-[#FDFBF7] font-poppins text-neutral-dark">
             {/* Hero Banner */}
             <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: 'url(/images/hero-marrakech.jpg)' }}
-                ></div>
+                <div className="absolute inset-0" aria-hidden="true">
+                    <Image
+                        src="/images/hero-marrakech.jpg"
+                        alt=""
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                    />
+                </div>
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="relative z-10 container mx-auto px-4 text-center">
                     <motion.div
@@ -77,10 +83,13 @@ export default function PackagesPage({ params }: PageProps) {
                         >
                             <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col md:flex-row h-auto md:h-[350px] border border-neutral-100 group cursor-pointer hover:-translate-y-1">
                                 <div className="md:w-2/5 relative h-64 md:h-full overflow-hidden">
-                                    <div
-                                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{ backgroundImage: `url(${item.image || '/images/hero-marrakech.jpg'})` }}
-                                    ></div>
+                                    <Image
+                                        src={item.image || '/images/hero-marrakech.jpg'}
+                                        alt={item.name || ''}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 40vw"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider text-neutral-dark shadow-sm">
                                         {t('packagesLabel')}

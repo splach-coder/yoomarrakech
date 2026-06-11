@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { siteConfig } from '@/config/site';
+import { useBooking } from '@/context/BookingContext';
 import { Calendar, Users, MessageCircle, MapPin, Clock, Receipt, Check, ChevronDown } from 'lucide-react';
 
 interface BookingFormProps {
@@ -34,13 +35,24 @@ export const BookingForm = ({
     pricingRules = [],
     maxGuests = 20
 }: BookingFormProps) => {
-    const [formData, setFormData] = useState({
-        date: '',
-        guests: 2,
-        selectedVariant: variants.length > 0 ? variants[0].id : null,
-    });
+    // Date and travelers live in the shared booking context (hero search bar,
+    // detail pages and this form all read/write the same state)
+    const { date, travelers, setDate, setTravelers } = useBooking();
+    const guests = Math.min(travelers, maxGuests);
+
+    const [selectedVariantId, setSelectedVariantId] = useState<string | null>(
+        variants.length > 0 ? variants[0].id : null
+    );
 
     const t = useTranslations('Common');
+
+    // A larger group may have been picked elsewhere — clamp the shared state
+    // to this service's capacity
+    useEffect(() => {
+        if (travelers > maxGuests) {
+            setTravelers(maxGuests);
+        }
+    }, [travelers, maxGuests, setTravelers]);
 
     const [showPriceBreakdown, setShowPriceBreakdown] = useState(true);
 
@@ -58,48 +70,48 @@ export const BookingForm = ({
         let guestsTotal = 0;
 
         // Logic for variants
-        if (variants.length > 0 && formData.selectedVariant) {
-            const variant = variants.find(v => v.id === formData.selectedVariant);
+        if (variants.length > 0 && selectedVariantId) {
+            const variant = variants.find(v => v.id === selectedVariantId);
             price = variant?.price || 0;
-            guestsTotal = price * formData.guests;
+            guestsTotal = price * guests;
         }
         // Logic for complex pricing logic from siteData (e.g. tours)
         else if (pricingRules && pricingRules.length > 0) {
             // Find applicable rule for current guest count
             const rule = pricingRules.find(r =>
-                formData.guests >= (r.minPeople || 0) &&
-                formData.guests <= (r.maxPeople || Infinity)
+                guests >= (r.minPeople || 0) &&
+                guests <= (r.maxPeople || Infinity)
             );
 
             if (rule) {
                 if (rule.totalPrice) {
                     // Fixed price for the group size range
                     guestsTotal = rule.totalPrice;
-                    price = Math.round(rule.totalPrice / formData.guests); // Average per person for display
+                    price = Math.round(rule.totalPrice / guests); // Average per person for display
                 } else if (rule.pricePerPerson) {
                     // Per person price for the group size range
                     price = rule.pricePerPerson;
-                    guestsTotal = price * formData.guests;
+                    guestsTotal = price * guests;
                 }
             } else {
                 // Fallback if no rule matches (e.g. exceeding max people defined in rules)
                 const lastRule = pricingRules[pricingRules.length - 1];
                 if (lastRule.totalPrice) {
                     guestsTotal = lastRule.totalPrice;
-                    price = Math.round(lastRule.totalPrice / formData.guests);
+                    price = Math.round(lastRule.totalPrice / guests);
                 } else if (lastRule.pricePerPerson) {
                     price = lastRule.pricePerPerson;
-                    guestsTotal = price * formData.guests;
+                    guestsTotal = price * guests;
                 } else {
                     price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice as string) || 0;
-                    guestsTotal = price * formData.guests;
+                    guestsTotal = price * guests;
                 }
             }
         }
         // Default simple pricing
         else {
             price = typeof basePrice === 'number' ? basePrice : parseInt(basePrice as string) || 0;
-            guestsTotal = price * formData.guests;
+            guestsTotal = price * guests;
         }
 
         // Determine if a group discount is active
@@ -123,32 +135,29 @@ export const BookingForm = ({
             total: guestsTotal,
             hasDiscount: hasDiscount
         });
-    }, [formData.guests, formData.selectedVariant, basePrice, variants, pricingRules]);
+    }, [guests, selectedVariantId, basePrice, variants, pricingRules]);
 
     const handleGuestsChange = (increment: number) => {
-        setFormData(prev => ({
-            ...prev,
-            guests: Math.max(1, Math.min(maxGuests, prev.guests + increment))
-        }));
+        setTravelers(Math.max(1, Math.min(maxGuests, guests + increment)));
     };
 
     const handleVariantChange = (variantId: string) => {
-        setFormData(prev => ({ ...prev, selectedVariant: variantId }));
+        setSelectedVariantId(variantId);
     };
 
     const handleWhatsAppSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const selectedVariant = variants.find(v => v.id === formData.selectedVariant);
+        const selectedVariant = variants.find(v => v.id === selectedVariantId);
         const variantInfo = selectedVariant
             ? `\n🎯 Option: ${selectedVariant.name} (${selectedVariant.location})`
             : '';
 
         const text = `Hello! I would like to book "${serviceName}".
-        
+
 📋 Booking Details:
-📅 Date: ${formData.date}
-👥 Guests: ${formData.guests}${variantInfo}
+📅 Date: ${date}
+👥 Guests: ${guests}${variantInfo}
 
 💰 Total Price: ${pricing.total}€
 
@@ -159,7 +168,7 @@ Please confirm availability. Thank you!`;
         window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
     };
 
-    const selectedVariant = variants.find(v => v.id === formData.selectedVariant);
+    const selectedVariant = variants.find(v => v.id === selectedVariantId);
     const isTransport = serviceType === 'transport';
 
     return (
@@ -169,7 +178,7 @@ Please confirm availability. Thank you!`;
                 <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                         <Receipt className="w-5 h-5" />
-                        <h3 className="text-lg font-bold">Book Now</h3>
+                        <h3 className="text-lg font-bold">{t('bookNow')}</h3>
                     </div>
                     {!isTransport && (
                         <button
@@ -184,13 +193,13 @@ Please confirm availability. Thank you!`;
                 <div className="flex items-baseline gap-2">
                     {isTransport ? (
                         <div>
-                            <span className="text-2xl font-bold block">Contact for Price</span>
-                            <span className="text-white/70 text-sm">Custom quote based on your needs</span>
+                            <span className="text-2xl font-bold block">{t('contactForPrice')}</span>
+                            <span className="text-white/70 text-sm">{t('customQuote')}</span>
                         </div>
                     ) : (
                         <>
                             <span className="text-4xl font-bold">{pricing.total}€</span>
-                            <span className="text-white/70 text-sm">total</span>
+                            <span className="text-white/70 text-sm">{t('total')}</span>
                         </>
                     )}
                 </div>
@@ -206,15 +215,15 @@ Please confirm availability. Thank you!`;
                 <div className="px-6 py-4 bg-primary/5 border-b border-neutral-100">
                     <div className="space-y-2 text-sm">
                         <div className="flex justify-between text-gray-600">
-                            <span>Price per person</span>
+                            <span>{t('pricePerPerson')}</span>
                             <span className="font-semibold">{pricing.basePrice}€</span>
                         </div>
                         <div className="flex justify-between text-gray-600">
-                            <span>Number of travelers</span>
-                            <span className="font-semibold">× {formData.guests}</span>
+                            <span>{t('numberOfTravelers')}</span>
+                            <span className="font-semibold">× {guests}</span>
                         </div>
                         <div className="pt-2 border-t border-neutral-200 flex justify-between font-bold text-neutral-dark">
-                            <span>Subtotal</span>
+                            <span>{t('subtotal')}</span>
                             <span className="text-primary">{pricing.guestsTotal}€</span>
                         </div>
                     </div>
@@ -233,14 +242,17 @@ Please confirm availability. Thank you!`;
                 {variants.length > 0 && (
                     <div className="space-y-3">
                         <label className="text-xs font-bold uppercase text-neutral-dark tracking-wide flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-primary" /> Choose Experience
+                            <MapPin className="w-4 h-4 text-primary" /> {t('chooseExperience')}
                         </label>
-                        <div className="space-y-2">
+                        <div className="space-y-2" role="radiogroup" aria-label={t('chooseExperience')}>
                             {variants.map((variant) => (
-                                <div
+                                <button
+                                    type="button"
+                                    role="radio"
+                                    aria-checked={selectedVariantId === variant.id}
                                     key={variant.id}
                                     onClick={() => handleVariantChange(variant.id)}
-                                    className={`relative p-3 rounded-lg border-2 cursor-pointer transition-all ${formData.selectedVariant === variant.id
+                                    className={`relative w-full text-left p-3 rounded-lg border-2 cursor-pointer transition-all focus-visible:ring-2 focus-visible:ring-primary/40 outline-none ${selectedVariantId === variant.id
                                         ? 'border-primary bg-primary/5 shadow-sm'
                                         : 'border-neutral-200 hover:border-primary/30 hover:bg-neutral-50'
                                         }`}
@@ -254,14 +266,14 @@ Please confirm availability. Thank you!`;
                                             <div className="text-right">
                                                 <p className="text-lg font-bold text-primary">{variant.price}€</p>
                                             </div>
-                                            {formData.selectedVariant === variant.id && (
+                                            {selectedVariantId === variant.id && (
                                                 <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
                                                     <Check className="w-3 h-3 text-white" />
                                                 </div>
                                             )}
                                         </div>
                                     </div>
-                                </div>
+                                </button>
                             ))}
                         </div>
                     </div>
@@ -270,15 +282,15 @@ Please confirm availability. Thank you!`;
                 {/* Date Picker */}
                 <div className="space-y-2">
                     <label className="text-xs font-bold uppercase text-neutral-dark tracking-wide flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-primary" /> Travel Date
+                        <Calendar className="w-4 h-4 text-primary" /> {t('travelDate')}
                     </label>
                     <input
                         type="date"
                         name="date"
                         required
                         min={new Date().toISOString().split('T')[0]}
-                        value={formData.date}
-                        onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
                         className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-neutral-dark text-sm"
                     />
                 </div>
@@ -286,26 +298,28 @@ Please confirm availability. Thank you!`;
                 {/* Guests Counter */}
                 <div className="space-y-2">
                     <label className="text-xs font-bold uppercase text-neutral-dark tracking-wide flex items-center gap-2">
-                        <Users className="w-4 h-4 text-primary" /> Travelers
+                        <Users className="w-4 h-4 text-primary" /> {t('travelers')}
                     </label>
                     <div className="flex items-center justify-between bg-neutral-50 border border-neutral-200 rounded-lg p-2">
                         <button
                             type="button"
                             onClick={() => handleGuestsChange(-1)}
+                            aria-label={`${t('decrease')} — ${t('numberOfTravelers')}`}
                             className="w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-neutral-dark hover:bg-neutral-200 transition-colors font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                            disabled={formData.guests <= 1}
+                            disabled={guests <= 1}
                         >
                             −
                         </button>
                         <div className="text-center">
-                            <span className="font-bold text-xl text-neutral-dark block">{formData.guests}</span>
-                            <span className="text-xs text-gray-500">{formData.guests === 1 ? 'person' : 'people'}</span>
+                            <span className="font-bold text-xl text-neutral-dark block">{guests}</span>
+                            <span className="text-xs text-gray-500">{t('personCount', { count: guests })}</span>
                         </div>
                         <button
                             type="button"
                             onClick={() => handleGuestsChange(1)}
+                            aria-label={`${t('increase')} — ${t('numberOfTravelers')}`}
                             className="w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary hover:bg-primary/10 transition-colors font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                            disabled={formData.guests >= maxGuests}
+                            disabled={guests >= maxGuests}
                         >
                             +
                         </button>
@@ -321,11 +335,11 @@ Please confirm availability. Thank you!`;
                     className="w-full bg-[#25D366] hover:bg-[#20b858] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
                 >
                     <MessageCircle className="w-5 h-5 fill-current" />
-                    <span>Confirm via WhatsApp</span>
+                    <span>{t('confirmWhatsApp')}</span>
                 </button>
 
                 <p className="text-xs text-center text-gray-400">
-                    💳 No payment now • Pay on arrival
+                    {t('noPaymentNow')}
                 </p>
             </form>
         </div>
