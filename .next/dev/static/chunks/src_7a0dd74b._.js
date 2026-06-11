@@ -121,41 +121,179 @@ const HeroSearchBar = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full max-w-2xl mx-auto",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex flex-col sm:flex-row items-stretch sm:items-center bg-black/45 backdrop-blur-md border border-white/15 rounded-2xl sm:rounded-full p-2 gap-1 shadow-2xl",
+            className: "flex flex-col sm:flex-row items-stretch sm:items-center bg-black/45 backdrop-blur-md border border-white/15 rounded-2xl sm:rounded-full p-1.5 sm:p-2 gap-1.5 sm:gap-1 shadow-2xl",
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                    type: "button",
-                    onClick: openDatePicker,
-                    "aria-label": t('pickDate'),
-                    className: "relative flex-1 flex items-center gap-3 px-5 py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer",
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex items-stretch sm:items-center flex-1 min-w-0",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
-                            className: "w-5 h-5 text-white/80 shrink-0"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 66,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: `text-sm font-medium truncate ${date ? 'text-white' : 'text-white/80'}`,
-                            children: formattedDate || t('pickDate')
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 67,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                            ref: dateInputRef,
-                            type: "date",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
+                            onClick: openDatePicker,
                             "aria-label": t('pickDate'),
-                            min: today,
-                            value: date,
-                            onChange: (e)=>setDate(e.target.value),
-                            className: "absolute inset-0 w-full h-full opacity-0 cursor-pointer",
-                            tabIndex: -1
+                            className: "relative flex-1 min-w-0 flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
+                                    className: "w-5 h-5 text-white/80 shrink-0"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                    lineNumber: 68,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: `text-sm font-medium truncate ${date ? 'text-white' : 'text-white/80'}`,
+                                    children: formattedDate || t('pickDate')
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                    lineNumber: 69,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                    ref: dateInputRef,
+                                    type: "date",
+                                    "aria-label": t('pickDate'),
+                                    min: today,
+                                    value: date,
+                                    onChange: (e)=>setDate(e.target.value),
+                                    className: "absolute inset-0 w-full h-full opacity-0 cursor-pointer",
+                                    tabIndex: -1
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                    lineNumber: 72,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                            lineNumber: 62,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-px bg-white/15 shrink-0 self-stretch my-1 sm:my-0 sm:self-auto sm:h-8"
                         }, void 0, false, {
                             fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 70,
+                            lineNumber: 84,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            ref: travelersRef,
+                            className: "relative flex-1 min-w-0",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    type: "button",
+                                    onClick: ()=>setShowTravelers((prev)=>!prev),
+                                    "aria-expanded": showTravelers,
+                                    "aria-haspopup": "dialog",
+                                    "aria-label": t('travelersLabel'),
+                                    className: "w-full h-full flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
+                                            className: "w-5 h-5 text-white/80 shrink-0"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                            lineNumber: 96,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-sm font-medium text-white truncate",
+                                            children: t('travelers', {
+                                                count: travelers
+                                            })
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                            lineNumber: 97,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                    lineNumber: 88,
+                                    columnNumber: 25
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                showTravelers && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute top-full mt-3 right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 z-30 bg-white rounded-2xl shadow-xl border border-neutral-100 p-4 w-56 max-w-[calc(100vw-2rem)]",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-xs font-bold uppercase tracking-wide text-neutral-dark mb-3",
+                                            children: t('travelersLabel')
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                            lineNumber: 104,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center justify-between",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>setTravelers(travelers - 1),
+                                                    disabled: travelers <= __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MIN_TRAVELERS"],
+                                                    "aria-label": `${tCommon('decrease')} — ${t('travelersLabel')}`,
+                                                    className: "w-11 h-11 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-dark hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 outline-none transition-colors disabled:opacity-40 disabled:cursor-not-allowed",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$minus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Minus$3e$__["Minus"], {
+                                                        className: "w-4 h-4"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                                        lineNumber: 115,
+                                                        columnNumber: 37
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                                    lineNumber: 108,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "font-bold text-lg text-neutral-dark",
+                                                    "aria-live": "polite",
+                                                    children: travelers
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                                    lineNumber: 117,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>setTravelers(travelers + 1),
+                                                    disabled: travelers >= __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MAX_TRAVELERS"],
+                                                    "aria-label": `${tCommon('increase')} — ${t('travelersLabel')}`,
+                                                    className: "w-11 h-11 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-dark hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 outline-none transition-colors disabled:opacity-40 disabled:cursor-not-allowed",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                                        className: "w-4 h-4"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                                        lineNumber: 125,
+                                                        columnNumber: 37
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                                    lineNumber: 118,
+                                                    columnNumber: 33
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                            lineNumber: 107,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            type: "button",
+                                            onClick: ()=>setShowTravelers(false),
+                                            className: "mt-4 w-full py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors",
+                                            children: t('done')
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                            lineNumber: 128,
+                                            columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
+                                    lineNumber: 103,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/HeroSearchBar.tsx",
+                            lineNumber: 87,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -164,165 +302,29 @@ const HeroSearchBar = ()=>{
                     lineNumber: 60,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "hidden sm:block h-8 w-px bg-white/15 shrink-0"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                    lineNumber: 82,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "sm:hidden h-px w-full bg-white/15"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                    lineNumber: 83,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    ref: travelersRef,
-                    className: "relative flex-1",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "button",
-                            onClick: ()=>setShowTravelers((prev)=>!prev),
-                            "aria-expanded": showTravelers,
-                            "aria-haspopup": "dialog",
-                            "aria-label": t('travelersLabel'),
-                            className: "w-full flex items-center gap-3 px-5 py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
-                                    className: "w-5 h-5 text-white/80 shrink-0"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                    lineNumber: 95,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-sm font-medium text-white truncate",
-                                    children: t('travelers', {
-                                        count: travelers
-                                    })
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                    lineNumber: 96,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 87,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        showTravelers && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute top-full mt-3 left-1/2 -translate-x-1/2 z-30 bg-white rounded-2xl shadow-xl border border-neutral-100 p-4 w-56 max-w-[calc(100vw-2rem)]",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-xs font-bold uppercase tracking-wide text-neutral-dark mb-3",
-                                    children: t('travelersLabel')
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                    lineNumber: 103,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center justify-between",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "button",
-                                            onClick: ()=>setTravelers(travelers - 1),
-                                            disabled: travelers <= __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MIN_TRAVELERS"],
-                                            "aria-label": `${tCommon('decrease')} — ${t('travelersLabel')}`,
-                                            className: "w-11 h-11 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-dark hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 outline-none transition-colors disabled:opacity-40 disabled:cursor-not-allowed",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$minus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Minus$3e$__["Minus"], {
-                                                className: "w-4 h-4"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                                lineNumber: 114,
-                                                columnNumber: 37
-                                            }, ("TURBOPACK compile-time value", void 0))
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                            lineNumber: 107,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-bold text-lg text-neutral-dark",
-                                            "aria-live": "polite",
-                                            children: travelers
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                            lineNumber: 116,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                            type: "button",
-                                            onClick: ()=>setTravelers(travelers + 1),
-                                            disabled: travelers >= __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$BookingContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MAX_TRAVELERS"],
-                                            "aria-label": `${tCommon('increase')} — ${t('travelersLabel')}`,
-                                            className: "w-11 h-11 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-dark hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:ring-primary/40 outline-none transition-colors disabled:opacity-40 disabled:cursor-not-allowed",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
-                                                className: "w-4 h-4"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                                lineNumber: 124,
-                                                columnNumber: 37
-                                            }, ("TURBOPACK compile-time value", void 0))
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                            lineNumber: 117,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                    lineNumber: 106,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    type: "button",
-                                    onClick: ()=>setShowTravelers(false),
-                                    className: "mt-4 w-full py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors",
-                                    children: t('done')
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                                    lineNumber: 127,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 102,
-                            columnNumber: 25
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/HeroSearchBar.tsx",
-                    lineNumber: 86,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     type: "button",
                     onClick: handleSearch,
-                    className: "flex items-center justify-center gap-2 bg-white text-neutral-dark font-semibold text-sm px-7 py-3 rounded-xl sm:rounded-full hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors shrink-0 cursor-pointer",
+                    className: "flex items-center justify-center gap-2 bg-white text-neutral-dark font-semibold text-sm px-7 py-2.5 sm:py-3 rounded-xl sm:rounded-full hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors shrink-0 cursor-pointer",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 144,
+                            lineNumber: 146,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: t('search')
                         }, void 0, false, {
                             fileName: "[project]/src/components/HeroSearchBar.tsx",
-                            lineNumber: 145,
+                            lineNumber: 147,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/HeroSearchBar.tsx",
-                    lineNumber: 139,
+                    lineNumber: 141,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]
@@ -418,7 +420,7 @@ const AnimatedHero = ({ lang })=>{
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         ref: containerRef,
-        className: "relative h-screen min-h-[700px] w-full overflow-hidden bg-neutral-dark flex flex-col justify-center",
+        className: "relative h-screen min-h-[600px] md:min-h-[700px] w-full overflow-hidden bg-neutral-dark flex flex-col justify-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                 style: {
@@ -428,8 +430,8 @@ const AnimatedHero = ({ lang })=>{
                 className: "absolute inset-0 z-0",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                        src: "/images/hero-marrakech.jpg",
-                        alt: "Minaret silhouette against a sunset sky in Marrakech",
+                        src: "/images/hero-marrakechv2.jpg",
+                        alt: "Jemaa el-Fna square at dusk in Marrakech",
                         fill: true,
                         priority: true,
                         sizes: "100vw",
@@ -460,10 +462,10 @@ const AnimatedHero = ({ lang })=>{
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative z-10 container mx-auto px-4 text-center pb-24 flex flex-col items-center",
+                className: "relative z-10 container mx-auto px-4 text-center pb-10 md:pb-24 flex flex-col items-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
-                        className: "font-dancing text-2xl md:text-3xl text-white mb-4 italic drop-shadow-md",
+                        className: "font-dancing text-xl sm:text-2xl md:text-3xl text-white mb-2 md:mb-4 italic drop-shadow-md",
                         ...fadeUp(0.3),
                         children: t('heroTag')
                     }, void 0, false, {
@@ -472,7 +474,7 @@ const AnimatedHero = ({ lang })=>{
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h1, {
-                        className: "max-w-6xl mx-auto text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 font-poppins tracking-tight leading-tight drop-shadow-lg",
+                        className: "max-w-6xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 md:mb-6 font-poppins tracking-tight leading-tight drop-shadow-lg",
                         ...fadeUp(0.55),
                         children: t('heroTitle')
                     }, void 0, false, {
@@ -481,7 +483,7 @@ const AnimatedHero = ({ lang })=>{
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
-                        className: "max-w-xl mx-auto text-white/90 text-base md:text-lg font-light leading-relaxed mb-10 drop-shadow-md",
+                        className: "max-w-xl mx-auto text-white/90 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-6 md:mb-10 drop-shadow-md",
                         ...fadeUp(0.7),
                         children: t('heroFooter')
                     }, void 0, false, {

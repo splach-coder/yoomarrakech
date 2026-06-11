@@ -55,51 +55,52 @@ export const HeroSearchBar = () => {
 
     return (
         <div className="w-full max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-black/45 backdrop-blur-md border border-white/15 rounded-2xl sm:rounded-full p-2 gap-1 shadow-2xl">
-                {/* Date */}
-                <button
-                    type="button"
-                    onClick={openDatePicker}
-                    aria-label={t('pickDate')}
-                    className="relative flex-1 flex items-center gap-3 px-5 py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer"
-                >
-                    <Calendar className="w-5 h-5 text-white/80 shrink-0" />
-                    <span className={`text-sm font-medium truncate ${date ? 'text-white' : 'text-white/80'}`}>
-                        {formattedDate || t('pickDate')}
-                    </span>
-                    <input
-                        ref={dateInputRef}
-                        type="date"
-                        aria-label={t('pickDate')}
-                        min={today}
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                        tabIndex={-1}
-                    />
-                </button>
-
-                <div className="hidden sm:block h-8 w-px bg-white/15 shrink-0" />
-                <div className="sm:hidden h-px w-full bg-white/15" />
-
-                {/* Travelers */}
-                <div ref={travelersRef} className="relative flex-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-black/45 backdrop-blur-md border border-white/15 rounded-2xl sm:rounded-full p-1.5 sm:p-2 gap-1.5 sm:gap-1 shadow-2xl">
+                {/* Date + Travelers — share one row on mobile */}
+                <div className="flex items-stretch sm:items-center flex-1 min-w-0">
+                    {/* Date */}
                     <button
                         type="button"
-                        onClick={() => setShowTravelers(prev => !prev)}
-                        aria-expanded={showTravelers}
-                        aria-haspopup="dialog"
-                        aria-label={t('travelersLabel')}
-                        className="w-full flex items-center gap-3 px-5 py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer"
+                        onClick={openDatePicker}
+                        aria-label={t('pickDate')}
+                        className="relative flex-1 min-w-0 flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer"
                     >
-                        <Users className="w-5 h-5 text-white/80 shrink-0" />
-                        <span className="text-sm font-medium text-white truncate">
-                            {t('travelers', { count: travelers })}
+                        <Calendar className="w-5 h-5 text-white/80 shrink-0" />
+                        <span className={`text-sm font-medium truncate ${date ? 'text-white' : 'text-white/80'}`}>
+                            {formattedDate || t('pickDate')}
                         </span>
+                        <input
+                            ref={dateInputRef}
+                            type="date"
+                            aria-label={t('pickDate')}
+                            min={today}
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            tabIndex={-1}
+                        />
                     </button>
 
-                    {showTravelers && (
-                        <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 z-30 bg-white rounded-2xl shadow-xl border border-neutral-100 p-4 w-56 max-w-[calc(100vw-2rem)]">
+                    <div className="w-px bg-white/15 shrink-0 self-stretch my-1 sm:my-0 sm:self-auto sm:h-8" />
+
+                    {/* Travelers */}
+                    <div ref={travelersRef} className="relative flex-1 min-w-0">
+                        <button
+                            type="button"
+                            onClick={() => setShowTravelers(prev => !prev)}
+                            aria-expanded={showTravelers}
+                            aria-haspopup="dialog"
+                            aria-label={t('travelersLabel')}
+                            className="w-full h-full flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-full hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors text-left cursor-pointer"
+                        >
+                            <Users className="w-5 h-5 text-white/80 shrink-0" />
+                            <span className="text-sm font-medium text-white truncate">
+                                {t('travelers', { count: travelers })}
+                            </span>
+                        </button>
+
+                        {showTravelers && (
+                            <div className="absolute top-full mt-3 right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 z-30 bg-white rounded-2xl shadow-xl border border-neutral-100 p-4 w-56 max-w-[calc(100vw-2rem)]">
                             <p className="text-xs font-bold uppercase tracking-wide text-neutral-dark mb-3">
                                 {t('travelersLabel')}
                             </p>
@@ -132,14 +133,15 @@ export const HeroSearchBar = () => {
                                 {t('done')}
                             </button>
                         </div>
-                    )}
+                        )}
+                    </div>
                 </div>
 
                 {/* Search */}
                 <button
                     type="button"
                     onClick={handleSearch}
-                    className="flex items-center justify-center gap-2 bg-white text-neutral-dark font-semibold text-sm px-7 py-3 rounded-xl sm:rounded-full hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors shrink-0 cursor-pointer"
+                    className="flex items-center justify-center gap-2 bg-white text-neutral-dark font-semibold text-sm px-7 py-2.5 sm:py-3 rounded-xl sm:rounded-full hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/60 outline-none transition-colors shrink-0 cursor-pointer"
                 >
                     <Search className="w-4 h-4" />
                     <span>{t('search')}</span>
